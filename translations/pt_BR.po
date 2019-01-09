@@ -1,5 +1,5 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
+# ACE Plugin.
+# Copyright (C) 2019 THIAGO OLIVEIRA
 #
 # Translators:
 # Thiago Oliveira <thiago.eec@gmail.com>, 2019
