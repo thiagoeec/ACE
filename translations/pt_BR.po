@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+#
+# Translators:
+# Thiago Oliveira <thiago.eec@gmail.com>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: calibre-plugins\n"
+"POT-Creation-Date: 2019-01-08 17:30-0200\n"
+"PO-Revision-Date: 2019-01-09 11:17-0200\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/calibre/"
+"calibre-plugins/language/pt_BR/)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+
+#: __init__.py:32
+msgid "Checks the accessibility of EPUB files with ACE."
+msgstr "Verifica a acessibilidade de arquivos EPUB com o ACE."
+
+#: config.py:47
+msgid "Report Folder:"
+msgstr "Pasta do Relatório:"
+
+#: config.py:55
+msgid "Folder to save the report"
+msgstr "Pasta para salvar o relatório"
+
+#: config.py:60
+msgid "Select Report Folder"
+msgstr "Selecionar Pasta do Relatório"
+
+#: config.py:61
+msgid "Select the folder where the report will be saved."
+msgstr "Selecionar a pasta onde o relatório será salvo."
+
+#: config.py:67
+msgid "Options:"
+msgstr "Opções:"
+
+#: config.py:73
+msgid "Open Report after checking"
+msgstr "Abrir Relatório após a verificação"
+
+#: config.py:74
+msgid ""
+"When unchecked, it will display a message pointing to the report folder."
+msgstr ""
+"Quando desmarcada, o plugin irá exibir uma mensagem apontando para a pasta "
+"do relatório."
+
+#: config.py:80
+msgid "Debug Mode"
+msgstr "Modo de Depuração"
+
+#: config.py:81
+msgid "When checked, ACE log will be saved to clipboard."
+msgstr "Quando marcada, o log do ACE será salvo na área de transferência."
+
+#: config.py:87
+msgid "About"
+msgstr "Sobre"
+
+#: config.py:96 config.py:99
+msgid "About the ACE plugin"
+msgstr "Sobre o plugin ACE"
+
+#: config.py:109
+msgid "Select Directory to save Report to"
+msgstr "Selecione a pasta para salvar o Relatório"
+
+#: config.py:120
+msgid ""
+"<p>The path specified for the Report Folder does not exist.<br/>Your latest "
+"preference changes will <b>NOT</b> be saved!</p>"
+msgstr ""
+"<p>O caminho especificado para a Pasta do Relatório não existe.<br/>Suas "
+"últimas alterações de preferências <b>NÃO</b> serão salvas!</p>"
+
+#: main.py:99
+msgid "Configure ACE"
+msgstr "Configurar ACE"
+
+#: main.py:122
+msgid "Run ACE"
+msgstr "Executar ACE"
+
+#: main.py:137
+msgid "Configure"
+msgstr "Configurar"
+
+#: main.py:139
+msgid "Configure ACE plugin"
+msgstr "Configurar o plugin ACE"
+
+#: main.py:153
+msgid "Before: ACE"
+msgstr "Antes de: ACE"
+
+#: main.py:158
+msgid "Unsupported file format"
+msgstr "Formato não suportado"
+
+#: main.py:159
+msgid "You can't check {} files with ACE."
+msgstr "Não é possível verificar arquivos {} com o ACE."
+
+#: main.py:197 main.py:220
+msgid "Error"
+msgstr "Erro"
+
+#: main.py:201
+msgid ""
+"ACE found an error during execution.\n"
+"Do you want to try to rerun it?\n"
+"This can resolve a few errors."
+msgstr ""
+"Ocorreu um erro durante a execução.\n"
+"Gostaria de executar o ACE novamente?\n"
+"Isso pode resolver alguns erros."
+
+#: main.py:204
+msgid "Rerun"
+msgstr "Reexecutar"
+
+#: main.py:231
+msgid "Unhandled exception"
+msgstr "Execeção não tratada"
+
+#: main.py:232
+msgid "An unexpected error occurred. Click 'Show details' for more info."
+msgstr ""
+"Um erro inesperado ocorreu. Clique em 'Mostrar detalhes' para mais "
+"informações."
+
+#: main.py:238
+msgid ""
+"ACE check is finished!\n"
+"The report will open on your default browser."
+msgstr ""
+"A verificação do ACE foi concluída!\n"
+"O relatório será aberto no seu navegador padrão."
+
+#: main.py:245
+msgid ""
+"ACE check is finished!\n"
+"The report was saved to: "
+msgstr ""
+"A verificação do ACE foi concluída!\n"
+"O relatório foi salvo na pasta: "
+
+#~ msgid "ACE"
+#~ msgstr "ACE"
