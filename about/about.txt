@@ -1,0 +1,11 @@
+The first version of this plugin was based
+on Doitsu's code for Sigil's ACE Plugin.
+This is a simplified version.
+
+It allows you to run ACE directly from the
+Editor. Report opens on your default browser.
+
+The Config Menu is based on KindleUnpack.
+
+Thanks to Kovid Goyal for the help setting up
+the Configuration Menu inside the Editor.
