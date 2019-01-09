@@ -12,7 +12,7 @@ This plugin is a simple [ACE](https://github.com/daisy/ace) (Accessibility Check
 <p>The first version of this plugin was based on Doitsu's code for Sigil's ACE Plugin.
 <br/>This is a simplified version. It allows you to run ACE directly from the Editor. Report opens on your default browser.
 <br/>The Config Menu is based on KindleUnpack.
-<br/>Thanks to [kovidgoyal](https://github.com/kovidgoyal) for the help setting up the Configuration Menu inside the Editor.</p>
+  <br/>Thanks to <a href="https://github.com/kovidgoyal">@kovidgoyal</a> for the help setting up the Configuration Menu inside the Editor.</p>
 
 ## System requirements
 
@@ -24,7 +24,7 @@ Visit the [ACE's website](https://daisy.github.io/ace/getting-started/installati
 
 ## Plugin installation
 
-You can add this plugin to calibre via Preferences > Plugins > Get new plugins. Select ACE on the list and click on the 'Install' button. You can also download the  [MobileRead forum](https://www.mobileread.com/forums/showthread.php?t=313848).
+You can add this plugin to calibre via Preferences > Plugins > Get new plugins. Select ACE on the list and click on the 'Install' button. You can also download it from the [MobileRead forum](https://www.mobileread.com/forums/showthread.php?t=313848).
 
 ## Settings
 
