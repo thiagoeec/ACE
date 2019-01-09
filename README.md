@@ -7,7 +7,7 @@ ACE Plugin for calibre
 
 This plugin is a simple [ACE](https://github.com/daisy/ace) (Accessibility Checker for EPUB) wrapper.
 
-## History
+## Credits
 
 <p>The first version of this plugin was based on Doitsu's code for Sigil's ACE Plugin.
 <br/>This is a simplified version. It allows you to run ACE directly from the Editor. Report opens on your default browser.
