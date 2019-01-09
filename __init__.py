@@ -1,20 +1,6 @@
 #!/usr/bin/env python2
 # vim:fileencoding=utf-8
 
-'''
-The first version of this plugin was based
-on Doitsu's code for Sigil's ACE Plugin.
-
-This is a simplified version. It enables
-running ACE directly from the Editor. The
-report will open on your default browser.
-
-The Config Menu is based on KindleUnpack.
-
-Thanks to Kovid Goyal for the help setting
-up the Configuration Menu inside the Editor.
-'''
-
 from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
