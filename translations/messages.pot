@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-10 08:31-0200\n"
+"POT-Creation-Date: 2019-01-10 19:45-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr ""
 
-#: config.py:47
+#: config.py:43
 msgid "Report Folder:"
 msgstr ""
 
-#: config.py:55
+#: config.py:51
 msgid "Folder to save the report"
 msgstr ""
 
-#: config.py:60
+#: config.py:56
 msgid "Select Report Folder"
 msgstr ""
 
-#: config.py:61
+#: config.py:57
 msgid "Select the folder where the report will be saved."
 msgstr ""
 
-#: config.py:67
+#: config.py:63
 msgid "Options:"
 msgstr ""
 
-#: config.py:73
+#: config.py:69
 msgid "Open Report after checking"
 msgstr ""
 
-#: config.py:74
+#: config.py:70
 msgid "When unchecked, it will display a message pointing to the report folder."
 msgstr ""
 
-#: config.py:80
+#: config.py:76
 msgid "Debug Mode"
 msgstr ""
 
-#: config.py:81
+#: config.py:77
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr ""
 
-#: config.py:87
+#: config.py:83
 msgid "About"
 msgstr ""
 
-#: config.py:100
+#: config.py:90
 msgid ""
 "The first version of this plugin was based\n"
 "on Doitsu's code for Sigil's ACE Plugin.\n"
@@ -74,76 +74,76 @@ msgid ""
 "the Configuration Menu inside the Editor."
 msgstr ""
 
-#: config.py:111
+#: config.py:101
 msgid "About the ACE plugin"
 msgstr ""
 
-#: config.py:121
+#: config.py:111
 msgid "Select Directory to save Report to"
 msgstr ""
 
-#: config.py:132
+#: config.py:122
 msgid "<p>The path specified for the Report Folder does not exist.<br/>Your latest preference changes will <b>NOT</b> be saved!</p>"
 msgstr ""
 
-#: main.py:99
+#: main.py:100
 msgid "Configure ACE"
 msgstr ""
 
-#: main.py:122
+#: main.py:123
 msgid "Run ACE"
 msgstr ""
 
-#: main.py:137
+#: main.py:138
 msgid "Configure"
 msgstr ""
 
-#: main.py:139
+#: main.py:140
 msgid "Configure ACE plugin"
 msgstr ""
 
-#: main.py:153
+#: main.py:154
 msgid "Before: ACE"
 msgstr ""
 
-#: main.py:158
+#: main.py:159
 msgid "Unsupported file format"
 msgstr ""
 
-#: main.py:159
+#: main.py:160
 msgid "You can't check {} files with ACE."
 msgstr ""
 
-#: main.py:197 main.py:220
+#: main.py:198 main.py:221
 msgid "Error"
 msgstr ""
 
-#: main.py:201
+#: main.py:202
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
 "This can resolve a few errors."
 msgstr ""
 
-#: main.py:204
+#: main.py:205
 msgid "Rerun"
 msgstr ""
 
-#: main.py:231
+#: main.py:232
 msgid "Unhandled exception"
 msgstr ""
 
-#: main.py:232
+#: main.py:233
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 
-#: main.py:238
+#: main.py:239
 msgid ""
 "ACE check is finished!\n"
 "The report will open on your default browser."
 msgstr ""
 
-#: main.py:245
+#: main.py:246
 msgid ""
 "ACE check is finished!\n"
 "The report was saved to: "

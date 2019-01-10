@@ -1,7 +1,6 @@
-set PYTHONIOENCODING=UTF-8
+@echo off
+:: Extract translatable strings from source files
+py %localappdata%\Programs\Python\Python37\Tools\i18n\pygettext.py __init__.py config.py main.py
 
-for %%f in (*.py) do (
-	set count=1
-    py -3.7 "C:\Users\go_th\AppData\Local\Programs\Python\Python37\Tools\i18n\pygettext.py" -d message%%~nf %%~nf.py
-	set count=count+1
-)
+:: Moves the generated file to translations folder
+move messages.pot translations > nul

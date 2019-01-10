@@ -5,7 +5,7 @@ from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
 __license__ = 'GPL v3'
-__copyright__ = '2018, Thiago'
+__copyright__ = '2018, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
 # PyQt libraries
@@ -22,7 +22,7 @@ import os, sys, tempfile, webbrowser, shutil
 import os.path
 from os.path import expanduser
 
-# Loads translation files (.mo) on the folder 'translations'
+# Load translation files (.mo) on the folder 'translations'
 load_translations()
 
 # DiapDealer's temp folder code
@@ -39,6 +39,7 @@ def make_temp_directory():
     temp_dir = tempfile.mkdtemp()
     yield temp_dir
     shutil.rmtree(temp_dir)
+
 
 # Set up icon
 def get_icon(icon_name):

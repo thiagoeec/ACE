@@ -5,13 +5,13 @@ from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
 __license__ = 'GPL v3'
-__copyright__ = '2018, Thiago'
+__copyright__ = '2018, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
 # Calibre libraries
 from calibre.customize import EditBookToolPlugin, InterfaceActionBase
 
-# Loads translation files (.mo) on the folder 'translations'
+# Load translation files (.mo) on the folder 'translations'
 load_translations()
 
 PLUGIN_NAME          = 'ACE'

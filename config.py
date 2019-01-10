@@ -3,7 +3,7 @@ from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
 __license__   = 'GPL v3'
-__copyright__ = '2018, Thiago'
+__copyright__ = '2018, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
 # PyQt libraries
@@ -19,7 +19,7 @@ from calibre_plugins.ACE.__init__ import PLUGIN_NAME, PLUGIN_VERSION
 # Standard libraries
 import os
 
-# Loads translation files (.mo) on the folder 'translations'
+# Load translation files (.mo) on the folder 'translations'
 load_translations()
 
 # This is where all preferences for this plugin will be stored.
