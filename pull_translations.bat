@@ -6,4 +6,8 @@ for %%f in (*.po) do (
     "C:\Program Files\Calibre2\calibre-debug.exe" -c "from calibre.translations.msgfmt import main; main()" %%~nf
 )
 
+for %%f in (*.po) do (
+    del %%~nf.po
+)
+
 cd ..

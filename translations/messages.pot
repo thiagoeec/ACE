@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-09 11:24-0200\n"
+"POT-Creation-Date: 2019-01-10 08:31-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: __init__.py:32
+#: __init__.py:18
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr ""
 
@@ -59,15 +59,30 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: config.py:96 config.py:99
+#: config.py:100
+msgid ""
+"The first version of this plugin was based\n"
+"on Doitsu's code for Sigil's ACE Plugin.\n"
+"This is a simplified version.\n"
+"\n"
+"It allows you to run ACE directly from the\n"
+"Editor. Report opens on your default browser.\n"
+"\n"
+"The Config Menu is based on KindleUnpack.\n"
+"\n"
+"Thanks to Kovid Goyal for the help setting up\n"
+"the Configuration Menu inside the Editor."
+msgstr ""
+
+#: config.py:111
 msgid "About the ACE plugin"
 msgstr ""
 
-#: config.py:109
+#: config.py:121
 msgid "Select Directory to save Report to"
 msgstr ""
 
-#: config.py:120
+#: config.py:132
 msgid "<p>The path specified for the Report Folder does not exist.<br/>Your latest preference changes will <b>NOT</b> be saved!</p>"
 msgstr ""
 

@@ -22,10 +22,6 @@ import os
 # Loads translation files (.mo) on the folder 'translations'
 load_translations()
 
-# Get calibre interface language
-from calibre.utils.config_base import prefs
-lang = prefs['language']
-
 # This is where all preferences for this plugin will be stored.
 plugin_prefs = JSONConfig('plugins/ACE')
 
@@ -91,12 +87,18 @@ class ConfigWidget(QWidget):
 
     def about(self):
         # Read the 'about' file
-        try:
-            text = get_resources('about/about_{}.txt'.format(lang))
-            QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))
-        except AttributeError:
-            text = get_resources('about/about.txt')
-            QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))
+        text = _('The first version of this plugin was based\n'
+                 'on Doitsu\'s code for Sigil\'s ACE Plugin.\n'
+                 'This is a simplified version.\n'
+                 '\n'
+                 'It allows you to run ACE directly from the\n'
+                 'Editor. Report opens on your default browser.\n'
+                 '\n'
+                 'The Config Menu is based on KindleUnpack.\n'
+                 '\n'
+                 'Thanks to Kovid Goyal for the help setting up\n'
+                 'the Configuration Menu inside the Editor.')
+        QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))
 
     def save_settings(self):
         # Save current dialog sttings back to JSON config file
