@@ -126,19 +126,19 @@ class AceTool(Tool):
             # register it for the action created for the menu, not the toolbar,
             # to avoid a double trigger
             self.register_shortcut(ac, 'ACE-tool', default_keys=('Ctrl+Shift+Alt+A',))
+
+        # Check calibre version. 'Dialog' module in do_config()
+        # is not available before version 2.15.0
+        from calibre.constants import numeric_version as calibre_version
+        if calibre_version < (2, 15, 0):
+            pass
         else:
-            from calibre.constants import numeric_version as calibre_version
-            # Check calibre version. 'Dialog' module in do_config()
-            # is not available before version 2.15.0
-            if calibre_version < (2, 15, 0):
-                pass
-            else:
-                menu = QMenu()
-                ac.setMenu(menu)
-                config_menu_item = menu.addAction(_('Configure'))
-                config_menu_item.setIcon(QIcon(I('config.png')))
-                config_menu_item.setStatusTip(_('Configure ACE plugin'))
-                config_menu_item.triggered.connect(self.do_config)
+            menu = QMenu()
+            ac.setMenu(menu)
+            config_menu_item = menu.addAction(_('Configure'))
+            config_menu_item.setIcon(QIcon(I('config.png')))
+            config_menu_item.setStatusTip(_('Configure ACE plugin'))
+            config_menu_item.triggered.connect(self.do_config)
 
         ac.triggered.connect(self.run)
         return ac

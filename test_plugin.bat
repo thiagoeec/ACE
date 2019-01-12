@@ -1,15 +1,9 @@
 @echo off
-:: Mount plugin
-py make_plugin.py
+::Assemble plugin file
+call make_plugin.bat
 
-:: Remove cache folder
-rmdir /s /q __pycache__
-
-:: Override calibre language
-set CALIBRE_OVERRIDE_LANG=es
-
-:: Add plugin to calibre
-calibre-customize -a ACE.zip
+:: Override calibre with the language code passed
+set CALIBRE_OVERRIDE_LANG=%1
 
 :: Starts calibre in debug mode
 calibre-debug -g
