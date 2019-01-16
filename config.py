@@ -29,6 +29,7 @@ plugin_prefs = JSONConfig('plugins/ACE')
 plugin_prefs.defaults['report_path'] = expanduser('~')
 plugin_prefs.defaults['open_report'] = True
 plugin_prefs.defaults['debug_mode'] = False
+plugin_prefs.defaults['close_docks'] = True
 
 # Set up Config Dialog
 class ConfigWidget(QWidget):
@@ -79,6 +80,13 @@ class ConfigWidget(QWidget):
         # Load the checkbox with the current preference setting
         self.debug_mode_check.setChecked(plugin_prefs['debug_mode'])
 
+        # Close docks checkbox
+        self.close_docks_check = QCheckBox(_('Close Validation Docks'), self)
+        self.close_docks_check.setToolTip(_('When checked, ACE will attempt to close other validation docks.'))
+        misc_group_box_layout.addWidget(self.close_docks_check)
+        # Load the checkbox with the current preference setting
+        self.close_docks_check.setChecked(plugin_prefs['close_docks'])
+
         # About button
         self.about_button = QPushButton(_('About'), self)
         self.about_button.clicked.connect(self.about)
@@ -87,24 +95,26 @@ class ConfigWidget(QWidget):
 
     def about(self):
         # Read the 'about' file
-        text = _('The first version of this plugin was based\n'
-                 'on Doitsu\'s code for Sigil\'s ACE Plugin.\n'
-                 'This is a simplified version.\n'
+        text = _('This plugin is based on Doitsu\'s code for\n'
+                 'Sigil\'s ACE Plugin and EPUBCheck for calibre.\n'
                  '\n'
-                 'It allows you to run ACE directly from the\n'
-                 'Editor. Report opens on your default browser.\n'
+                 'This plugin works better with calibre 3.38 or\n'
+                 'newer. On older versions, clicking on an error\n'
+                 'will take you to the file, but not to the line\n'
+                 'where the error is.\n'
                  '\n'
                  'The Config Menu is based on KindleUnpack.\n'
                  '\n'
-                 'Thanks to Kovid Goyal for the help setting up\n'
-                 'the Configuration Menu inside the Editor.')
+                 'Thanks to Kovid Goyal for adding the feature\n'
+                 'that make possible linked error messages.')
         QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))
 
     def save_settings(self):
         # Save current dialog sttings back to JSON config file
-            plugin_prefs['report_path'] = unicode(self.directory_txtBox.displayText())
-            plugin_prefs['open_report'] = self.open_report_check.isChecked()
-            plugin_prefs['debug_mode'] = self.debug_mode_check.isChecked()
+        plugin_prefs['report_path'] = unicode(self.directory_txtBox.displayText())
+        plugin_prefs['open_report'] = self.open_report_check.isChecked()
+        plugin_prefs['debug_mode'] = self.debug_mode_check.isChecked()
+        plugin_prefs['close_docks'] = self.close_docks_check.isChecked()
 
     def getDirectory(self):
         c = choose_dir(self, PLUGIN_NAME + 'dir_chooser',

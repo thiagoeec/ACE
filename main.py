@@ -9,18 +9,21 @@ __copyright__ = '2018, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
 # PyQt libraries
-from PyQt5.Qt import QApplication, QAction, QMessageBox, QDialog, Qt, QMenu, QIcon, QPixmap
+from PyQt5.Qt import QApplication, QAction, QMessageBox, QDialog, Qt, QMenu,\
+    QIcon, QPixmap, QTreeWidget, QVBoxLayout, QTreeWidgetItem, QTextEdit, QDockWidget
+from PyQt5 import QtCore, QtGui
 
 # Calibre libraries
 from calibre.gui2 import error_dialog
 from calibre.gui2.tweak_book.plugin import Tool
 from calibre.utils.config import JSONConfig, config_dir
-from calibre.constants import iswindows, islinux, isosx
+from calibre.constants import iswindows, islinux, isosx, numeric_version
+from calibre.ebooks.BeautifulSoup import BeautifulSoup
 
 # Standard libraries
-import os, sys, tempfile, webbrowser, shutil
+import os, sys, tempfile, webbrowser, shutil, json
 import os.path
-from os.path import expanduser
+from os.path import expanduser, basename
 
 # Load translation files (.mo) on the folder 'translations'
 load_translations()
@@ -54,6 +57,35 @@ def get_icon(icon_name):
         return QIcon(pixmap)
     # As we did not find an icon elsewhere, look within our zip resources
     return get_icons(icon_name)
+
+
+# Get equivalent ARIA role
+def getrole(epub_type):
+    noequiv = {
+    'figure' : 'figure',
+    'glossterm' : 'term',
+    'glossdef' : 'definition',
+    'landmarks' : 'directory',
+    'list' : 'list',
+    'list-item' : 'listitem',
+    'page-list' : 'doc-pagelist',
+    'referrer' : 'doc-backlink',
+    'table' : 'table',
+    'table-row' : 'row',
+    'table-cell' : 'cell',
+    }
+    if epub_type in ['abstract', 'acknowledgments', 'afterword', 'appendix',
+        'biblioentry', 'bibliography', 'biblioref', 'chapter', 'colophon', 'conclusion',
+        'cover', 'credit', 'credits', 'dedication', 'endnote', 'endnotes', 'epigraph',
+        'epilogue', 'errata', 'footnote', 'foreword', 'glossary', 'glossref', 'index',
+        'introduction', 'noteref', 'notice', 'pagebreak', 'part', 'preface', 'prologue',
+        'pullquote', 'qna', 'backlink', 'subtitle', 'tip', 'toc']:
+        role = 'doc-' + epub_type
+    elif epub_type in noequiv:
+        role = noequiv[epub_type]
+    else:
+        role = None
+    return role
 
 
 # Simple wrapper for ACE
@@ -129,8 +161,7 @@ class AceTool(Tool):
 
         # Check calibre version. 'Dialog' module in do_config()
         # is not available before version 2.15.0
-        from calibre.constants import numeric_version as calibre_version
-        if calibre_version < (2, 15, 0):
+        if numeric_version < (2, 15, 0):
             pass
         else:
             menu = QMenu()
@@ -149,6 +180,7 @@ class AceTool(Tool):
         open_report = cfg.plugin_prefs['open_report']
         report_path = cfg.plugin_prefs['report_path']
         debug_mode = cfg.plugin_prefs['debug_mode']
+        close_docks = cfg.plugin_prefs['close_docks']
 
         # Create a savepoint
         self.boss.add_savepoint(_('Before: ACE'))
@@ -167,6 +199,7 @@ class AceTool(Tool):
             report_folder = os.path.join(report_path, 'report')
             report_data = os.path.join(report_folder, 'data')
             report_file_name = os.path.join(report_folder, 'report.html')
+            json_file_name = report_file_name.replace('.html', '.json')
             if os.path.exists(report_data):
                 shutil.rmtree(report_data)
             self.boss.commit_all_editors_to_container()
@@ -174,6 +207,14 @@ class AceTool(Tool):
 
             # Define ACE command line parameters
             args = ['ace', '-f', '-o', report_folder, epub_path]
+
+            # --------------------------------------------------------------------
+            # create a dictionary that maps names to relative hrefs
+            # --------------------------------------------------------------------
+            epub_mime_map = self.current_container.mime_map
+            epub_name_to_href = {}
+            for href in epub_mime_map:
+                epub_name_to_href[os.path.basename(href)] = href
 
             # Run ACE and handle errors
             try:
@@ -190,15 +231,14 @@ class AceTool(Tool):
                     stdout += stderr
                     QApplication.clipboard().setText(stdout)
 
-                # Hide busy cursor
-                QApplication.restoreOverrideCursor()
-
                 if return_code == 1:
+                    # Hide busy cursor
+                    QApplication.restoreOverrideCursor()
+
                     # If an error is found
                     QMessageBox.warning(self.gui, _('Error'), stderr)
 
                     # Ask user to rerun ACE
-                    from PyQt5 import QtGui
                     rerun_msg = _('ACE found an error during execution.' \
                                 '\nDo you want to try to rerun it?' \
                                 '\nThis can resolve a few errors.')
@@ -213,15 +253,162 @@ class AceTool(Tool):
                         stdout = result[0]
                         stderr = result[1]
 
-                        # Hide busy cursor
-                        QApplication.restoreOverrideCursor()
+                        # Full debug mode (complete log)
+                        if debug_mode:
+                            stdout += stderr
+                            QApplication.clipboard().setText(stdout)
 
                         if return_code == 1:
+                            # Hide busy cursor
+                            QApplication.restoreOverrideCursor()
+
                             # Exit if error persists
                             QMessageBox.critical(self.gui, _('Error'), stderr)
                             return
                     else:
                         return
+
+                # If ACE succeeded, there should be a report file in the home folder
+                if os.path.isfile(report_file_name):
+                    with open(json_file_name, 'r') as file:
+                        json_string = file.read()
+                    parsed_json = json.loads(json_string)
+                    earl_outcome = parsed_json['earl:result']['earl:outcome']
+
+                    # Main routine
+                    error_messages = []
+
+                    if earl_outcome == 'fail':
+                        for assertion in parsed_json['assertions']:
+
+                            # Get file name
+                            file_name = assertion['earl:testSubject']['url']
+
+                            # Process all ACE assertions
+                            for earl_assertion in assertion['assertions']:
+                                epubcfi = None
+
+                                # Get error message
+                                error_message = (earl_assertion['earl:result']['dct:description'] + '.')\
+                                    .replace('Fix any of the following:\n ', '')\
+                                    .replace('Fix all of the following:\n ', '').replace('\n', '.').strip()
+
+                                # Get error level (serious, moderate, minor)
+                                error_level = earl_assertion['earl:test']['earl:impact']
+
+                                # Define message type
+                                if error_level == 'serious':
+                                    restype = 'error'
+                                elif error_level == 'moderate':
+                                    restype = 'warning'
+                                else:
+                                    restype = 'info'
+
+                                # Get epubcfi
+                                if 'earl:pointer' in earl_assertion['earl:result']:
+                                    epubcfi = earl_assertion['earl:result']['earl:pointer']['cfi'][0]
+                                else:
+                                    # ACE doesn't report line numbers for non-HTML files
+                                    epubcfi = '/2'
+
+                                # Get html (snippet) and recommended ARIA role
+                                if 'html' in earl_assertion['earl:result']:
+                                    role = None
+                                    snippet = earl_assertion['earl:result']['html']
+                                    soup = BeautifulSoup(snippet)
+                                    tag = soup.contents[0]
+
+                                    if tag.has_key('epub:type'):
+                                        epub_type = tag['epub:type']
+                                        role = getrole(epub_type)
+
+                                # Add suggested role:
+                                if error_message == 'Element has no ARIA role matching its epub:type.' and role is not None:
+                                    error_message += ' Matching role: ' + role + '.'
+
+                                # Save error information in list
+                                error_messages.append((error_message, restype, file_name))
+
+                                # Function to jump to the line corresponding to a partial cfi
+                                def GotoLine():
+                                    # Get the current line for the widget
+                                    selected_item = tree.currentItem()
+                                    current_row = tree.indexOfTopLevelItem(selected_item)
+                                    # Get error information
+                                    message, restype, file_name = error_messages[current_row]
+                                    # Jump to line
+                                    file_name = os.path.basename(file_name)
+                                    filepath = epub_name_to_href[file_name]
+                                    if numeric_version < (3, 38, 0):
+                                        self.boss.edit_file(filepath, 'html')
+                                    else:
+                                        self.boss.show_partial_cfi_in_editor(filepath, epubcfi)
+
+                                # Remove existing Ace/EpubCheck docks and close Check Ebook dock
+                                for widget in self.gui.children():
+                                    if isinstance(widget, QDockWidget) and widget.objectName() == 'ace-dock':
+                                        widget.setParent(None)
+                                    if close_docks:
+                                        if isinstance(widget, QDockWidget) and widget.objectName()\
+                                                in ('check-book-dock', 'epubcheck-dock'):
+                                            widget.close()
+
+                                # Define dock widget layout
+                                tree = QTreeWidget()
+                                tree.setRootIsDecorated(False)
+                                l = QVBoxLayout()
+                                l.addWidget(tree)
+                                dock_widget = QDockWidget(self.gui)
+                                dock_widget.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea |
+                                                            Qt.BottomDockWidgetArea | Qt.TopDockWidgetArea)
+                                dock_widget.setObjectName('ace-dock')
+                                dock_widget.setWindowTitle('ACE, by Daisy')
+                                dock_widget.setWidget(tree)
+                                tree.setHeaderLabels([_('File'), _('Error message')])
+
+                                # Add error messages to list widget
+                                for error_msg in error_messages:
+                                    message, restype, file_name = error_msg
+                                    item = QTreeWidgetItem(tree, [file_name, message])
+                                    # Select background color based on severity
+                                    if restype == 'error':
+                                        bg_color = QtGui.QBrush(QtGui.QColor(255, 230, 230))
+                                    elif restype == 'warning':
+                                        bg_color = QtGui.QBrush(QtGui.QColor(255, 255, 230))
+                                    else:
+                                        bg_color = QtGui.QBrush(QtGui.QColor(224, 255, 255))
+                                    item.setBackground(0, QtGui.QColor(bg_color))
+                                    item.setBackground(1, QtGui.QColor(bg_color))
+                                    tree.addTopLevelItem(item)
+
+                                tree.itemClicked.connect(GotoLine)
+
+                                # Add dock widget to the dock
+                                self.gui.addDockWidget(Qt.TopDockWidgetArea, dock_widget)
+
+                                # Auto adjust column sizes
+                                tree.resizeColumnToContents(0)
+
+                    else:
+                        # Hide busy cursor
+                        QApplication.restoreOverrideCursor()
+
+                        no_error_msg = _('ACE check is finished!'
+                                         '\nCongratulations: no errors were found!')
+                        QMessageBox.information(self.gui, 'ACE, by Daisy', no_error_msg)
+
+                else:
+
+                    # Hide busy cursor
+                    QApplication.restoreOverrideCursor()
+
+                    # If, for some reason, the report can't be found
+                    import traceback
+                    error_dialog(self.gui, _('Error opening the report'),
+                                 _('Ace could not open the report. Click \'Show details\' for more info.'),
+                                 det_msg=traceback.format_exc(), show=True)
+                    return
+
             except:
 
                 # Hide busy cursor
@@ -234,15 +421,10 @@ class AceTool(Tool):
                              det_msg=traceback.format_exc(), show=True)
                 return
 
+        # Hide busy cursor
+        QApplication.restoreOverrideCursor()
+
         # Show report on default browser
         if open_report:
-            report_true_msg = _('ACE check is finished!' \
-                              '\nThe report will open on your default browser.')
-            QMessageBox.information(self.gui, 'ACE, by Daisy', report_true_msg)
             url = 'file://' + os.path.abspath(report_file_name)
             webbrowser.open(url)
-        else:
-            # Point report location
-            report_false_msg = _('ACE check is finished!' \
-                               '\nThe report was saved to: ')
-            QMessageBox.information(self.gui, 'ACE, by Daisy', report_false_msg + '\'' + report_folder + '\'.')

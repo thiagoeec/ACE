@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-12 08:50-0200\n"
+"POT-Creation-Date: 2019-01-15 23:39-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,133 +19,152 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr ""
 
-#: config.py:43
+#: config.py:44
 msgid "Report Folder:"
 msgstr ""
 
-#: config.py:51
+#: config.py:52
 msgid "Folder to save the report"
 msgstr ""
 
-#: config.py:56
+#: config.py:57
 msgid "Select Report Folder"
 msgstr ""
 
-#: config.py:57
+#: config.py:58
 msgid "Select the folder where the report will be saved."
 msgstr ""
 
-#: config.py:63
+#: config.py:64
 msgid "Options:"
 msgstr ""
 
-#: config.py:69
+#: config.py:70
 msgid "Open Report after checking"
 msgstr ""
 
-#: config.py:70
+#: config.py:71
 msgid "When unchecked, it will display a message pointing to the report folder."
 msgstr ""
 
-#: config.py:76
+#: config.py:77
 msgid "Debug Mode"
 msgstr ""
 
-#: config.py:77
+#: config.py:78
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr ""
 
-#: config.py:83
+#: config.py:84
+msgid "Close Validation Docks"
+msgstr ""
+
+#: config.py:85
+msgid "When checked, ACE will attempt to close other validation docks."
+msgstr ""
+
+#: config.py:91
 msgid "About"
 msgstr ""
 
-#: config.py:90
+#: config.py:98
 msgid ""
-"The first version of this plugin was based\n"
-"on Doitsu's code for Sigil's ACE Plugin.\n"
-"This is a simplified version.\n"
+"This plugin is based on Doitsu's code for\n"
+"Sigil's ACE Plugin and EPUBCheck for calibre.\n"
 "\n"
-"It allows you to run ACE directly from the\n"
-"Editor. Report opens on your default browser.\n"
+"This plugin works better with calibre 3.38 or\n"
+"newer. On older versions, clicking on an error\n"
+"will take you to the file, but not to the line\n"
+"where the error is.\n"
 "\n"
 "The Config Menu is based on KindleUnpack.\n"
 "\n"
-"Thanks to Kovid Goyal for the help setting up\n"
-"the Configuration Menu inside the Editor."
+"Thanks to Kovid Goyal for adding the feature\n"
+"that make possible linked error messages."
 msgstr ""
 
-#: config.py:101
+#: config.py:110
 msgid "About the ACE plugin"
 msgstr ""
 
-#: config.py:111
+#: config.py:121
 msgid "Select Directory to save Report to"
 msgstr ""
 
-#: config.py:122
+#: config.py:132
 msgid "<p>The path specified for the Report Folder does not exist.<br/>Your latest preference changes will <b>NOT</b> be saved!</p>"
 msgstr ""
 
-#: main.py:100
+#: main.py:132
 msgid "Configure ACE"
 msgstr ""
 
-#: main.py:123
+#: main.py:155
 msgid "Run ACE"
 msgstr ""
 
-#: main.py:138
+#: main.py:169
 msgid "Configure"
 msgstr ""
 
-#: main.py:140
+#: main.py:171
 msgid "Configure ACE plugin"
 msgstr ""
 
-#: main.py:154
+#: main.py:186
 msgid "Before: ACE"
 msgstr ""
 
-#: main.py:159
+#: main.py:191
 msgid "Unsupported file format"
 msgstr ""
 
-#: main.py:160
+#: main.py:192
 msgid "You can't check {} files with ACE."
 msgstr ""
 
-#: main.py:198 main.py:221
+#: main.py:239 main.py:266
 msgid "Error"
 msgstr ""
 
-#: main.py:202
+#: main.py:242
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
 "This can resolve a few errors."
 msgstr ""
 
-#: main.py:205
+#: main.py:245
 msgid "Rerun"
 msgstr ""
 
-#: main.py:232
+#: main.py:367
+msgid "Error message"
+msgstr ""
+
+#: main.py:367
+msgid "File"
+msgstr ""
+
+#: main.py:396
+msgid ""
+"ACE check is finished!\n"
+"Congratulations: no errors were found!"
+msgstr ""
+
+#: main.py:407
+msgid "Error opening the report"
+msgstr ""
+
+#: main.py:408
+msgid "Ace could not open the report. Click 'Show details' for more info."
+msgstr ""
+
+#: main.py:419
 msgid "Unhandled exception"
 msgstr ""
 
-#: main.py:233
+#: main.py:420
 msgid "An unexpected error occurred. Click 'Show details' for more info."
-msgstr ""
-
-#: main.py:239
-msgid ""
-"ACE check is finished!\n"
-"The report will open on your default browser."
-msgstr ""
-
-#: main.py:246
-msgid ""
-"ACE check is finished!\n"
-"The report was saved to: "
 msgstr ""
 
