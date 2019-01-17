@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-15 23:39-0200\n"
+"POT-Creation-Date: 2019-01-17 01:03-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,152 +19,169 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr ""
 
-#: config.py:44
+#: config.py:45
 msgid "Report Folder:"
 msgstr ""
 
-#: config.py:52
+#: config.py:53
 msgid "Folder to save the report"
 msgstr ""
 
-#: config.py:57
+#: config.py:58
 msgid "Select Report Folder"
 msgstr ""
 
-#: config.py:58
+#: config.py:59
 msgid "Select the folder where the report will be saved."
 msgstr ""
 
-#: config.py:64
+#: config.py:65
 msgid "Options:"
 msgstr ""
 
-#: config.py:70
+#: config.py:71
 msgid "Open Report after checking"
 msgstr ""
 
-#: config.py:71
-msgid "When unchecked, it will display a message pointing to the report folder."
-msgstr ""
-
-#: config.py:77
-msgid "Debug Mode"
+#: config.py:72
+msgid "Check it to open the html report on you default browser."
 msgstr ""
 
 #: config.py:78
+msgid "Debug Mode"
+msgstr ""
+
+#: config.py:79
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr ""
 
-#: config.py:84
+#: config.py:85
 msgid "Close Validation Docks"
 msgstr ""
 
-#: config.py:85
+#: config.py:86
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr ""
 
-#: config.py:91
+#: config.py:92
 msgid "About"
 msgstr ""
 
-#: config.py:98
+#: config.py:99
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
-"\n"
-"This plugin works better with calibre 3.38 or\n"
-"newer. On older versions, clicking on an error\n"
-"will take you to the file, but not to the line\n"
-"where the error is.\n"
-"\n"
+msgstr ""
+
+#: config.py:102
+msgid ""
 "The Config Menu is based on KindleUnpack.\n"
-"\n"
+msgstr ""
+
+#: config.py:104
+msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that make possible linked error messages."
 msgstr ""
 
-#: config.py:110
+#: config.py:106
 msgid "About the ACE plugin"
 msgstr ""
 
-#: config.py:121
+#: config.py:117
 msgid "Select Directory to save Report to"
 msgstr ""
 
-#: config.py:132
+#: config.py:128
 msgid "<p>The path specified for the Report Folder does not exist.<br/>Your latest preference changes will <b>NOT</b> be saved!</p>"
 msgstr ""
 
-#: main.py:132
+#: main.py:130
 msgid "Configure ACE"
 msgstr ""
 
-#: main.py:155
+#: main.py:153
 msgid "Run ACE"
 msgstr ""
 
-#: main.py:169
+#: main.py:167
 msgid "Configure"
 msgstr ""
 
-#: main.py:171
+#: main.py:169
 msgid "Configure ACE plugin"
 msgstr ""
 
-#: main.py:186
+#: main.py:184
 msgid "Before: ACE"
 msgstr ""
 
-#: main.py:191
+#: main.py:189
 msgid "Unsupported file format"
 msgstr ""
 
-#: main.py:192
+#: main.py:190
 msgid "You can't check {} files with ACE."
 msgstr ""
 
-#: main.py:239 main.py:266
+#: main.py:235 main.py:262
 msgid "Error"
 msgstr ""
 
-#: main.py:242
+#: main.py:238
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
 "This can resolve a few errors."
 msgstr ""
 
-#: main.py:245
+#: main.py:241
 msgid "Rerun"
 msgstr ""
 
-#: main.py:367
-msgid "Error message"
+#: main.py:297
+msgid "Serious"
 msgstr ""
 
-#: main.py:367
-msgid "File"
+#: main.py:299
+msgid "Moderate"
 msgstr ""
 
-#: main.py:396
+#: main.py:301
+msgid "Minor"
+msgstr ""
+
+#: main.py:336
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
 msgstr ""
 
-#: main.py:407
+#: main.py:354
 msgid "Error opening the report"
 msgstr ""
 
-#: main.py:408
+#: main.py:355
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 
-#: main.py:419
+#: main.py:453
+msgid "Error message"
+msgstr ""
+
+#: main.py:453
+msgid "File"
+msgstr ""
+
+#: main.py:453
+msgid "Severity"
+msgstr ""
+
+#: main.py:492
 msgid "Unhandled exception"
 msgstr ""
 
-#: main.py:420
+#: main.py:493
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 

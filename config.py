@@ -6,6 +6,9 @@ __license__   = 'GPL v3'
 __copyright__ = '2018, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
+# Standard libraries
+import os
+
 # PyQt libraries
 from PyQt5.Qt import (QWidget, QLabel, QLineEdit, QPushButton, QCheckBox,
                       QGroupBox, QVBoxLayout, QComboBox, QMessageBox)
@@ -15,9 +18,6 @@ from calibre.utils.config import JSONConfig
 from calibre.utils.filenames import expanduser
 from calibre.gui2 import choose_dir, error_dialog
 from calibre_plugins.ACE.__init__ import PLUGIN_NAME, PLUGIN_VERSION
-
-# Standard libraries
-import os
 
 # Load translation files (.mo) on the folder 'translations'
 load_translations()
@@ -30,6 +30,7 @@ plugin_prefs.defaults['report_path'] = expanduser('~')
 plugin_prefs.defaults['open_report'] = True
 plugin_prefs.defaults['debug_mode'] = False
 plugin_prefs.defaults['close_docks'] = True
+
 
 # Set up Config Dialog
 class ConfigWidget(QWidget):
@@ -56,9 +57,9 @@ class ConfigWidget(QWidget):
         # Folder select button
         directory_button = QPushButton(_('Select Report Folder'), self)
         directory_button.setToolTip(_('Select the folder where the report will be saved.'))
-        # Connect button to the getDirectory function
-        directory_button.clicked.connect(self.getDirectory)
         directory_group_box_layout.addWidget(directory_button)
+        # Connect button to the getDirectory function
+        directory_button.clicked.connect(self.get_directory)
 
         # --- Misc Options ---
         misc_group_box = QGroupBox(_('Options:'), self)
@@ -68,7 +69,7 @@ class ConfigWidget(QWidget):
 
         # Open report checkbox
         self.open_report_check = QCheckBox(_('Open Report after checking'), self)
-        self.open_report_check.setToolTip(_('When unchecked, it will display a message pointing to the report folder.'))
+        self.open_report_check.setToolTip(_('Check it to open the html report on you default browser.'))
         misc_group_box_layout.addWidget(self.open_report_check)
         # Load the checkbox with the current preference setting
         self.open_report_check.setChecked(plugin_prefs['open_report'])
@@ -94,29 +95,24 @@ class ConfigWidget(QWidget):
         layout.addWidget(self.about_button)
 
     def about(self):
-        # Read the 'about' file
+        # About text
         text = _('This plugin is based on Doitsu\'s code for\n'
-                 'Sigil\'s ACE Plugin and EPUBCheck for calibre.\n'
-                 '\n'
-                 'This plugin works better with calibre 3.38 or\n'
-                 'newer. On older versions, clicking on an error\n'
-                 'will take you to the file, but not to the line\n'
-                 'where the error is.\n'
-                 '\n'
-                 'The Config Menu is based on KindleUnpack.\n'
-                 '\n'
-                 'Thanks to Kovid Goyal for adding the feature\n'
+                 'Sigil\'s ACE Plugin and EPUBCheck for calibre.\n') +\
+                 '\n' +\
+               _('The Config Menu is based on KindleUnpack.\n') +\
+                 '\n' +\
+               _('Thanks to Kovid Goyal for adding the feature\n'
                  'that make possible linked error messages.')
         QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))
 
     def save_settings(self):
-        # Save current dialog sttings back to JSON config file
+        # Save current dialog settings back to JSON config file
         plugin_prefs['report_path'] = unicode(self.directory_txtBox.displayText())
         plugin_prefs['open_report'] = self.open_report_check.isChecked()
         plugin_prefs['debug_mode'] = self.debug_mode_check.isChecked()
         plugin_prefs['close_docks'] = self.close_docks_check.isChecked()
 
-    def getDirectory(self):
+    def get_directory(self):
         c = choose_dir(self, PLUGIN_NAME + 'dir_chooser',
                        _('Select Directory to save Report to'))
         if c:
@@ -129,8 +125,8 @@ class ConfigWidget(QWidget):
         # manually enter a non-existent path in the Default path textbox.
         # Shouldn't be possible at this point.
         if not os.path.exists(self.directory_txtBox.text()):
-            errmsg = _('<p>The path specified for the Report Folder does not exist.' \
-                     '<br/>Your latest preference changes will <b>NOT</b> be saved!</p>')
+            errmsg = _('<p>The path specified for the Report Folder does not exist.'
+                       '<br/>Your latest preference changes will <b>NOT</b> be saved!</p>')
             error_dialog(None, PLUGIN_NAME + ' v' + PLUGIN_VERSION,
                          errmsg, show=True)
             return False

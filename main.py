@@ -8,9 +8,19 @@ __license__ = 'GPL v3'
 __copyright__ = '2018, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
+# Standard libraries
+import os
+import os.path
+import sys
+import tempfile
+import webbrowser
+import shutil
+import json
+from os.path import expanduser, basename
+
 # PyQt libraries
-from PyQt5.Qt import QApplication, QAction, QMessageBox, QDialog, Qt, QMenu,\
-    QIcon, QPixmap, QTreeWidget, QVBoxLayout, QTreeWidgetItem, QTextEdit, QDockWidget
+from PyQt5.Qt import QApplication, QAction, QMessageBox, QDialog, Qt, QMenu, QIcon,\
+    QPixmap, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QTextEdit, QDockWidget
 from PyQt5 import QtCore, QtGui
 
 # Calibre libraries
@@ -20,19 +30,14 @@ from calibre.utils.config import JSONConfig, config_dir
 from calibre.constants import iswindows, islinux, isosx, numeric_version
 from calibre.ebooks.BeautifulSoup import BeautifulSoup
 
-# Standard libraries
-import os, sys, tempfile, webbrowser, shutil, json
-import os.path
-from os.path import expanduser, basename
-
-# Load translation files (.mo) on the folder 'translations'
-load_translations()
-
 # DiapDealer's temp folder code
 from contextlib import contextmanager
 
 # Get config
 import calibre_plugins.ACE.config as cfg
+
+# Load translation files (.mo) on the folder 'translations'
+load_translations()
 
 
 # Create a temp directory
@@ -62,24 +67,17 @@ def get_icon(icon_name):
 # Get equivalent ARIA role
 def getrole(epub_type):
     noequiv = {
-    'figure' : 'figure',
-    'glossterm' : 'term',
-    'glossdef' : 'definition',
-    'landmarks' : 'directory',
-    'list' : 'list',
-    'list-item' : 'listitem',
-    'page-list' : 'doc-pagelist',
-    'referrer' : 'doc-backlink',
-    'table' : 'table',
-    'table-row' : 'row',
-    'table-cell' : 'cell',
+        'figure': 'figure', 'glossterm': 'term', 'glossdef': 'definition', 'landmarks': 'directory',
+        'list': 'list', 'list-item': 'listitem', 'page-list': 'doc-pagelist', 'referrer': 'doc-backlink',
+        'table': 'table', 'table-row': 'row', 'table-cell': 'cell',
     }
-    if epub_type in ['abstract', 'acknowledgments', 'afterword', 'appendix',
-        'biblioentry', 'bibliography', 'biblioref', 'chapter', 'colophon', 'conclusion',
-        'cover', 'credit', 'credits', 'dedication', 'endnote', 'endnotes', 'epigraph',
-        'epilogue', 'errata', 'footnote', 'foreword', 'glossary', 'glossref', 'index',
-        'introduction', 'noteref', 'notice', 'pagebreak', 'part', 'preface', 'prologue',
-        'pullquote', 'qna', 'backlink', 'subtitle', 'tip', 'toc']:
+    if epub_type in [
+        'abstract', 'acknowledgments', 'afterword', 'appendix', 'biblioentry', 'bibliography',
+        'biblioref', 'chapter', 'colophon', 'conclusion', 'cover', 'credit', 'credits', 'dedication',
+        'endnote', 'endnotes', 'epigraph', 'epilogue', 'errata', 'footnote', 'foreword', 'glossary',
+        'glossref', 'index', 'introduction', 'noteref', 'notice', 'pagebreak', 'part', 'preface',
+        'prologue', 'pullquote', 'qna', 'backlink', 'subtitle', 'tip', 'toc'
+    ]:
         role = 'doc-' + epub_type
     elif epub_type in noequiv:
         role = noequiv[epub_type]
@@ -122,7 +120,7 @@ class AceTool(Tool):
     def do_config(self):
         from calibre.gui2.widgets2 import Dialog
         from calibre.gui2.tweak_book import tprefs
-        from PyQt5.Qt import QVBoxLayout, QDialogButtonBox
+        from PyQt5.Qt import QDialogButtonBox
         from calibre_plugins.ACE.config import ConfigWidget
         tool = self
 
@@ -208,9 +206,7 @@ class AceTool(Tool):
             # Define ACE command line parameters
             args = ['ace', '-f', '-o', report_folder, epub_path]
 
-            # --------------------------------------------------------------------
-            # create a dictionary that maps names to relative hrefs
-            # --------------------------------------------------------------------
+            # Create a dictionary that maps names to relative hrefs
             epub_mime_map = self.current_container.mime_map
             epub_name_to_href = {}
             for href in epub_mime_map:
@@ -226,7 +222,7 @@ class AceTool(Tool):
                 stdout = result[0]
                 stderr = result[1]
 
-                # Full debug mode (complete log)
+                # Debug mode (ACE log)
                 if debug_mode:
                     stdout += stderr
                     QApplication.clipboard().setText(stdout)
@@ -239,9 +235,9 @@ class AceTool(Tool):
                     QMessageBox.warning(self.gui, _('Error'), stderr)
 
                     # Ask user to rerun ACE
-                    rerun_msg = _('ACE found an error during execution.' \
-                                '\nDo you want to try to rerun it?' \
-                                '\nThis can resolve a few errors.')
+                    rerun_msg = _('ACE found an error during execution.'
+                                  '\nDo you want to try to rerun it?'
+                                  '\nThis can resolve a few errors.')
                     reply = QMessageBox.question(self.gui, _('Rerun'), rerun_msg,
                                                  QMessageBox.Yes, QMessageBox.No)
                     if reply == QMessageBox.Yes:
@@ -253,7 +249,7 @@ class AceTool(Tool):
                         stdout = result[0]
                         stderr = result[1]
 
-                        # Full debug mode (complete log)
+                        # Debug mode (ACE log)
                         if debug_mode:
                             stdout += stderr
                             QApplication.clipboard().setText(stdout)
@@ -275,8 +271,9 @@ class AceTool(Tool):
                     parsed_json = json.loads(json_string)
                     earl_outcome = parsed_json['earl:result']['earl:outcome']
 
-                    # Main routine
+                    # Parse JSON report file
                     error_messages = []
+                    msg_index = 0
 
                     if earl_outcome == 'fail':
                         for assertion in parsed_json['assertions']:
@@ -286,7 +283,6 @@ class AceTool(Tool):
 
                             # Process all ACE assertions
                             for earl_assertion in assertion['assertions']:
-                                epubcfi = None
 
                                 # Get error message
                                 error_message = (earl_assertion['earl:result']['dct:description'] + '.')\
@@ -298,11 +294,11 @@ class AceTool(Tool):
 
                                 # Define message type
                                 if error_level == 'serious':
-                                    restype = 'error'
+                                    severity = _('Serious')
                                 elif error_level == 'moderate':
-                                    restype = 'warning'
+                                    severity = _('Moderate')
                                 else:
-                                    restype = 'info'
+                                    severity = _('Minor')
 
                                 # Get epubcfi
                                 if 'earl:pointer' in earl_assertion['earl:result']:
@@ -312,8 +308,8 @@ class AceTool(Tool):
                                     epubcfi = '/2'
 
                                 # Get html (snippet) and recommended ARIA role
+                                role = None
                                 if 'html' in earl_assertion['earl:result']:
-                                    role = None
                                     snippet = earl_assertion['earl:result']['html']
                                     soup = BeautifulSoup(snippet)
                                     tag = soup.contents[0]
@@ -323,71 +319,15 @@ class AceTool(Tool):
                                         role = getrole(epub_type)
 
                                 # Add suggested role:
-                                if error_message == 'Element has no ARIA role matching its epub:type.' and role is not None:
+                                if error_message == 'Element has no ARIA role matching its epub:type.'\
+                                        and role is not None:
                                     error_message += ' Matching role: ' + role + '.'
 
-                                # Save error information in list
-                                error_messages.append((error_message, restype, file_name))
+                                # Save error information in a list
+                                error_messages.append((str(msg_index), error_message, severity, file_name, epubcfi))
 
-                                # Function to jump to the line corresponding to a partial cfi
-                                def GotoLine():
-                                    # Get the current line for the widget
-                                    selected_item = tree.currentItem()
-                                    current_row = tree.indexOfTopLevelItem(selected_item)
-                                    # Get error information
-                                    message, restype, file_name = error_messages[current_row]
-                                    # Jump to line
-                                    file_name = os.path.basename(file_name)
-                                    filepath = epub_name_to_href[file_name]
-                                    if numeric_version < (3, 38, 0):
-                                        self.boss.edit_file(filepath, 'html')
-                                    else:
-                                        self.boss.show_partial_cfi_in_editor(filepath, epubcfi)
-
-                                # Remove existing Ace/EpubCheck docks and close Check Ebook dock
-                                for widget in self.gui.children():
-                                    if isinstance(widget, QDockWidget) and widget.objectName() == 'ace-dock':
-                                        widget.setParent(None)
-                                    if close_docks:
-                                        if isinstance(widget, QDockWidget) and widget.objectName()\
-                                                in ('check-book-dock', 'epubcheck-dock'):
-                                            widget.close()
-
-                                # Define dock widget layout
-                                tree = QTreeWidget()
-                                tree.setRootIsDecorated(False)
-                                l = QVBoxLayout()
-                                l.addWidget(tree)
-                                dock_widget = QDockWidget(self.gui)
-                                dock_widget.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea |
-                                                            Qt.BottomDockWidgetArea | Qt.TopDockWidgetArea)
-                                dock_widget.setObjectName('ace-dock')
-                                dock_widget.setWindowTitle('ACE, by Daisy')
-                                dock_widget.setWidget(tree)
-                                tree.setHeaderLabels([_('File'), _('Error message')])
-
-                                # Add error messages to list widget
-                                for error_msg in error_messages:
-                                    message, restype, file_name = error_msg
-                                    item = QTreeWidgetItem(tree, [file_name, message])
-                                    # Select background color based on severity
-                                    if restype == 'error':
-                                        bg_color = QtGui.QBrush(QtGui.QColor(255, 230, 230))
-                                    elif restype == 'warning':
-                                        bg_color = QtGui.QBrush(QtGui.QColor(255, 255, 230))
-                                    else:
-                                        bg_color = QtGui.QBrush(QtGui.QColor(224, 255, 255))
-                                    item.setBackground(0, QtGui.QColor(bg_color))
-                                    item.setBackground(1, QtGui.QColor(bg_color))
-                                    tree.addTopLevelItem(item)
-
-                                tree.itemClicked.connect(GotoLine)
-
-                                # Add dock widget to the dock
-                                self.gui.addDockWidget(Qt.TopDockWidgetArea, dock_widget)
-
-                                # Auto adjust column sizes
-                                tree.resizeColumnToContents(0)
+                                # Message index to help sorting
+                                msg_index = msg_index + 1
 
                     else:
                         # Hide busy cursor
@@ -396,6 +336,13 @@ class AceTool(Tool):
                         no_error_msg = _('ACE check is finished!'
                                          '\nCongratulations: no errors were found!')
                         QMessageBox.information(self.gui, 'ACE, by Daisy', no_error_msg)
+
+                        # Show report on default browser
+                        if open_report:
+                            url = 'file://' + os.path.abspath(report_file_name)
+                            webbrowser.open(url)
+
+                        return
 
                 else:
 
@@ -408,6 +355,132 @@ class AceTool(Tool):
                                  _('Ace could not open the report. Click \'Show details\' for more info.'),
                                  det_msg=traceback.format_exc(), show=True)
                     return
+
+                # Go to the error line
+                def go_to_line():
+
+                    # Parse the CFI reference
+                    def decode_cfi(root, cfi):
+                        from lxml.etree import XPathEvalError
+                        from calibre.ebooks.epub.cfi.parse import parser, get_steps
+                        p = parser()
+                        try:
+                            pcfi = p.parse_path(cfi)[0]
+                        except Exception:
+                            import traceback
+                            traceback.print_exc()
+                            return
+                        if not pcfi:
+                            import sys
+                            print('Failed to parse CFI: %r' % pcfi, file=sys.stderr)
+                            return
+                        steps = get_steps(pcfi)
+                        ans = root
+                        for step in steps:
+                            num = step.get('num', 0)
+                            node_id = step.get('id')
+                            try:
+                                match = ans.xpath('descendant::*[@id="%s"]' % node_id)
+                            except XPathEvalError:
+                                match = ()
+                            if match:
+                                ans = match[0]
+                                continue
+                            index = 0
+                            for child in ans.iterchildren('*'):
+                                index |= 1  # increment index by 1 if it is even
+                                index += 1
+                                if index == num:
+                                    ans = child
+                                    break
+                            else:
+                                return
+                        return ans
+
+                    # Jump to the line corresponding to a partial CFI ref
+                    def show_partial_cfi_in_editor(name, cfi):
+                        editor = self.boss.edit_file(name, 'xml')
+                        if not editor or not editor.has_line_numbers:
+                            return False
+                        from calibre.ebooks.oeb.polish.parsing import parse
+                        root = parse(
+                            editor.get_raw_data(), decoder=lambda x: x.decode('utf-8'),
+                            line_numbers=True, linenumber_attribute='data-lnum')
+                        node = decode_cfi(root, cfi)
+                        if node is not None:
+                            lnum = node.get('data-lnum')
+                            if lnum:
+                                lnum = int(lnum)
+                                editor.current_line = lnum
+                                return True
+                        return False
+
+                    # Get the current line for the widget
+                    selected_item = tree.currentItem()
+                    # Read the msg_index (hidden column)
+                    row_index = selected_item.text(0)
+
+                    # Get error information
+                    m_index, msg, sev, f_name, epub_cfi = error_messages[int(row_index)]
+                    # Jump to line
+                    f_name = os.path.basename(f_name)
+                    filepath = epub_name_to_href[f_name]
+                    if numeric_version < (3, 38, 0):
+                        show_partial_cfi_in_editor(filepath, epub_cfi)
+                    else:
+                        self.boss.show_partial_cfi_in_editor(filepath, epub_cfi)
+
+                # Remove existing Ace/EpubCheck docks and close Check Ebook dock
+                for widget in self.gui.children():
+                    if isinstance(widget, QDockWidget) and widget.objectName() == 'ace-dock':
+                        widget.setParent(None)
+                    if close_docks:
+                        if isinstance(widget, QDockWidget) and widget.objectName() \
+                                in ('check-book-dock', 'epubcheck-dock'):
+                            widget.close()
+
+                # Define dock widget layout
+                tree = QTreeWidget()
+                tree.setRootIsDecorated(False)
+                layout = QVBoxLayout()
+                layout.addWidget(tree)
+                dock_widget = QDockWidget(self.gui)
+                dock_widget.setAllowedAreas(Qt.LeftDockWidgetArea | Qt.RightDockWidgetArea |
+                                            Qt.BottomDockWidgetArea | Qt.TopDockWidgetArea)
+                dock_widget.setObjectName('ace-dock')
+                dock_widget.setWindowTitle('ACE, by Daisy')
+                dock_widget.setWidget(tree)
+                tree.setHeaderLabels(['Index', _('File'), _('Severity'), _('Error message')])
+
+                # Add error messages to list widget
+                for error_msg in error_messages:
+                    msg_index, message, severity, file_name, epubcfi = error_msg
+                    item = QTreeWidgetItem(tree, [msg_index, file_name, severity, message])
+                    # Select background color based on severity
+                    if severity == 'Serious':
+                        bg_color = QtGui.QBrush(QtGui.QColor(255, 230, 230))
+                    elif severity == 'Moderate':
+                        bg_color = QtGui.QBrush(QtGui.QColor(255, 255, 230))
+                    else:
+                        bg_color = QtGui.QBrush(QtGui.QColor(224, 255, 255))
+                    item.setBackground(0, QtGui.QColor(bg_color))
+                    item.setBackground(1, QtGui.QColor(bg_color))
+                    item.setBackground(2, QtGui.QColor(bg_color))
+                    item.setBackground(3, QtGui.QColor(bg_color))
+                    tree.addTopLevelItem(item)
+
+                tree.itemClicked.connect(go_to_line)
+
+                # Add dock widget to the dock
+                self.gui.addDockWidget(Qt.TopDockWidgetArea, dock_widget)
+
+                # Auto adjust column sizes
+                tree.resizeColumnToContents(1)
+
+                # Enable sorting
+                tree.setSortingEnabled(True)
+                tree.sortItems(1, Qt.AscendingOrder)
+                tree.setColumnHidden(0, True)
 
             except:
 
