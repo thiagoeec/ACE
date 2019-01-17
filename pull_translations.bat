@@ -4,7 +4,7 @@ setlocal enableDelayedExpansion
 
 :: Fetch new translations (over 25% finished). Use -f to force download.
 echo.
-tx pull --minimum-perc=20 -a
+tx pull --minimum-perc=20 -a -f
 
 :: Gererate .mo files from the .po files downloaded from Transifex
 cd translations

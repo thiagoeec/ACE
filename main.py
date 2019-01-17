@@ -324,7 +324,7 @@ class AceTool(Tool):
                                     error_message += ' Matching role: ' + role + '.'
 
                                 # Save error information in a list
-                                error_messages.append((str(msg_index), error_message, severity, file_name, epubcfi))
+                                error_messages.append((msg_index, error_message, severity, file_name, epubcfi))
 
                                 # Message index to help sorting
                                 msg_index = msg_index + 1
@@ -399,7 +399,7 @@ class AceTool(Tool):
 
                     # Jump to the line corresponding to a partial CFI ref
                     def show_partial_cfi_in_editor(name, cfi):
-                        editor = self.boss.edit_file(name, 'xml')
+                        editor = self.boss.edit_file(name, 'html')
                         if not editor or not editor.has_line_numbers:
                             return False
                         from calibre.ebooks.oeb.polish.parsing import parse
@@ -418,10 +418,10 @@ class AceTool(Tool):
                     # Get the current line for the widget
                     selected_item = tree.currentItem()
                     # Read the msg_index (hidden column)
-                    row_index = selected_item.text(0)
+                    row_index = int(selected_item.text(0)) - 1
 
                     # Get error information
-                    m_index, msg, sev, f_name, epub_cfi = error_messages[int(row_index)]
+                    m_index, msg, sev, f_name, epub_cfi = error_messages[row_index]
                     # Jump to line
                     f_name = os.path.basename(f_name)
                     filepath = epub_name_to_href[f_name]
@@ -455,7 +455,9 @@ class AceTool(Tool):
                 # Add error messages to list widget
                 for error_msg in error_messages:
                     msg_index, message, severity, file_name, epubcfi = error_msg
-                    item = QTreeWidgetItem(tree, [msg_index, file_name, severity, message])
+                    msg_index = msg_index + 1
+                    msg_index = "{0:0=3d}".format(msg_index)
+                    item = QTreeWidgetItem(tree, [str(msg_index), os.path.split(file_name)[1], severity, message])
                     # Select background color based on severity
                     if severity == 'Serious':
                         bg_color = QtGui.QBrush(QtGui.QColor(255, 230, 230))
@@ -475,11 +477,12 @@ class AceTool(Tool):
                 self.gui.addDockWidget(Qt.TopDockWidgetArea, dock_widget)
 
                 # Auto adjust column sizes
+                tree.resizeColumnToContents(0)
                 tree.resizeColumnToContents(1)
 
                 # Enable sorting
                 tree.setSortingEnabled(True)
-                tree.sortItems(1, Qt.AscendingOrder)
+                tree.sortItems(0, Qt.AscendingOrder)
                 tree.setColumnHidden(0, True)
 
             except:

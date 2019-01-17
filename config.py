@@ -98,9 +98,9 @@ class ConfigWidget(QWidget):
         # About text
         text = _('This plugin is based on Doitsu\'s code for\n'
                  'Sigil\'s ACE Plugin and EPUBCheck for calibre.\n') +\
-                 '\n' +\
+               '\n' +\
                _('The Config Menu is based on KindleUnpack.\n') +\
-                 '\n' +\
+               '\n' +\
                _('Thanks to Kovid Goyal for adding the feature\n'
                  'that make possible linked error messages.')
         QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))

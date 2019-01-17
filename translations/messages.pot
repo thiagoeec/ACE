@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-17 01:03-0200\n"
+"POT-Creation-Date: 2019-01-17 20:22-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,11 +177,11 @@ msgstr ""
 msgid "Severity"
 msgstr ""
 
-#: main.py:492
+#: main.py:495
 msgid "Unhandled exception"
 msgstr ""
 
-#: main.py:493
+#: main.py:496
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 
