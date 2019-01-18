@@ -292,14 +292,6 @@ class AceTool(Tool):
                                 # Get error level (serious, moderate, minor)
                                 error_level = earl_assertion['earl:test']['earl:impact']
 
-                                # Define message type
-                                if error_level == 'serious':
-                                    severity = _('Serious')
-                                elif error_level == 'moderate':
-                                    severity = _('Moderate')
-                                else:
-                                    severity = _('Minor')
-
                                 # Get epubcfi
                                 if 'earl:pointer' in earl_assertion['earl:result']:
                                     epubcfi = earl_assertion['earl:result']['earl:pointer']['cfi'][0]
@@ -324,7 +316,7 @@ class AceTool(Tool):
                                     error_message += ' Matching role: ' + role + '.'
 
                                 # Save error information in a list
-                                error_messages.append((msg_index, error_message, severity, file_name, epubcfi))
+                                error_messages.append((msg_index, error_message, error_level, file_name, epubcfi))
 
                                 # Message index to help sorting
                                 msg_index = msg_index + 1
@@ -422,6 +414,7 @@ class AceTool(Tool):
 
                     # Get error information
                     m_index, msg, sev, f_name, epub_cfi = error_messages[row_index]
+
                     # Jump to line
                     f_name = os.path.basename(f_name)
                     filepath = epub_name_to_href[f_name]
@@ -454,14 +447,23 @@ class AceTool(Tool):
 
                 # Add error messages to list widget
                 for error_msg in error_messages:
-                    msg_index, message, severity, file_name, epubcfi = error_msg
+                    msg_index, message, error_level, file_name, epubcfi = error_msg
+
+                    # Set translatable severity type
+                    if error_level == 'serious':
+                        severity_type = _('Serious')
+                    elif error_level == 'moderate':
+                        severity_type = _('Moderate')
+                    else:
+                        severity_type = _('Minor')
+
                     msg_index = msg_index + 1
                     msg_index = "{0:0=3d}".format(msg_index)
-                    item = QTreeWidgetItem(tree, [str(msg_index), os.path.split(file_name)[1], severity, message])
+                    item = QTreeWidgetItem(tree, [str(msg_index), os.path.split(file_name)[1], severity_type, message])
                     # Select background color based on severity
-                    if severity == 'Serious':
+                    if error_level == 'serious':
                         bg_color = QtGui.QBrush(QtGui.QColor(255, 230, 230))
-                    elif severity == 'Moderate':
+                    elif error_level == 'moderate':
                         bg_color = QtGui.QBrush(QtGui.QColor(255, 255, 230))
                     else:
                         bg_color = QtGui.QBrush(QtGui.QColor(224, 255, 255))

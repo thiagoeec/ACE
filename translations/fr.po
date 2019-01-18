@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# JimmXinu <retiefjimm@gmail.com>, 2019
+# Ptit Prince <leporello1791@gmail.com>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-01-17 20:22-0200\n"
+"PO-Revision-Date: 2019-01-10 00:06+0000\n"
+"Last-Translator: Ptit Prince <leporello1791@gmail.com>, 2019\n"
+"Language-Team: French (https://www.transifex.com/calibre/teams/19337/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: __init__.py:18
+msgid "Checks the accessibility of EPUB files with ACE."
+msgstr "Vérification de l'accessibilité des fichiers EPUB avec ACE."
+
+#: config.py:45
+msgid "Report Folder:"
+msgstr "Répertoire des Rapports : "
+
+#: config.py:53
+msgid "Folder to save the report"
+msgstr "Répertoire dans lequel sauvegarder les rapports"
+
+#: config.py:58
+msgid "Select Report Folder"
+msgstr "Sélectionner le Répertoire des Rapports"
+
+#: config.py:59
+msgid "Select the folder where the report will be saved."
+msgstr ""
+"Sélectionner le répertoire dans lequel les rapports seront sauvegardés."
+
+#: config.py:65
+msgid "Options:"
+msgstr "Options :"
+
+#: config.py:71
+msgid "Open Report after checking"
+msgstr "Ouvrir le rapport après la vérification"
+
+#: config.py:72
+msgid "Check it to open the html report on you default browser."
+msgstr "Cochez ceci pour ouvrir le rapport html dans votre navigateur."
+
+#: config.py:78
+msgid "Debug Mode"
+msgstr "Mode débogage"
+
+#: config.py:79
+msgid "When checked, ACE log will be saved to clipboard."
+msgstr "Lorsque coché, le journal ACE sera sauvegardé vers le presse-papiers."
+
+#: config.py:85
+msgid "Close Validation Docks"
+msgstr "Fermer les Volets de Validation"
+
+#: config.py:86
+msgid "When checked, ACE will attempt to close other validation docks."
+msgstr ""
+"Lorsque coché, ACE essayera de fermer les autres volets de validation."
+
+#: config.py:92
+msgid "About"
+msgstr "À propos"
+
+#: config.py:99
+msgid ""
+"This plugin is based on Doitsu's code for\n"
+"Sigil's ACE Plugin and EPUBCheck for calibre.\n"
+msgstr ""
+"Cette extension est basée sur le code de Doitsu pour\n"
+"l'Extension ACEde Sigil et d'EPUBCheck pour calibre.\n"
+
+#: config.py:102
+msgid "The Config Menu is based on KindleUnpack.\n"
+msgstr "Le Menu de Configuration est basé sur KindleUnpack.\n"
+
+#: config.py:104
+msgid ""
+"Thanks to Kovid Goyal for adding the feature\n"
+"that make possible linked error messages."
+msgstr ""
+"Merci à Kovid Goyal d'avoir ajouté la fonctionnalité\n"
+"qui rend possible les messages d'erreur liés."
+
+#: config.py:106
+msgid "About the ACE plugin"
+msgstr "À propos de l'extension ACE"
+
+#: config.py:117
+msgid "Select Directory to save Report to"
+msgstr "Sélectionner le Répertoire vers lequel sauvegarder le Rapport"
+
+#: config.py:128
+msgid ""
+"<p>The path specified for the Report Folder does not exist.<br/>Your latest "
+"preference changes will <b>NOT</b> be saved!</p>"
+msgstr ""
+"<p>Le chemin spécifié pour le Répertoire des Rapports n'existe pas.<br/> "
+"Votre dernier changement de préférence ne sera <b>PAS</b> sauvegardé !</p>"
+
+#: main.py:130
+msgid "Configure ACE"
+msgstr "Configurer ACE"
+
+#: main.py:153
+msgid "Run ACE"
+msgstr "Exécuter ACE"
+
+#: main.py:167
+msgid "Configure"
+msgstr "Configurer"
+
+#: main.py:169
+msgid "Configure ACE plugin"
+msgstr "Configurer extension ACE"
+
+#: main.py:184
+msgid "Before: ACE"
+msgstr "Avant : ACE"
+
+#: main.py:189
+msgid "Unsupported file format"
+msgstr "Format de fichier non supporté"
+
+#: main.py:190
+msgid "You can't check {} files with ACE."
+msgstr "Vous ne pouvez vérifier les fichiers {} avec ACE."
+
+#: main.py:235 main.py:262
+msgid "Error"
+msgstr "Erreur"
+
+#: main.py:238
+msgid ""
+"ACE found an error during execution.\n"
+"Do you want to try to rerun it?\n"
+"This can resolve a few errors."
+msgstr ""
+"ACE a trouvé une erreur pendant l'exécution.\n"
+"Voulez-vous essayer de le relancer ?\n"
+"Ceci peut résoudre certaines erreurs."
+
+#: main.py:241
+msgid "Rerun"
+msgstr "Relancer"
+
+#: main.py:297
+msgid "Serious"
+msgstr "Préoccupante"
+
+#: main.py:299
+msgid "Moderate"
+msgstr "Modérée"
+
+#: main.py:301
+msgid "Minor"
+msgstr "Mineure"
+
+#: main.py:336
+msgid ""
+"ACE check is finished!\n"
+"Congratulations: no errors were found!"
+msgstr ""
+"La vérification ACE est terminée !\n"
+"Félicitations : aucune erreur n'a été trouvée !"
+
+#: main.py:354
+msgid "Error opening the report"
+msgstr "Erreur lors de l'ouverture du rapport"
+
+#: main.py:355
+msgid "Ace could not open the report. Click 'Show details' for more info."
+msgstr ""
+"ACE ne peut pas ouvrir le rapport. Cliquer sur 'Afficher les détails' pour "
+"plus d'informations."
+
+#: main.py:453
+msgid "Error message"
+msgstr "Message d'erreur"
+
+#: main.py:453
+msgid "File"
+msgstr "Fichier"
+
+#: main.py:453
+msgid "Severity"
+msgstr "Gravité"
+
+#: main.py:495
+msgid "Unhandled exception"
+msgstr "Exception non gérée"
+
+#: main.py:496
+msgid "An unexpected error occurred. Click 'Show details' for more info."
+msgstr ""
+"Une erreur inattendue s'est produite. Cliquez sur 'Afficher les détails' "
+"pour plus d'informations."
