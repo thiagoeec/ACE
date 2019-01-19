@@ -8,11 +8,8 @@ ACE Plugin for calibre
 This plugin is a simple [ACE](https://github.com/daisy/ace) (Accessibility Checker for EPUB) wrapper.
 
 ## Credits
-
-<p>The first version of this plugin was based on Doitsu's code for Sigil's ACE Plugin.
-<br/>This is a simplified version. It allows you to run ACE directly from the Editor. Report opens on your default browser.
-<br/>The Config Menu is based on KindleUnpack.
-  <br/>Thanks to <a href="https://github.com/kovidgoyal">@kovidgoyal</a> for the help setting up the Configuration Menu inside the Editor.</p>
+<p>This plugin is based on Doitsu's code for Sigil's ACE Plugin and EPUBCheck for calibre.
+<br/>The Config Menu is based on KindleUnpack's. Thanks to <a href="https://github.com/kovidgoyal">@kovidgoyal</a> for providing the feature that made possible linked error messages.</p>
 
 ## System requirements
 
@@ -31,14 +28,16 @@ You can add this plugin to calibre via Preferences > Plugins > Get new plugins. 
 You can change the settings on the 'Configure' dropdown menu beside the ACE icon on the Editor. The same menu is reachable via Preferences > Advanced > Plugins > Customize Plugin.
 
 Options:
+
  * <i>Report Folder</i>: select de default folder to save ACE report.
- * <i>Open Report after checking</i>: automatically opens the report, after finished.
+ * <i>Open Report after checking</i>: opens the report, after finished.
  * <i>Debug Mode</i>: copy ACE log to clipboard.
+ * <i>Close Validation Docks</i>: automatically close Check Book and EPUBCheck docks.
 
 ## Language
 
 The default language for ACE is English. There are no other options available right now.
-As for the plugin itself, it is currently available in <i>Portuguese</i> and <i>English</i>. The default language is English.
+As for the plugin itself, it is available* in several languages: de, eu, fr, it, pt_BR, ru, es, sv and uk. *Some have partial translations.
 
 ## Translation
 
