@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-17 20:22-0200\n"
+"POT-Creation-Date: 2019-01-18 19:28-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Ptit Prince <leporello1791@gmail.com>, 2019\n"
 "Language-Team: French (https://www.transifex.com/calibre/teams/19337/fr/)\n"
@@ -156,19 +156,7 @@ msgstr ""
 msgid "Rerun"
 msgstr "Relancer"
 
-#: main.py:297
-msgid "Serious"
-msgstr "Préoccupante"
-
-#: main.py:299
-msgid "Moderate"
-msgstr "Modérée"
-
-#: main.py:301
-msgid "Minor"
-msgstr "Mineure"
-
-#: main.py:336
+#: main.py:328
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -176,33 +164,45 @@ msgstr ""
 "La vérification ACE est terminée !\n"
 "Félicitations : aucune erreur n'a été trouvée !"
 
-#: main.py:354
+#: main.py:346
 msgid "Error opening the report"
 msgstr "Erreur lors de l'ouverture du rapport"
 
-#: main.py:355
+#: main.py:347
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "ACE ne peut pas ouvrir le rapport. Cliquer sur 'Afficher les détails' pour "
 "plus d'informations."
 
-#: main.py:453
+#: main.py:446
 msgid "Error message"
 msgstr "Message d'erreur"
 
-#: main.py:453
+#: main.py:446
 msgid "File"
 msgstr "Fichier"
 
-#: main.py:453
+#: main.py:446
 msgid "Severity"
 msgstr "Gravité"
 
-#: main.py:495
+#: main.py:454
+msgid "Serious"
+msgstr "Préoccupante"
+
+#: main.py:456
+msgid "Moderate"
+msgstr "Modérée"
+
+#: main.py:458
+msgid "Minor"
+msgstr "Mineure"
+
+#: main.py:497
 msgid "Unhandled exception"
 msgstr "Exception non gérée"
 
-#: main.py:496
+#: main.py:498
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Une erreur inattendue s'est produite. Cliquez sur 'Afficher les détails' "

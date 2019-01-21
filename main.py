@@ -181,7 +181,12 @@ class AceTool(Tool):
         close_docks = cfg.plugin_prefs['close_docks']
 
         # Create a savepoint
-        self.boss.add_savepoint(_('Before: ACE'))
+        try:
+            self.boss.add_savepoint(_('Before: ACE'))
+        except AttributeError:
+            QMessageBox.information(self.gui, _('Empty Editor'),
+                                    _('You must first open a book!'))
+            return
 
         # Check file type
         book_type = self.current_container.book_type
@@ -391,7 +396,7 @@ class AceTool(Tool):
 
                     # Jump to the line corresponding to a partial CFI ref
                     def show_partial_cfi_in_editor(name, cfi):
-                        editor = self.boss.edit_file(name, 'html')
+                        editor = self.boss.edit_file(name)
                         if not editor or not editor.has_line_numbers:
                             return False
                         from calibre.ebooks.oeb.polish.parsing import parse
@@ -418,10 +423,13 @@ class AceTool(Tool):
                     # Jump to line
                     f_name = os.path.basename(f_name)
                     filepath = epub_name_to_href[f_name]
-                    if numeric_version < (3, 38, 0):
-                        show_partial_cfi_in_editor(filepath, epub_cfi)
+                    if os.path.splitext(filepath)[1] == '.opf':
+                        self.boss.edit_file(filepath)  # .opf files does not support epubcfi
                     else:
-                        self.boss.show_partial_cfi_in_editor(filepath, epub_cfi)
+                        if numeric_version < (3, 38, 0):
+                            show_partial_cfi_in_editor(filepath, epub_cfi)
+                        else:
+                            self.boss.show_partial_cfi_in_editor(filepath, epub_cfi)
 
                 # Remove existing Ace/EpubCheck docks and close Check Ebook dock
                 for widget in self.gui.children():

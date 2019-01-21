@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-18 19:28-0200\n"
+"POT-Creation-Date: 2019-01-21 18:35-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 #: config.py:104
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
-"that make possible linked error messages."
+"that made possible linked error messages."
 msgstr ""
 
 #: config.py:106
@@ -112,76 +112,84 @@ msgstr ""
 msgid "Configure ACE plugin"
 msgstr ""
 
-#: main.py:184
+#: main.py:185
 msgid "Before: ACE"
 msgstr ""
 
-#: main.py:189
+#: main.py:187
+msgid "Empty Editor"
+msgstr ""
+
+#: main.py:188
+msgid "You must first open a book!"
+msgstr ""
+
+#: main.py:194
 msgid "Unsupported file format"
 msgstr ""
 
-#: main.py:190
+#: main.py:195
 msgid "You can't check {} files with ACE."
 msgstr ""
 
-#: main.py:235 main.py:262
+#: main.py:240 main.py:267
 msgid "Error"
 msgstr ""
 
-#: main.py:238
+#: main.py:243
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
 "This can resolve a few errors."
 msgstr ""
 
-#: main.py:241
+#: main.py:246
 msgid "Rerun"
 msgstr ""
 
-#: main.py:328
+#: main.py:333
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
 msgstr ""
 
-#: main.py:346
+#: main.py:351
 msgid "Error opening the report"
 msgstr ""
 
-#: main.py:347
+#: main.py:352
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 
-#: main.py:446
+#: main.py:454
 msgid "Error message"
 msgstr ""
 
-#: main.py:446
+#: main.py:454
 msgid "File"
 msgstr ""
 
-#: main.py:446
+#: main.py:454
 msgid "Severity"
 msgstr ""
 
-#: main.py:454
+#: main.py:462
 msgid "Serious"
 msgstr ""
 
-#: main.py:456
+#: main.py:464
 msgid "Moderate"
 msgstr ""
 
-#: main.py:458
+#: main.py:466
 msgid "Minor"
 msgstr ""
 
-#: main.py:497
+#: main.py:505
 msgid "Unhandled exception"
 msgstr ""
 
-#: main.py:498
+#: main.py:506
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 

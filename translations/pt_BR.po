@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-17 20:22-0200\n"
+"POT-Creation-Date: 2019-01-18 19:28-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Thiago Oliveira <thiago.eec@gmail.com>, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/calibre/teams/19337/pt_BR/)\n"
@@ -154,19 +154,7 @@ msgstr ""
 msgid "Rerun"
 msgstr "Reexecutar"
 
-#: main.py:297
-msgid "Serious"
-msgstr "Grave"
-
-#: main.py:299
-msgid "Moderate"
-msgstr "Moderada"
-
-#: main.py:301
-msgid "Minor"
-msgstr "Baixa"
-
-#: main.py:336
+#: main.py:328
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -174,33 +162,45 @@ msgstr ""
 "A verificação do ACE foi concluída!\n"
 "Parabéns: nenhum erro encontrado!"
 
-#: main.py:354
+#: main.py:346
 msgid "Error opening the report"
 msgstr "Erro ao abrir o relatório"
 
-#: main.py:355
+#: main.py:347
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "Não foi possível abrir o relatório. Clique em 'Mostrar detalhes' para mais "
 "informações."
 
-#: main.py:453
+#: main.py:446
 msgid "Error message"
 msgstr "Mensagem de erro"
 
-#: main.py:453
+#: main.py:446
 msgid "File"
 msgstr "Arquivo"
 
-#: main.py:453
+#: main.py:446
 msgid "Severity"
 msgstr "Severidade"
 
-#: main.py:495
+#: main.py:454
+msgid "Serious"
+msgstr "Grave"
+
+#: main.py:456
+msgid "Moderate"
+msgstr "Moderada"
+
+#: main.py:458
+msgid "Minor"
+msgstr "Baixa"
+
+#: main.py:497
 msgid "Unhandled exception"
 msgstr "Execeção não tratada"
 
-#: main.py:496
+#: main.py:498
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Um erro inesperado ocorreu. Clique em 'Mostrar detalhes' para mais "

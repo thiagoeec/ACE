@@ -3,14 +3,14 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Adolfo Jayme-Barrientos, 2019
+# Adolfo Jayme Barrientos, 2019
 # Darío Hereñú <magallania@gmail.com>, 2019
 # Jellby <jellby@yahoo.com>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-17 20:22-0200\n"
+"POT-Creation-Date: 2019-01-18 19:28-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Jellby <jellby@yahoo.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/calibre/teams/19337/es/)\n"
@@ -51,7 +51,7 @@ msgstr "Abrir informe después de la verificación"
 
 #: config.py:72
 msgid "Check it to open the html report on you default browser."
-msgstr ""
+msgstr "Actívelo para abrir el informe html en el navegador predeterminado."
 
 #: config.py:78
 msgid "Debug Mode"
@@ -64,11 +64,12 @@ msgstr ""
 
 #: config.py:85
 msgid "Close Validation Docks"
-msgstr ""
+msgstr "Cerrar paneles de validación"
 
 #: config.py:86
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr ""
+"Cuando está marcado, ACE tratará de cerrar otros paneles de validación."
 
 #: config.py:92
 msgid "About"
@@ -79,16 +80,20 @@ msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
 msgstr ""
+"Este complemento está basado en el código de Doitsu para\n"
+"los complementos ACE de Sigil y EPUBCheck de calibre.\n"
 
 #: config.py:102
 msgid "The Config Menu is based on KindleUnpack.\n"
-msgstr ""
+msgstr "El menú de configuración está basado en KindleUnpack.\n"
 
 #: config.py:104
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that make possible linked error messages."
 msgstr ""
+"Gracias a Kovid Goyal por hacer posibles\n"
+"los mensajes de error enlazados."
 
 #: config.py:106
 msgid "About the ACE plugin"
@@ -152,49 +157,53 @@ msgstr ""
 msgid "Rerun"
 msgstr "Repetir"
 
-#: main.py:297
-msgid "Serious"
-msgstr ""
-
-#: main.py:299
-msgid "Moderate"
-msgstr ""
-
-#: main.py:301
-msgid "Minor"
-msgstr ""
-
-#: main.py:336
+#: main.py:328
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
 msgstr ""
+"¡La verificación hecha por ACE ha finalizado!\n"
+"Enhorabuena: no se han encontrado errores"
 
-#: main.py:354
+#: main.py:346
 msgid "Error opening the report"
-msgstr ""
+msgstr "Error al abrir el informe"
 
-#: main.py:355
+#: main.py:347
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
+"ACE no pudo abrir el informe. Pulse en «Mostrar detalles» para obtener más "
+"información."
 
-#: main.py:453
+#: main.py:446
 msgid "Error message"
-msgstr ""
+msgstr "Mensaje de error"
 
-#: main.py:453
+#: main.py:446
 msgid "File"
-msgstr ""
+msgstr "Archivo"
 
-#: main.py:453
+#: main.py:446
 msgid "Severity"
-msgstr ""
+msgstr "Gravedad"
 
-#: main.py:495
+#: main.py:454
+msgid "Serious"
+msgstr "Seria"
+
+#: main.py:456
+msgid "Moderate"
+msgstr "Moderada"
+
+#: main.py:458
+msgid "Minor"
+msgstr "Leve"
+
+#: main.py:497
 msgid "Unhandled exception"
 msgstr "Excepción no controlada"
 
-#: main.py:496
+#: main.py:498
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Un error inesperado ocurrió. Pulse en «Mostrar detalles» para obtener más "

@@ -102,7 +102,7 @@ class ConfigWidget(QWidget):
                _('The Config Menu is based on KindleUnpack.\n') +\
                '\n' +\
                _('Thanks to Kovid Goyal for adding the feature\n'
-                 'that made possible linked error messages.')
+                 'that make possible linked error messages.')
         QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))
 
     def save_settings(self):

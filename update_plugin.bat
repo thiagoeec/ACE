@@ -4,8 +4,8 @@ if [%1]==[-m] (
 	call create_pot_files.bat
 )
 
-::Pull new translations from Transifex
-call pull_translations.bat
+::Pull new translations from Transifex. Use "-f" to force download.
+call pull_translations.bat %2
 
 ::Assemble plugin file
 echo.
