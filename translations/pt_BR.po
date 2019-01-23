@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-18 19:28-0200\n"
+"POT-Creation-Date: 2019-01-21 18:35-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Thiago Oliveira <thiago.eec@gmail.com>, 2019\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/calibre/teams/19337/pt_BR/)\n"
@@ -87,7 +87,7 @@ msgstr "O Menu 'Configurar' é baseado no KindleUnpack.\n"
 #: config.py:104
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
-"that make possible linked error messages."
+"that made possible linked error messages."
 msgstr ""
 "Obrigado ao Kovid Goyal por adicionar a função\n"
 "que tornou possível mensagens de erro clicáveis."
@@ -124,23 +124,31 @@ msgstr "Configurar"
 msgid "Configure ACE plugin"
 msgstr "Configurar o plugin ACE"
 
-#: main.py:184
+#: main.py:185
 msgid "Before: ACE"
 msgstr "Antes de: ACE"
 
-#: main.py:189
+#: main.py:187
+msgid "Empty Editor"
+msgstr "Editor vazio"
+
+#: main.py:188
+msgid "You must first open a book!"
+msgstr "É preciso abrir um livro primeiro!"
+
+#: main.py:194
 msgid "Unsupported file format"
 msgstr "Formato não suportado"
 
-#: main.py:190
+#: main.py:195
 msgid "You can't check {} files with ACE."
 msgstr "Não é possível verificar arquivos {} com o ACE."
 
-#: main.py:235 main.py:262
+#: main.py:240 main.py:267
 msgid "Error"
 msgstr "Erro"
 
-#: main.py:238
+#: main.py:243
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -150,11 +158,11 @@ msgstr ""
 "Gostaria de executar o ACE novamente?\n"
 "Isso pode resolver alguns erros."
 
-#: main.py:241
+#: main.py:246
 msgid "Rerun"
 msgstr "Reexecutar"
 
-#: main.py:328
+#: main.py:333
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -162,45 +170,45 @@ msgstr ""
 "A verificação do ACE foi concluída!\n"
 "Parabéns: nenhum erro encontrado!"
 
-#: main.py:346
+#: main.py:351
 msgid "Error opening the report"
 msgstr "Erro ao abrir o relatório"
 
-#: main.py:347
+#: main.py:352
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "Não foi possível abrir o relatório. Clique em 'Mostrar detalhes' para mais "
 "informações."
 
-#: main.py:446
+#: main.py:454
 msgid "Error message"
 msgstr "Mensagem de erro"
 
-#: main.py:446
+#: main.py:454
 msgid "File"
 msgstr "Arquivo"
 
-#: main.py:446
+#: main.py:454
 msgid "Severity"
 msgstr "Severidade"
 
-#: main.py:454
+#: main.py:462
 msgid "Serious"
 msgstr "Grave"
 
-#: main.py:456
+#: main.py:464
 msgid "Moderate"
 msgstr "Moderada"
 
-#: main.py:458
+#: main.py:466
 msgid "Minor"
 msgstr "Baixa"
 
-#: main.py:497
+#: main.py:505
 msgid "Unhandled exception"
 msgstr "Execeção não tratada"
 
-#: main.py:498
+#: main.py:506
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Um erro inesperado ocorreu. Clique em 'Mostrar detalhes' para mais "

@@ -483,6 +483,15 @@ class AceTool(Tool):
 
                 tree.itemClicked.connect(go_to_line)
 
+                # Double-click copies to clipboard
+                def msg_to_clipboard():
+                    item_content = _('File') + ': ' + tree.currentItem().text(1) + '\n' +\
+                               _('Severity') + ': ' + tree.currentItem().text(2) + '\n' +\
+                               _('Error message') + ': ' + tree.currentItem().text(3)
+                    QApplication.clipboard().setText(item_content)
+
+                tree.itemDoubleClicked.connect(msg_to_clipboard)
+
                 # Add dock widget to the dock
                 self.gui.addDockWidget(Qt.TopDockWidgetArea, dock_widget)
 

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-18 19:28-0200\n"
+"POT-Creation-Date: 2019-01-21 18:35-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/calibre/teams/19337/uk/)\n"
@@ -88,7 +88,7 @@ msgstr "Меню налаштовування засновано на KindleUnpa
 #: config.py:104
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
-"that make possible linked error messages."
+"that made possible linked error messages."
 msgstr ""
 "Дякуємо Ковіду Ґоялу за додавання коду,\n"
 "який уможливив прив'язування повідомлень про помилки до коду книги."
@@ -125,23 +125,31 @@ msgstr "Налаштувати"
 msgid "Configure ACE plugin"
 msgstr "Налаштувати додаток ACE"
 
-#: main.py:184
+#: main.py:185
 msgid "Before: ACE"
 msgstr "До дії: ACE"
 
-#: main.py:189
+#: main.py:187
+msgid "Empty Editor"
+msgstr "Порожній редактор"
+
+#: main.py:188
+msgid "You must first open a book!"
+msgstr "Вам слід спочатку відкрити книгу!"
+
+#: main.py:194
 msgid "Unsupported file format"
 msgstr "Непідтримуваний формат файлів"
 
-#: main.py:190
+#: main.py:195
 msgid "You can't check {} files with ACE."
 msgstr "Файли {} не вдасться перевірити за допомогою ACE."
 
-#: main.py:235 main.py:262
+#: main.py:240 main.py:267
 msgid "Error"
 msgstr "Помилка"
 
-#: main.py:238
+#: main.py:243
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -151,11 +159,11 @@ msgstr ""
 "Хочете спробувати повторно запустити програму?\n"
 "Повторний запуск може усунути певні проблеми."
 
-#: main.py:241
+#: main.py:246
 msgid "Rerun"
 msgstr "Запустити повторно"
 
-#: main.py:328
+#: main.py:333
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -163,45 +171,45 @@ msgstr ""
 "Перевірку ACE завершено!\n"
 "Вітаємо: помилок не знайдено!"
 
-#: main.py:346
+#: main.py:351
 msgid "Error opening the report"
 msgstr "Помилка під час спроби відкрити звіт"
 
-#: main.py:347
+#: main.py:352
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "Ace не вдалося відкрити звіт. Натисніть кнопку «Показати подробиці», щоб "
 "дізнатися більше."
 
-#: main.py:446
+#: main.py:454
 msgid "Error message"
 msgstr "Повідомлення про помилку"
 
-#: main.py:446
+#: main.py:454
 msgid "File"
 msgstr "Файл"
 
-#: main.py:446
+#: main.py:454
 msgid "Severity"
 msgstr "Критичність"
 
-#: main.py:454
+#: main.py:462
 msgid "Serious"
 msgstr "Критична"
 
-#: main.py:456
+#: main.py:464
 msgid "Moderate"
 msgstr "Важлива"
 
-#: main.py:458
+#: main.py:466
 msgid "Minor"
 msgstr "Неважлива"
 
-#: main.py:497
+#: main.py:505
 msgid "Unhandled exception"
 msgstr "Критичне виключення"
 
-#: main.py:498
+#: main.py:506
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Сталася неочікувана помилка. Щоб дізнатися більше, натисніть кнопку "

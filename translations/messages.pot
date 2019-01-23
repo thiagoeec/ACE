@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-21 18:35-0200\n"
+"POT-Creation-Date: 2019-01-23 21:06-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,10 +84,6 @@ msgid ""
 "that made possible linked error messages."
 msgstr ""
 
-#: config.py:106
-msgid "About the ACE plugin"
-msgstr ""
-
 #: config.py:117
 msgid "Select Directory to save Report to"
 msgstr ""
@@ -161,16 +157,16 @@ msgstr ""
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 
-#: main.py:454
-msgid "Error message"
-msgstr ""
-
-#: main.py:454
+#: main.py:454 main.py:488
 msgid "File"
 msgstr ""
 
-#: main.py:454
+#: main.py:454 main.py:489
 msgid "Severity"
+msgstr ""
+
+#: main.py:454 main.py:490
+msgid "Error message"
 msgstr ""
 
 #: main.py:462
@@ -185,11 +181,11 @@ msgstr ""
 msgid "Minor"
 msgstr ""
 
-#: main.py:505
+#: main.py:514
 msgid "Unhandled exception"
 msgstr ""
 
-#: main.py:506
+#: main.py:515
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 

@@ -102,8 +102,8 @@ class ConfigWidget(QWidget):
                _('The Config Menu is based on KindleUnpack.\n') +\
                '\n' +\
                _('Thanks to Kovid Goyal for adding the feature\n'
-                 'that make possible linked error messages.')
-        QMessageBox.about(self, _('About the ACE plugin'), text.decode('utf-8'))
+                 'that made possible linked error messages.')
+        QMessageBox.about(self, PLUGIN_NAME + ' v' + PLUGIN_VERSION, text.decode('utf-8'))
 
     def save_settings(self):
         # Save current dialog settings back to JSON config file
