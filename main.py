@@ -452,6 +452,10 @@ class AceTool(Tool):
                 dock_widget.setWindowTitle('ACE, by Daisy')
                 dock_widget.setWidget(tree)
                 tree.setHeaderLabels(['Index', _('File'), _('Severity'), _('Error message')])
+                header = tree.headerItem()
+                header.setToolTip(1, _('Sort by Filename'))
+                header.setToolTip(2, _('Sort by Severity'))
+                header.setToolTip(3, _('Sort by Error Message'))
 
                 # Add error messages to list widget
                 for error_msg in error_messages:
