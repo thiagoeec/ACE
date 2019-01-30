@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-21 18:35-0200\n"
+"POT-Creation-Date: 2019-01-23 21:06-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Alexander Gabilondo <alexgabilondo@gmail.com>, 2019\n"
 "Language-Team: Basque (https://www.transifex.com/calibre/teams/19337/eu/)\n"
@@ -86,10 +86,6 @@ msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
 msgstr ""
-
-#: config.py:106
-msgid "About the ACE plugin"
-msgstr "ACE pluginari buruz"
 
 #: config.py:117
 msgid "Select Directory to save Report to"
@@ -171,16 +167,16 @@ msgstr ""
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 
-#: main.py:454
-msgid "Error message"
-msgstr ""
-
-#: main.py:454
+#: main.py:454 main.py:488
 msgid "File"
 msgstr ""
 
-#: main.py:454
+#: main.py:454 main.py:489
 msgid "Severity"
+msgstr ""
+
+#: main.py:454 main.py:490
+msgid "Error message"
 msgstr ""
 
 #: main.py:462
@@ -195,11 +191,11 @@ msgstr ""
 msgid "Minor"
 msgstr ""
 
-#: main.py:505
+#: main.py:514
 msgid "Unhandled exception"
 msgstr "Kontrolatu gabeko salbuespena"
 
-#: main.py:506
+#: main.py:515
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Uste gabeko errorea gertatu da. Klikatu \"Erakutsi zehaztapenak\" informazio"

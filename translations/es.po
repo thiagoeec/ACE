@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-21 18:35-0200\n"
+"POT-Creation-Date: 2019-01-23 21:06-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Darío Hereñú <magallania@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/calibre/teams/19337/es/)\n"
@@ -94,10 +94,6 @@ msgid ""
 msgstr ""
 "Gracias a  Kovid Goyal poir agregar esta función\n"
 "que hizo posible vincular los mensajes de error."
-
-#: config.py:106
-msgid "About the ACE plugin"
-msgstr "Acerca del complemento ACE"
 
 #: config.py:117
 msgid "Select Directory to save Report to"
@@ -183,17 +179,17 @@ msgstr ""
 "ACE no pudo abrir el informe. Pulse en «Mostrar detalles» para obtener más "
 "información."
 
-#: main.py:454
-msgid "Error message"
-msgstr "Mensaje de error"
-
-#: main.py:454
+#: main.py:454 main.py:488
 msgid "File"
 msgstr "Archivo"
 
-#: main.py:454
+#: main.py:454 main.py:489
 msgid "Severity"
 msgstr "Gravedad"
+
+#: main.py:454 main.py:490
+msgid "Error message"
+msgstr "Mensaje de error"
 
 #: main.py:462
 msgid "Serious"
@@ -207,11 +203,11 @@ msgstr "Moderada"
 msgid "Minor"
 msgstr "Leve"
 
-#: main.py:505
+#: main.py:514
 msgid "Unhandled exception"
 msgstr "Excepción no controlada"
 
-#: main.py:506
+#: main.py:515
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Un error inesperado ocurrió. Pulse en «Mostrar detalles» para obtener más "
