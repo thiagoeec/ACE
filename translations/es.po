@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-23 21:06-0200\n"
+"POT-Creation-Date: 2019-01-30 16:35-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Darío Hereñú <magallania@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/calibre/teams/19337/es/)\n"
@@ -179,35 +179,47 @@ msgstr ""
 "ACE no pudo abrir el informe. Pulse en «Mostrar detalles» para obtener más "
 "información."
 
-#: main.py:454 main.py:488
+#: main.py:454 main.py:492
 msgid "File"
 msgstr "Archivo"
 
-#: main.py:454 main.py:489
+#: main.py:454 main.py:493
 msgid "Severity"
 msgstr "Gravedad"
 
-#: main.py:454 main.py:490
+#: main.py:454 main.py:494
 msgid "Error message"
 msgstr "Mensaje de error"
 
-#: main.py:462
+#: main.py:456
+msgid "Sort by Filename"
+msgstr "Ordenar por nombre de archivo"
+
+#: main.py:457
+msgid "Sort by Severity"
+msgstr "Ordenar por gravedad"
+
+#: main.py:458
+msgid "Sort by Error Message"
+msgstr "Ordenar por mensaje de error"
+
+#: main.py:466
 msgid "Serious"
 msgstr "Seria"
 
-#: main.py:464
+#: main.py:468
 msgid "Moderate"
 msgstr "Moderada"
 
-#: main.py:466
+#: main.py:470
 msgid "Minor"
 msgstr "Leve"
 
-#: main.py:514
+#: main.py:518
 msgid "Unhandled exception"
 msgstr "Excepción no controlada"
 
-#: main.py:515
+#: main.py:519
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Un error inesperado ocurrió. Pulse en «Mostrar detalles» para obtener más "

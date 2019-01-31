@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-23 21:06-0200\n"
+"POT-Creation-Date: 2019-01-30 16:35-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Jonatan Nyberg, 2019\n"
 "Language-Team: Swedish (https://www.transifex.com/calibre/teams/19337/sv/)\n"
@@ -169,34 +169,46 @@ msgstr ""
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 
-#: main.py:454 main.py:488
+#: main.py:454 main.py:492
 msgid "File"
 msgstr ""
 
-#: main.py:454 main.py:489
+#: main.py:454 main.py:493
 msgid "Severity"
 msgstr ""
 
-#: main.py:454 main.py:490
+#: main.py:454 main.py:494
 msgid "Error message"
 msgstr ""
 
-#: main.py:462
-msgid "Serious"
+#: main.py:456
+msgid "Sort by Filename"
 msgstr ""
 
-#: main.py:464
-msgid "Moderate"
+#: main.py:457
+msgid "Sort by Severity"
+msgstr ""
+
+#: main.py:458
+msgid "Sort by Error Message"
 msgstr ""
 
 #: main.py:466
+msgid "Serious"
+msgstr ""
+
+#: main.py:468
+msgid "Moderate"
+msgstr ""
+
+#: main.py:470
 msgid "Minor"
 msgstr ""
 
-#: main.py:514
+#: main.py:518
 msgid "Unhandled exception"
 msgstr "Ohanterat undantag"
 
-#: main.py:515
+#: main.py:519
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr "Ett oväntat fel uppstod. Klicka på \"Visa detaljer\" för mer info."
