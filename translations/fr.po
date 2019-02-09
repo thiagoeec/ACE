@@ -4,15 +4,15 @@
 # 
 # Translators:
 # JimmXinu <retiefjimm@gmail.com>, 2019
-# Ptit Prince <leporello1791@gmail.com>, 2019
 # Doryan R <doryan16238@gmail.com>, 2019
+# Ptit Prince <leporello1791@gmail.com>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-01-30 16:35-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: Doryan R <doryan16238@gmail.com>, 2019\n"
+"Last-Translator: Ptit Prince <leporello1791@gmail.com>, 2019\n"
 "Language-Team: French (https://www.transifex.com/calibre/teams/19337/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -133,7 +133,7 @@ msgstr "Éditeur vide"
 
 #: main.py:188
 msgid "You must first open a book!"
-msgstr "Vous devez d'abord ouvrir un livre!"
+msgstr "Vous devez d'abord ouvrir un livre !"
 
 #: main.py:194
 msgid "Unsupported file format"
@@ -193,15 +193,15 @@ msgstr "Message d'erreur"
 
 #: main.py:456
 msgid "Sort by Filename"
-msgstr "Trier par nom de fichier"
+msgstr "Trier par Nom de fichier"
 
 #: main.py:457
 msgid "Sort by Severity"
-msgstr "Trier par gravité"
+msgstr "Trier par Gravité"
 
 #: main.py:458
 msgid "Sort by Error Message"
-msgstr "Trier par message d'erreur"
+msgstr "Trier par Message d'Erreur"
 
 #: main.py:466
 msgid "Serious"
