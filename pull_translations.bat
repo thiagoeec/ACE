@@ -2,7 +2,7 @@
 set PYTHONIOENCODING=UTF-8
 setlocal enableDelayedExpansion
 
-:: Fetch new translations (over 25% finished). Use -f to force download.
+:: Fetch new translations (over 20% finished). Use -f to force download.
 echo.
 tx pull --minimum-perc=20 -a %1
 
