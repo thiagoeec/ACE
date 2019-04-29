@@ -4,13 +4,14 @@
 # 
 # Translators:
 # ashed <craysy@gmail.com>, 2019
+# Aleksandr P, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-01-30 16:35-0200\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: ashed <craysy@gmail.com>, 2019\n"
+"Last-Translator: Aleksandr P, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/calibre/teams/19337/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +50,7 @@ msgstr "Открыть отчет после проверки"
 
 #: config.py:72
 msgid "Check it to open the html report on you default browser."
-msgstr ""
+msgstr "Щелкните, чтобы открыть HTML-отчет в вашем браузере по умолчанию."
 
 #: config.py:78
 msgid "Debug Mode"
@@ -61,11 +62,11 @@ msgstr "Если отмечено, журнал ACE будет сохранен 
 
 #: config.py:85
 msgid "Close Validation Docks"
-msgstr ""
+msgstr "Закрывать панели валидации"
 
 #: config.py:86
 msgid "When checked, ACE will attempt to close other validation docks."
-msgstr ""
+msgstr "Если отмечено, ACE попытается закрыть остальные панели валидации."
 
 #: config.py:92
 msgid "About"
@@ -76,16 +77,20 @@ msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
 msgstr ""
+"Это плагин основан на коде Doitsu для плагина\n"
+"ACE для Sigil и EPUBCheck для calibre.\n"
 
 #: config.py:102
 msgid "The Config Menu is based on KindleUnpack.\n"
-msgstr ""
+msgstr "Меню настроек основано на KindleUnpack.\n"
 
 #: config.py:104
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
 msgstr ""
+"Спасибо Ковиду Гоялу за добавление функции,\n"
+"сделавшей возможным связь сообщений об ошибках."
 
 #: config.py:117
 msgid "Select Directory to save Report to"
@@ -121,11 +126,11 @@ msgstr "До: ACE"
 
 #: main.py:187
 msgid "Empty Editor"
-msgstr ""
+msgstr "Редактор пуст"
 
 #: main.py:188
 msgid "You must first open a book!"
-msgstr ""
+msgstr "Сначала нужно открыть книгу!"
 
 #: main.py:194
 msgid "Unsupported file format"
@@ -158,50 +163,54 @@ msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
 msgstr ""
+"Проверка ACE завершена!\n"
+"Поздравляем, ошибок не обнаружено!"
 
 #: main.py:351
 msgid "Error opening the report"
-msgstr ""
+msgstr "Ошибка при открытии отчета"
 
 #: main.py:352
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
+"Не удалось открыть отчет ACE. Щелкните «Подробности» для дополнительной "
+"информации."
 
 #: main.py:454 main.py:492
 msgid "File"
-msgstr ""
+msgstr "Файл"
 
 #: main.py:454 main.py:493
 msgid "Severity"
-msgstr ""
+msgstr "Важность"
 
 #: main.py:454 main.py:494
 msgid "Error message"
-msgstr ""
+msgstr "Сообщение об ошибке"
 
 #: main.py:456
 msgid "Sort by Filename"
-msgstr ""
+msgstr "Сортировать по имени файла"
 
 #: main.py:457
 msgid "Sort by Severity"
-msgstr ""
+msgstr "Сортировать по серьезности"
 
 #: main.py:458
 msgid "Sort by Error Message"
-msgstr ""
+msgstr "Сортировать по сообщению об ошибке"
 
 #: main.py:466
 msgid "Serious"
-msgstr ""
+msgstr "Серьезная"
 
 #: main.py:468
 msgid "Moderate"
-msgstr ""
+msgstr "Средняя"
 
 #: main.py:470
 msgid "Minor"
-msgstr ""
+msgstr "Незначительная"
 
 #: main.py:518
 msgid "Unhandled exception"
