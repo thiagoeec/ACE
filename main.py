@@ -28,7 +28,7 @@ from calibre.gui2 import error_dialog
 from calibre.gui2.tweak_book.plugin import Tool
 from calibre.utils.config import JSONConfig, config_dir
 from calibre.constants import iswindows, islinux, isosx, numeric_version
-from calibre.ebooks.BeautifulSoup import BeautifulSoup
+from calibre.ebooks.BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
 
 # DiapDealer's temp folder code
 from contextlib import contextmanager
@@ -222,6 +222,8 @@ class AceTool(Tool):
                 # Display busy cursor
                 QApplication.setOverrideCursor(Qt.WaitCursor)
 
+                self.gui.show_status_message(_("Checking book..."), 5)
+
                 # Run ACE
                 result, return_code = ace_wrapper(*args)
                 stdout = result[0]
@@ -248,6 +250,8 @@ class AceTool(Tool):
                     if reply == QMessageBox.Yes:
                         # Display busy cursor
                         QApplication.setOverrideCursor(Qt.WaitCursor)
+
+                        self.gui.show_status_message(_("Checking book..."), 5)
 
                         # Rerun ACE
                         result, return_code = ace_wrapper(*args)
@@ -308,12 +312,18 @@ class AceTool(Tool):
                                 role = None
                                 if 'html' in earl_assertion['earl:result']:
                                     snippet = earl_assertion['earl:result']['html']
-                                    soup = BeautifulSoup(snippet)
-                                    tag = soup.contents[0]
-
-                                    if tag.has_key('epub:type'):
-                                        epub_type = tag['epub:type']
-                                        role = getrole(epub_type)
+                                    if numeric_version < (3, 41, 0):
+                                        soup = BeautifulSoup(snippet)
+                                        tag = soup.contents[0]
+                                        if tag.has_key('epub:type'):
+                                            epub_type = tag['epub:type']
+                                            role = getrole(epub_type)
+                                    else:
+                                        soup = BeautifulStoneSoup(snippet)
+                                        tag = soup.contents[0]
+                                        if 'epub:type' in tag.attrs:
+                                            epub_type = tag['epub:type']
+                                            role = getrole(epub_type)
 
                                 # Add suggested role:
                                 if error_message == 'Element has no ARIA role matching its epub:type.'\
