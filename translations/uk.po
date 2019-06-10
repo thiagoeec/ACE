@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 16:35-0200\n"
+"POT-Creation-Date: 2019-06-03 21:25-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/calibre/teams/19337/uk/)\n"
@@ -141,11 +141,15 @@ msgstr "Непідтримуваний формат файлів"
 msgid "You can't check {} files with ACE."
 msgstr "Файли {} не вдасться перевірити за допомогою ACE."
 
-#: main.py:240 main.py:267
+#: main.py:225 main.py:254
+msgid "Checking book..."
+msgstr "Перевіряємо книгу…"
+
+#: main.py:242 main.py:271
 msgid "Error"
 msgstr "Помилка"
 
-#: main.py:243
+#: main.py:245
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -155,11 +159,11 @@ msgstr ""
 "Хочете спробувати повторно запустити програму?\n"
 "Повторний запуск може усунути певні проблеми."
 
-#: main.py:246
+#: main.py:248
 msgid "Rerun"
 msgstr "Запустити повторно"
 
-#: main.py:333
+#: main.py:343
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -167,57 +171,57 @@ msgstr ""
 "Перевірку ACE завершено!\n"
 "Вітаємо: помилок не знайдено!"
 
-#: main.py:351
+#: main.py:361
 msgid "Error opening the report"
 msgstr "Помилка під час спроби відкрити звіт"
 
-#: main.py:352
+#: main.py:362
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "Ace не вдалося відкрити звіт. Натисніть кнопку «Показати подробиці», щоб "
 "дізнатися більше."
 
-#: main.py:454 main.py:492
+#: main.py:464 main.py:502
 msgid "File"
 msgstr "Файл"
 
-#: main.py:454 main.py:493
+#: main.py:464 main.py:503
 msgid "Severity"
 msgstr "Критичність"
 
-#: main.py:454 main.py:494
+#: main.py:464 main.py:504
 msgid "Error message"
 msgstr "Повідомлення про помилку"
 
-#: main.py:456
+#: main.py:466
 msgid "Sort by Filename"
 msgstr "Упорядкувати за назвою файла"
 
-#: main.py:457
+#: main.py:467
 msgid "Sort by Severity"
 msgstr "Упорядкувати за критичністю"
 
-#: main.py:458
+#: main.py:468
 msgid "Sort by Error Message"
 msgstr "Упорядкувати за повідомленням про помилку"
 
-#: main.py:466
+#: main.py:476
 msgid "Serious"
 msgstr "Критична"
 
-#: main.py:468
+#: main.py:478
 msgid "Moderate"
 msgstr "Важлива"
 
-#: main.py:470
+#: main.py:480
 msgid "Minor"
 msgstr "Неважлива"
 
-#: main.py:518
+#: main.py:528
 msgid "Unhandled exception"
 msgstr "Критичне виключення"
 
-#: main.py:519
+#: main.py:529
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Сталася неочікувана помилка. Щоб дізнатися більше, натисніть кнопку "

@@ -3,14 +3,14 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Adolfo Jayme Barrientos, 2019
+# Fito JB, 2019
 # Jellby <jellby@yahoo.com>, 2019
 # Darío Hereñú <magallania@gmail.com>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 16:35-0200\n"
+"POT-Creation-Date: 2019-06-03 21:25-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Darío Hereñú <magallania@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/calibre/teams/19337/es/)\n"
@@ -143,11 +143,15 @@ msgstr "Formato de archivo no soportado"
 msgid "You can't check {} files with ACE."
 msgstr "No se pueden verificar archivos {} con ACE."
 
-#: main.py:240 main.py:267
+#: main.py:225 main.py:254
+msgid "Checking book..."
+msgstr "Verificando libro..."
+
+#: main.py:242 main.py:271
 msgid "Error"
 msgstr "Error"
 
-#: main.py:243
+#: main.py:245
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -157,11 +161,11 @@ msgstr ""
 "¿Desea intentarlo de nuevo?\n"
 "Esto podría resolver algunos errores."
 
-#: main.py:246
+#: main.py:248
 msgid "Rerun"
 msgstr "Repetir"
 
-#: main.py:333
+#: main.py:343
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -169,57 +173,57 @@ msgstr ""
 "¡La verificación hecha por ACE ha finalizado!\n"
 "Enhorabuena: no se han encontrado errores"
 
-#: main.py:351
+#: main.py:361
 msgid "Error opening the report"
 msgstr "Error al abrir el informe"
 
-#: main.py:352
+#: main.py:362
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "ACE no pudo abrir el informe. Pulse en «Mostrar detalles» para obtener más "
 "información."
 
-#: main.py:454 main.py:492
+#: main.py:464 main.py:502
 msgid "File"
 msgstr "Archivo"
 
-#: main.py:454 main.py:493
+#: main.py:464 main.py:503
 msgid "Severity"
 msgstr "Gravedad"
 
-#: main.py:454 main.py:494
+#: main.py:464 main.py:504
 msgid "Error message"
 msgstr "Mensaje de error"
 
-#: main.py:456
+#: main.py:466
 msgid "Sort by Filename"
 msgstr "Ordenar por nombre de archivo"
 
-#: main.py:457
+#: main.py:467
 msgid "Sort by Severity"
 msgstr "Ordenar por gravedad"
 
-#: main.py:458
+#: main.py:468
 msgid "Sort by Error Message"
 msgstr "Ordenar por mensaje de error"
 
-#: main.py:466
+#: main.py:476
 msgid "Serious"
 msgstr "Seria"
 
-#: main.py:468
+#: main.py:478
 msgid "Moderate"
 msgstr "Moderada"
 
-#: main.py:470
+#: main.py:480
 msgid "Minor"
 msgstr "Leve"
 
-#: main.py:518
+#: main.py:528
 msgid "Unhandled exception"
 msgstr "Excepción no controlada"
 
-#: main.py:519
+#: main.py:529
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Un error inesperado ocurrió. Pulse en «Mostrar detalles» para obtener más "
