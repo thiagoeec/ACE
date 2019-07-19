@@ -33,11 +33,12 @@ Options:
  * <i>Open Report after checking</i>: opens the report, after finished.
  * <i>Debug Mode</i>: copy ACE log to clipboard.
  * <i>Close Validation Docks</i>: automatically close Check Book and EPUBCheck docks.
+ * <i>Language</i>: choose the language to display Ace messages.
 
 ## Language
 
-The default language for ACE is English. There are no other options available right now.
-As for the plugin itself, it is available* in several languages: de, eu, fr, it, pt_BR, ru, es, sv and uk. *Some have partial translations.
+The default language for ACE is English. Other languages available: de, fr, ja, nl, pt_BR.
+As for the plugin itself, it is available* in several languages: de, et, es, eu, fr, hu, id, it, nl, pt_BR, ru, sv, and uk. *Some have partial translations.
 
 ## Translation
 
