@@ -8,10 +8,11 @@ __docformat__ = 'restructuredtext en'
 
 # Standard libraries
 import os
+import locale
 
 # PyQt libraries
 from PyQt5.Qt import (QWidget, QLabel, QLineEdit, QPushButton, QCheckBox,
-                      QGroupBox, QVBoxLayout, QComboBox, QMessageBox)
+                      QGroupBox, QVBoxLayout, QGridLayout, QComboBox, QMessageBox)
 
 # Calibre libraries
 from calibre.utils.config import JSONConfig
@@ -22,6 +23,9 @@ from calibre_plugins.ACE.__init__ import PLUGIN_NAME, PLUGIN_VERSION
 # Load translation files (.mo) on the folder 'translations'
 load_translations()
 
+# Get user language
+user_language = locale.getdefaultlocale()
+
 # This is where all preferences for this plugin will be stored.
 plugin_prefs = JSONConfig('plugins/ACE')
 
@@ -30,6 +34,7 @@ plugin_prefs.defaults['report_path'] = expanduser('~')
 plugin_prefs.defaults['open_report'] = True
 plugin_prefs.defaults['debug_mode'] = False
 plugin_prefs.defaults['close_docks'] = True
+plugin_prefs.defaults['user_lang'] = user_language[0]
 
 
 # Set up Config Dialog
@@ -55,7 +60,7 @@ class ConfigWidget(QWidget):
         self.directory_txtBox.setReadOnly(True)
 
         # Folder select button
-        directory_button = QPushButton(_('Select Report Folder'), self)
+        directory_button = QPushButton('&'+_('Select Report Folder'), self)
         directory_button.setToolTip(_('Select the folder where the report will be saved.'))
         directory_group_box_layout.addWidget(directory_button)
         # Connect button to the getDirectory function
@@ -68,25 +73,51 @@ class ConfigWidget(QWidget):
         misc_group_box.setLayout(misc_group_box_layout)
 
         # Open report checkbox
-        self.open_report_check = QCheckBox(_('Open Report after checking'), self)
+        self.open_report_check = QCheckBox('&'+_('Open Report after checking'), self)
         self.open_report_check.setToolTip(_('Check it to open the html report on you default browser.'))
         misc_group_box_layout.addWidget(self.open_report_check)
         # Load the checkbox with the current preference setting
         self.open_report_check.setChecked(plugin_prefs['open_report'])
 
         # Debug checkbox
-        self.debug_mode_check = QCheckBox(_('Debug Mode'), self)
+        self.debug_mode_check = QCheckBox('&'+_('Debug Mode'), self)
         self.debug_mode_check.setToolTip(_('When checked, ACE log will be saved to clipboard.'))
         misc_group_box_layout.addWidget(self.debug_mode_check)
         # Load the checkbox with the current preference setting
         self.debug_mode_check.setChecked(plugin_prefs['debug_mode'])
 
         # Close docks checkbox
-        self.close_docks_check = QCheckBox(_('Close Validation Docks'), self)
+        self.close_docks_check = QCheckBox('&'+_('Close Validation Docks'), self)
         self.close_docks_check.setToolTip(_('When checked, ACE will attempt to close other validation docks.'))
         misc_group_box_layout.addWidget(self.close_docks_check)
         # Load the checkbox with the current preference setting
         self.close_docks_check.setChecked(plugin_prefs['close_docks'])
+
+        # --- Lang Options ---
+        lang_group_box = QGroupBox(_('Messages:'), self)
+        layout.addWidget(lang_group_box)
+        lang_group_box_layout = QGridLayout()
+        lang_group_box.setLayout(lang_group_box_layout)
+
+        # Language combobox
+        self.language_box_label = QLabel(_('&Language:'), self)
+        tooltip = _('Choose the language to show ACE and AXE messages. '
+                    'Some languages work for AXE, but not for ACE.')
+        self.language_box_label.setToolTip(tooltip)
+        self.language_box = QComboBox()
+        self.language_box.setToolTip(tooltip)
+        self.language_box.addItems({'de', 'en', 'fr', 'ja', 'nl', 'pt_BR'})
+        self.language_box.model().sort(0)
+        self.language_box_label.setBuddy(self.language_box)
+        lang_group_box_layout.addWidget(self.language_box_label, 0, 0)
+        lang_group_box_layout.addWidget(self.language_box, 0, 1)
+        # Load the combobox with the current preference setting
+        default_index = self.language_box.findText(plugin_prefs['user_lang'])
+        # Check if the user language is available. If not, fallbacks to English.
+        if default_index == -1:
+            self.language_box.setCurrentText('en')
+        else:
+            self.language_box.setCurrentIndex(default_index)
 
         # About button
         self.about_button = QPushButton(_('About'), self)
@@ -111,6 +142,7 @@ class ConfigWidget(QWidget):
         plugin_prefs['open_report'] = self.open_report_check.isChecked()
         plugin_prefs['debug_mode'] = self.debug_mode_check.isChecked()
         plugin_prefs['close_docks'] = self.close_docks_check.isChecked()
+        plugin_prefs['user_lang'] = self.language_box.currentText()
 
     def get_directory(self):
         c = choose_dir(self, PLUGIN_NAME + 'dir_chooser',

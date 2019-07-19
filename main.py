@@ -179,6 +179,7 @@ class AceTool(Tool):
         report_path = cfg.plugin_prefs['report_path']
         debug_mode = cfg.plugin_prefs['debug_mode']
         close_docks = cfg.plugin_prefs['close_docks']
+        user_lang = cfg.plugin_prefs['user_lang']
 
         # Create a savepoint
         try:
@@ -209,7 +210,7 @@ class AceTool(Tool):
             self.current_container.commit(epub_path)
 
             # Define ACE command line parameters
-            args = ['ace', '-f', '-o', report_folder, epub_path]
+            args = ['ace', '-f', '-o', report_folder, '-l', user_lang, epub_path]
 
             # Create a dictionary that maps names to relative hrefs
             epub_mime_map = self.current_container.mime_map
@@ -294,12 +295,11 @@ class AceTool(Tool):
                             for earl_assertion in assertion['assertions']:
 
                                 # Get error message
-                                error_message = (earl_assertion['earl:result']['dct:description'] + '.')\
-                                    .replace('Fix any of the following:\n ', '')\
-                                    .replace('Fix all of the following:\n ', '').replace('\n', '.').strip()
+                                error_message = (earl_assertion['earl:result']['dct:description'] + '.')
 
-                                # Get error level (serious, moderate, minor)
+                                # Get error level (critical, serious, moderate, minor) and id
                                 error_level = earl_assertion['earl:test']['earl:impact']
+                                error_id = earl_assertion['earl:test']['dct:title']
 
                                 # Get epubcfi
                                 if 'earl:pointer' in earl_assertion['earl:result']:
@@ -309,7 +309,7 @@ class AceTool(Tool):
                                     epubcfi = '/2'
 
                                 # Get html (snippet) and recommended ARIA role
-                                role = None
+                                roles = []
                                 if 'html' in earl_assertion['earl:result']:
                                     snippet = earl_assertion['earl:result']['html']
                                     if numeric_version < (3, 41, 0):
@@ -317,18 +317,30 @@ class AceTool(Tool):
                                         tag = soup.contents[0]
                                         if tag.has_key('epub:type'):
                                             epub_type = tag['epub:type']
-                                            role = getrole(epub_type)
+                                            epub_type_list = epub_type.split()
+                                            for epub_type_item in epub_type_list:
+                                                roles.append(getrole(epub_type_item))
                                     else:
                                         soup = BeautifulStoneSoup(snippet)
                                         tag = soup.contents[0]
                                         if 'epub:type' in tag.attrs:
                                             epub_type = tag['epub:type']
-                                            role = getrole(epub_type)
+                                            epub_type_list = epub_type.split()
+                                            for epub_type_item in epub_type_list:
+                                                roles.append(getrole(epub_type_item))
 
                                 # Add suggested role:
-                                if error_message == 'Element has no ARIA role matching its epub:type.'\
-                                        and role is not None:
-                                    error_message += ' Matching role: ' + role + '.'
+                                if error_id == 'epub-type-has-matching-role' and roles is not []:
+                                    role_string = None
+                                    multiple_roles_msg = ''
+                                    for role in roles:
+                                        if role is not None:
+                                            if role_string is None:
+                                                role_string = role
+                                            else:
+                                                role_string = role_string + ', ' + role
+                                                multiple_roles_msg = _(' (you must use only one role)')
+                                    error_message += _(' Matching ARIA role: ') + role_string + multiple_roles_msg + '.'
 
                                 # Save error information in a list
                                 error_messages.append((msg_index, error_message, error_level, file_name, epubcfi))
@@ -472,7 +484,9 @@ class AceTool(Tool):
                     msg_index, message, error_level, file_name, epubcfi = error_msg
 
                     # Set translatable severity type
-                    if error_level == 'serious':
+                    if error_level == 'critical':
+                        severity_type = _('Critical')
+                    elif error_level == 'serious':
                         severity_type = _('Serious')
                     elif error_level == 'moderate':
                         severity_type = _('Moderate')
@@ -483,12 +497,14 @@ class AceTool(Tool):
                     msg_index = "{0:0=3d}".format(msg_index)
                     item = QTreeWidgetItem(tree, [str(msg_index), os.path.split(file_name)[1], severity_type, message])
                     # Select background color based on severity
-                    if error_level == 'serious':
-                        bg_color = QtGui.QBrush(QtGui.QColor(255, 230, 230))
+                    if error_level == 'critical':
+                        bg_color = QtGui.QBrush(QtGui.QColor(255, 200, 200))
+                    elif error_level == 'serious':
+                        bg_color = QtGui.QBrush(QtGui.QColor(255, 220, 170))
                     elif error_level == 'moderate':
                         bg_color = QtGui.QBrush(QtGui.QColor(255, 255, 230))
                     else:
-                        bg_color = QtGui.QBrush(QtGui.QColor(224, 255, 255))
+                        bg_color = QtGui.QBrush(QtGui.QColor(190, 255, 255))
                     item.setBackground(0, QtGui.QColor(bg_color))
                     item.setBackground(1, QtGui.QColor(bg_color))
                     item.setBackground(2, QtGui.QColor(bg_color))
