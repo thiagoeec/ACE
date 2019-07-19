@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-19 07:57-0300\n"
+"POT-Creation-Date: 2019-07-19 09:04-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -164,7 +164,7 @@ msgid " (you must use only one role)"
 msgstr ""
 
 #: main.py:343
-msgid " Matching role: "
+msgid " Matching ARIA role: "
 msgstr ""
 
 #: main.py:355
