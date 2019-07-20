@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-06-03 21:25-0300\n"
+"POT-Creation-Date: 2019-07-19 09:04-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Samsul M <semarngaji@gmail.com>, 2019\n"
 "Language-Team: Indonesian (https://www.transifex.com/calibre/teams/19337/id/)\n"
@@ -24,55 +24,69 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr "Memeriksa aksesibilitas berkas EPUB dengan ACE."
 
-#: config.py:45
+#: config.py:50
 msgid "Report Folder:"
 msgstr "Folder Laporan:"
 
-#: config.py:53
+#: config.py:58
 msgid "Folder to save the report"
 msgstr "Folder simpan laporan"
 
-#: config.py:58
+#: config.py:63
 msgid "Select Report Folder"
 msgstr "Pilih Folder Laporan"
 
-#: config.py:59
+#: config.py:64
 msgid "Select the folder where the report will be saved."
 msgstr "Pilih folder untuk menyimpan laporan."
 
-#: config.py:65
+#: config.py:70
 msgid "Options:"
 msgstr "Opsi:"
 
-#: config.py:71
+#: config.py:76
 msgid "Open Report after checking"
 msgstr "Buka Laporan setelah pengecekan"
 
-#: config.py:72
+#: config.py:77
 msgid "Check it to open the html report on you default browser."
 msgstr "Contreng untuk membuka laporan HTML dengan browser."
 
-#: config.py:78
+#: config.py:83
 msgid "Debug Mode"
 msgstr "Moda Debug"
 
-#: config.py:79
+#: config.py:84
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr "Jika dicontreng, log ACE disimpan di clipboard."
 
-#: config.py:85
+#: config.py:90
 msgid "Close Validation Docks"
 msgstr "Tutup Dok Validasi"
 
-#: config.py:86
+#: config.py:91
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr "Jika dicontreng, ACE akan mencoba menutup dok validasi lainnya."
 
-#: config.py:92
+#: config.py:97
+msgid "Messages:"
+msgstr ""
+
+#: config.py:103
+msgid "&Language:"
+msgstr ""
+
+#: config.py:104
+msgid ""
+"Choose the language to show ACE and AXE messages. Some languages work for "
+"AXE, but not for ACE."
+msgstr ""
+
+#: config.py:123
 msgid "About"
 msgstr "Tentang"
 
-#: config.py:99
+#: config.py:130
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
@@ -80,11 +94,11 @@ msgstr ""
 "Plugin ini berdasarkan kode Doitsu untuk\n"
 "Plugin ACE Sigil dan EPUBCheck untuk calibre.\n"
 
-#: config.py:102
+#: config.py:133
 msgid "The Config Menu is based on KindleUnpack.\n"
 msgstr "Menu Config berdasarkan KindleUnpack.\n"
 
-#: config.py:104
+#: config.py:135
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
@@ -92,11 +106,11 @@ msgstr ""
 "Terima kasih kepada Kovid Goyal karena telah menambahkan fitur ini \n"
 "yang memungkinkan pesan error terkait."
 
-#: config.py:117
+#: config.py:149
 msgid "Select Directory to save Report to"
 msgstr "Pilih Direktori untuk menyimpan laporan ke"
 
-#: config.py:128
+#: config.py:160
 msgid ""
 "<p>The path specified for the Report Folder does not exist.<br/>Your latest "
 "preference changes will <b>NOT</b> be saved!</p>"
@@ -120,35 +134,35 @@ msgstr "Konfigurasikan"
 msgid "Configure ACE plugin"
 msgstr "Konfigurasikan plugin ACE"
 
-#: main.py:185
+#: main.py:186
 msgid "Before: ACE"
 msgstr "Sebelum: ACE"
 
-#: main.py:187
+#: main.py:188
 msgid "Empty Editor"
 msgstr "Kosongkan Editor"
 
-#: main.py:188
+#: main.py:189
 msgid "You must first open a book!"
 msgstr "Anda lebih dahulu harus membuka sebuah buku!"
 
-#: main.py:194
+#: main.py:195
 msgid "Unsupported file format"
 msgstr "Format berkas tidak didukung"
 
-#: main.py:195
+#: main.py:196
 msgid "You can't check {} files with ACE."
 msgstr "Anda tidak dapat mengecek berkas  {} dengan ACE."
 
-#: main.py:225 main.py:254
+#: main.py:226 main.py:255
 msgid "Checking book..."
 msgstr ""
 
-#: main.py:242 main.py:271
+#: main.py:243 main.py:272
 msgid "Error"
 msgstr "Error"
 
-#: main.py:245
+#: main.py:246
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -158,11 +172,19 @@ msgstr ""
 "Ingin mencoba menjalankannya kembali?\n"
 "Ini dapat memperbaiki beberapa error."
 
-#: main.py:248
+#: main.py:249
 msgid "Rerun"
 msgstr "Jalankan kembali"
 
+#: main.py:342
+msgid " (you must use only one role)"
+msgstr ""
+
 #: main.py:343
+msgid " Matching ARIA role: "
+msgstr ""
+
+#: main.py:355
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -170,57 +192,61 @@ msgstr ""
 "Cek ACE selesai!\n"
 "Selamat: tidak ditemukan error!"
 
-#: main.py:361
+#: main.py:373
 msgid "Error opening the report"
 msgstr "Error saat membuka laporan"
 
-#: main.py:362
+#: main.py:374
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "ACE tidak dapat membuka laporan. Klik 'Show Details' untuk info lebih "
 "detail."
 
-#: main.py:464 main.py:502
+#: main.py:476 main.py:518
 msgid "File"
 msgstr "Berkas"
 
-#: main.py:464 main.py:503
+#: main.py:476 main.py:519
 msgid "Severity"
 msgstr "Kepadatan"
 
-#: main.py:464 main.py:504
+#: main.py:476 main.py:520
 msgid "Error message"
 msgstr "Pesan error"
 
-#: main.py:466
+#: main.py:478
 msgid "Sort by Filename"
 msgstr "Urut berdasar Filename"
 
-#: main.py:467
+#: main.py:479
 msgid "Sort by Severity"
 msgstr "Urut berdasar Severity"
 
-#: main.py:468
+#: main.py:480
 msgid "Sort by Error Message"
 msgstr "Urut berdasar Pesan Error"
 
-#: main.py:476
+#: main.py:488
+msgid "Critical"
+msgstr ""
+
+#: main.py:490
 msgid "Serious"
 msgstr "Berat"
 
-#: main.py:478
+#: main.py:492
 msgid "Moderate"
 msgstr "Lumayan"
 
-#: main.py:480
+#: main.py:494
 msgid "Minor"
 msgstr "Ringan"
 
-#: main.py:528
+#: main.py:544
 msgid "Unhandled exception"
 msgstr "Pengecualian tak tertangani"
 
-#: main.py:529
+#: main.py:545
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Terjadi error yang tak diharapkan. Klik 'Show details' untuk info lebih "
