@@ -37,7 +37,7 @@ Options:
 
 ## Language
 
-<p>The default language for ACE is English. Other languages available: ACE (en, fr, pt_BR) and AXE (de, en, fr, ja, nl, pt_BR).
+<p>The default language for ACE is English. Other languages available: ACE (fr, pt_BR) and AXE (de, fr, ja, nl, pt_BR).
 <br/>As for the plugin itself, it is available* in several languages: de, et, es, eu, fr, hu, id, it, nl, pt_BR, ru, sv, and uk. *Some have partial translations.</p>
 
 ## Translation

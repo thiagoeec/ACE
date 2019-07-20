@@ -295,7 +295,8 @@ class AceTool(Tool):
                             for earl_assertion in assertion['assertions']:
 
                                 # Get error message
-                                error_message = (earl_assertion['earl:result']['dct:description'] + '.')
+                                error_message = (earl_assertion['earl:result']['dct:description'] + '.')\
+                                    .replace('\n\n', '. ').replace(':\n', ':').replace('\n', ';').strip()
 
                                 # Get error level (critical, serious, moderate, minor) and id
                                 error_level = earl_assertion['earl:test']['earl:impact']
