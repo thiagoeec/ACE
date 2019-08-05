@@ -8,13 +8,14 @@
 # Armin Geller <armin.geller@t-online.de>, 2019
 # pitfd <pitfd@posteo.de>, 2019
 # Dirk Hein <bankman@mailbox.org>, 2019
+# Janina Schlappkohl <mirataria@gmail.com>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-07-19 09:04-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: Dirk Hein <bankman@mailbox.org>, 2019\n"
+"Last-Translator: Janina Schlappkohl <mirataria@gmail.com>, 2019\n"
 "Language-Team: German (https://www.transifex.com/calibre/teams/19337/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,17 +78,19 @@ msgstr ""
 
 #: config.py:97
 msgid "Messages:"
-msgstr ""
+msgstr "Nachrichten"
 
 #: config.py:103
 msgid "&Language:"
-msgstr ""
+msgstr "&Sprache:"
 
 #: config.py:104
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
 msgstr ""
+"Wählen Sie die Sprache aus, in der ACE- und AXE-Nachrichten angezeigt werden"
+" sollen. Einige Sprachen funktionieren für AXE, aber nicht für ACE."
 
 #: config.py:123
 msgid "About"
@@ -187,11 +190,11 @@ msgstr "Erneut Ausführen"
 
 #: main.py:342
 msgid " (you must use only one role)"
-msgstr ""
+msgstr "(Sie darfst nur eine Rolle verwenden)"
 
 #: main.py:343
 msgid " Matching ARIA role: "
-msgstr ""
+msgstr "Passende ARIA Rolle:"
 
 #: main.py:355
 msgid ""
@@ -237,7 +240,7 @@ msgstr "Sortieren nach Fehlermeldung"
 
 #: main.py:488
 msgid "Critical"
-msgstr ""
+msgstr "Kritisch"
 
 #: main.py:490
 msgid "Serious"

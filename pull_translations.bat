@@ -1,5 +1,6 @@
 @echo off
 set PYTHONIOENCODING=UTF-8
+set CALIBRE_OVERRIDE_LANG=en
 setlocal enableDelayedExpansion
 
 :: Fetch new translations (over 20% finished). Use -f to force download.

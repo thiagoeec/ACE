@@ -180,6 +180,7 @@ class AceTool(Tool):
         debug_mode = cfg.plugin_prefs['debug_mode']
         close_docks = cfg.plugin_prefs['close_docks']
         user_lang = cfg.plugin_prefs['user_lang']
+        split_lines = cfg.plugin_prefs['split_lines']
 
         # Create a savepoint
         try:
@@ -295,8 +296,11 @@ class AceTool(Tool):
                             for earl_assertion in assertion['assertions']:
 
                                 # Get error message
-                                error_message = (earl_assertion['earl:result']['dct:description'] + '.')\
-                                    .replace('\n\n', '. ').replace(':\n', ':').replace('\n', ';').strip()
+                                if split_lines:
+                                    error_message = (earl_assertion['earl:result']['dct:description'] + '.')
+                                else:
+                                    error_message = (earl_assertion['earl:result']['dct:description'] + '.') \
+                                        .replace('\n', '. ').strip()
 
                                 # Get error level (critical, serious, moderate, minor) and id
                                 error_level = earl_assertion['earl:test']['earl:impact']

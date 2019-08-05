@@ -73,17 +73,19 @@ msgstr ""
 
 #: config.py:97
 msgid "Messages:"
-msgstr ""
+msgstr "Messages :"
 
 #: config.py:103
 msgid "&Language:"
-msgstr ""
+msgstr "&Langue :"
 
 #: config.py:104
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
 msgstr ""
+"Choisissez la langue d'affichage des messages ACE et AXE. Certaines langues "
+"fonctionnent pour AXE, mais pas pour ACE."
 
 #: config.py:123
 msgid "About"
@@ -181,11 +183,11 @@ msgstr "Relancer"
 
 #: main.py:342
 msgid " (you must use only one role)"
-msgstr ""
+msgstr " (vous ne devez utiliser qu'un seul rôle)"
 
 #: main.py:343
 msgid " Matching ARIA role: "
-msgstr ""
+msgstr " Correspondant au rôle ARIA : "
 
 #: main.py:355
 msgid ""
@@ -231,7 +233,7 @@ msgstr "Trier par Message d'Erreur"
 
 #: main.py:488
 msgid "Critical"
-msgstr ""
+msgstr "Critique"
 
 #: main.py:490
 msgid "Serious"

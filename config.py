@@ -35,6 +35,7 @@ plugin_prefs.defaults['open_report'] = True
 plugin_prefs.defaults['debug_mode'] = False
 plugin_prefs.defaults['close_docks'] = True
 plugin_prefs.defaults['user_lang'] = user_language[0]
+plugin_prefs.defaults['split_lines'] = False
 
 
 # Set up Config Dialog
@@ -93,6 +94,13 @@ class ConfigWidget(QWidget):
         # Load the checkbox with the current preference setting
         self.close_docks_check.setChecked(plugin_prefs['close_docks'])
 
+        # Split errors across multiple lines, when AXE give "Fix any/all of the following" messages
+        self.split_lines_check = QCheckBox(_('Split multiline &errors'), self)
+        self.split_lines_check.setToolTip(_('When checked, ACE will split multiline error messages.'))
+        misc_group_box_layout.addWidget(self.split_lines_check)
+        # Load the checkbox with the current preference setting
+        self.split_lines_check.setChecked(plugin_prefs['split_lines'])
+
         # --- Lang Options ---
         lang_group_box = QGroupBox(_('Messages:'), self)
         layout.addWidget(lang_group_box)
@@ -106,7 +114,7 @@ class ConfigWidget(QWidget):
         self.language_box_label.setToolTip(tooltip)
         self.language_box = QComboBox()
         self.language_box.setToolTip(tooltip)
-        self.language_box.addItems({'de', 'en', 'fr', 'ja', 'nl', 'pt_BR'})
+        self.language_box.addItems({'de', 'en', 'es', 'fr', 'ja', 'nl', 'pt_BR'})
         self.language_box.model().sort(0)
         self.language_box_label.setBuddy(self.language_box)
         lang_group_box_layout.addWidget(self.language_box_label, 0, 0)
@@ -143,6 +151,7 @@ class ConfigWidget(QWidget):
         plugin_prefs['debug_mode'] = self.debug_mode_check.isChecked()
         plugin_prefs['close_docks'] = self.close_docks_check.isChecked()
         plugin_prefs['user_lang'] = self.language_box.currentText()
+        plugin_prefs['split_lines'] = self.split_lines_check.isChecked()
 
     def get_directory(self):
         c = choose_dir(self, PLUGIN_NAME + 'dir_chooser',
