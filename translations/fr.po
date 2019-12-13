@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-19 09:04-0300\n"
+"POT-Creation-Date: 2019-08-05 20:17-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Ptit Prince <leporello1791@gmail.com>, 2019\n"
 "Language-Team: French (https://www.transifex.com/calibre/teams/19337/fr/)\n"
@@ -25,61 +25,69 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr "Vérification de l'accessibilité des fichiers EPUB avec ACE."
 
-#: config.py:50
+#: config.py:51
 msgid "Report Folder:"
 msgstr "Répertoire des Rapports : "
 
-#: config.py:58
+#: config.py:59
 msgid "Folder to save the report"
 msgstr "Répertoire dans lequel sauvegarder les rapports"
 
-#: config.py:63
+#: config.py:64
 msgid "Select Report Folder"
 msgstr "Sélectionner le Répertoire des Rapports"
 
-#: config.py:64
+#: config.py:65
 msgid "Select the folder where the report will be saved."
 msgstr ""
 "Sélectionner le répertoire dans lequel les rapports seront sauvegardés."
 
-#: config.py:70
+#: config.py:71
 msgid "Options:"
 msgstr "Options :"
 
-#: config.py:76
+#: config.py:77
 msgid "Open Report after checking"
 msgstr "Ouvrir le rapport après la vérification"
 
-#: config.py:77
+#: config.py:78
 msgid "Check it to open the html report on you default browser."
 msgstr "Cochez ceci pour ouvrir le rapport html dans votre navigateur."
 
-#: config.py:83
+#: config.py:84
 msgid "Debug Mode"
 msgstr "Mode débogage"
 
-#: config.py:84
+#: config.py:85
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr "Lorsque coché, le journal ACE sera sauvegardé vers le presse-papiers."
 
-#: config.py:90
+#: config.py:91
 msgid "Close Validation Docks"
 msgstr "Fermer les Volets de Validation"
 
-#: config.py:91
+#: config.py:92
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr ""
 "Lorsque coché, ACE essayera de fermer les autres volets de validation."
 
-#: config.py:97
+#: config.py:98
+msgid "Split multiline &errors"
+msgstr "Fractionner les &erreurs multilignes"
+
+#: config.py:99
+msgid "When checked, ACE will split multiline error messages."
+msgstr "Lorsque cochée, ACE fractionnera les messages d'erreur multilignes."
+
+#: config.py:105
 msgid "Messages:"
 msgstr "Messages :"
 
-#: config.py:103
+#: config.py:111
 msgid "&Language:"
 msgstr "&Langue :"
 
-#: config.py:104
+#: config.py:112
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
@@ -87,11 +95,11 @@ msgstr ""
 "Choisissez la langue d'affichage des messages ACE et AXE. Certaines langues "
 "fonctionnent pour AXE, mais pas pour ACE."
 
-#: config.py:123
+#: config.py:131
 msgid "About"
 msgstr "À propos"
 
-#: config.py:130
+#: config.py:138
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
@@ -99,11 +107,11 @@ msgstr ""
 "Cette extension est basée sur le code de Doitsu pour\n"
 "l'Extension ACEde Sigil et d'EPUBCheck pour calibre.\n"
 
-#: config.py:133
+#: config.py:141
 msgid "The Config Menu is based on KindleUnpack.\n"
 msgstr "Le Menu de Configuration est basé sur KindleUnpack.\n"
 
-#: config.py:135
+#: config.py:143
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
@@ -111,11 +119,11 @@ msgstr ""
 "Merci à Kovid Goyal pour l’ajout de la fonctionnalité\n"
 "cela a rendu possible les messages d'erreur liés."
 
-#: config.py:149
+#: config.py:158
 msgid "Select Directory to save Report to"
 msgstr "Sélectionner le Répertoire vers lequel sauvegarder le Rapport"
 
-#: config.py:160
+#: config.py:169
 msgid ""
 "<p>The path specified for the Report Folder does not exist.<br/>Your latest "
 "preference changes will <b>NOT</b> be saved!</p>"
@@ -139,35 +147,35 @@ msgstr "Configurer"
 msgid "Configure ACE plugin"
 msgstr "Configurer extension ACE"
 
-#: main.py:186
+#: main.py:187
 msgid "Before: ACE"
 msgstr "Avant : ACE"
 
-#: main.py:188
+#: main.py:189
 msgid "Empty Editor"
 msgstr "Éditeur vide"
 
-#: main.py:189
+#: main.py:190
 msgid "You must first open a book!"
 msgstr "Vous devez d'abord ouvrir un livre !"
 
-#: main.py:195
+#: main.py:196
 msgid "Unsupported file format"
 msgstr "Format de fichier non supporté"
 
-#: main.py:196
+#: main.py:197
 msgid "You can't check {} files with ACE."
 msgstr "Vous ne pouvez vérifier les fichiers {} avec ACE."
 
-#: main.py:226 main.py:255
+#: main.py:227 main.py:256
 msgid "Checking book..."
 msgstr "Vérification du livre en cours..."
 
-#: main.py:243 main.py:272
+#: main.py:244 main.py:273
 msgid "Error"
 msgstr "Erreur"
 
-#: main.py:246
+#: main.py:247
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -177,19 +185,19 @@ msgstr ""
 "Voulez-vous essayer de le relancer ?\n"
 "Ceci peut résoudre certaines erreurs."
 
-#: main.py:249
+#: main.py:250
 msgid "Rerun"
 msgstr "Relancer"
 
-#: main.py:342
+#: main.py:347
 msgid " (you must use only one role)"
 msgstr " (vous ne devez utiliser qu'un seul rôle)"
 
-#: main.py:343
+#: main.py:348
 msgid " Matching ARIA role: "
-msgstr " Correspondant au rôle ARIA : "
+msgstr "Correspondant au rôle ARIA :"
 
-#: main.py:355
+#: main.py:360
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -197,61 +205,61 @@ msgstr ""
 "La vérification ACE est terminée !\n"
 "Félicitations : aucune erreur n'a été trouvée !"
 
-#: main.py:373
+#: main.py:378
 msgid "Error opening the report"
 msgstr "Erreur lors de l'ouverture du rapport"
 
-#: main.py:374
+#: main.py:379
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "ACE ne peut pas ouvrir le rapport. Cliquer sur 'Afficher les détails' pour "
 "plus d'informations."
 
-#: main.py:476 main.py:518
+#: main.py:481 main.py:523
 msgid "File"
 msgstr "Fichier"
 
-#: main.py:476 main.py:519
+#: main.py:481 main.py:524
 msgid "Severity"
 msgstr "Gravité"
 
-#: main.py:476 main.py:520
+#: main.py:481 main.py:525
 msgid "Error message"
 msgstr "Message d'erreur"
 
-#: main.py:478
+#: main.py:483
 msgid "Sort by Filename"
 msgstr "Trier par Nom de fichier"
 
-#: main.py:479
+#: main.py:484
 msgid "Sort by Severity"
 msgstr "Trier par Gravité"
 
-#: main.py:480
+#: main.py:485
 msgid "Sort by Error Message"
 msgstr "Trier par Message d'Erreur"
 
-#: main.py:488
+#: main.py:493
 msgid "Critical"
 msgstr "Critique"
 
-#: main.py:490
+#: main.py:495
 msgid "Serious"
 msgstr "Préoccupante"
 
-#: main.py:492
+#: main.py:497
 msgid "Moderate"
 msgstr "Modérée"
 
-#: main.py:494
+#: main.py:499
 msgid "Minor"
 msgstr "Mineure"
 
-#: main.py:544
+#: main.py:549
 msgid "Unhandled exception"
 msgstr "Exception non gérée"
 
-#: main.py:545
+#: main.py:550
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Une erreur inattendue s'est produite. Cliquez sur 'Afficher les détails' "

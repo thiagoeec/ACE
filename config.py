@@ -35,7 +35,7 @@ plugin_prefs.defaults['open_report'] = True
 plugin_prefs.defaults['debug_mode'] = False
 plugin_prefs.defaults['close_docks'] = True
 plugin_prefs.defaults['user_lang'] = user_language[0]
-plugin_prefs.defaults['split_lines'] = False
+plugin_prefs.defaults['split_lines'] = True
 
 
 # Set up Config Dialog

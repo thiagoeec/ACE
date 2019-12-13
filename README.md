@@ -34,6 +34,7 @@ Options:
  * <i>Debug Mode</i>: copy ACE log to clipboard.
  * <i>Close Validation Docks</i>: automatically close Check Book and EPUBCheck docks.
  * <i>Language</i>: choose the language to display Ace messages.
+ * <i>Split multiline errors</i>: split into multiple lines long messages.
 
 ## Language
 

@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-19 09:04-0300\n"
+"POT-Creation-Date: 2019-08-05 20:17-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Jonatan Nyberg, 2019\n"
 "Language-Team: Swedish (https://www.transifex.com/calibre/teams/19337/sv/)\n"
@@ -25,89 +25,103 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr "Kontrollerar tillgängligheten av EPUB-filer med ACE."
 
-#: config.py:50
+#: config.py:51
 msgid "Report Folder:"
 msgstr "Rapportmapp:"
 
-#: config.py:58
+#: config.py:59
 msgid "Folder to save the report"
 msgstr "Mapp för att spara rapporten"
 
-#: config.py:63
+#: config.py:64
 msgid "Select Report Folder"
 msgstr "Välj rapportmapp"
 
-#: config.py:64
+#: config.py:65
 msgid "Select the folder where the report will be saved."
 msgstr "Välj den mapp där rapporten ska sparas."
 
-#: config.py:70
+#: config.py:71
 msgid "Options:"
 msgstr "Alternativ:"
 
-#: config.py:76
+#: config.py:77
 msgid "Open Report after checking"
 msgstr "Öppna rapport efter kontroll"
 
-#: config.py:77
+#: config.py:78
 msgid "Check it to open the html report on you default browser."
-msgstr ""
+msgstr "Markera den för att öppna html-rapporten i din standardwebbläsare."
 
-#: config.py:83
+#: config.py:84
 msgid "Debug Mode"
 msgstr "Felsökningsläge"
 
-#: config.py:84
+#: config.py:85
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr "När det är markerat kommer ACE-logg att sparas till urklipp."
 
-#: config.py:90
-msgid "Close Validation Docks"
-msgstr ""
-
 #: config.py:91
+msgid "Close Validation Docks"
+msgstr "Stäng valideringsdockor"
+
+#: config.py:92
 msgid "When checked, ACE will attempt to close other validation docks."
+msgstr "När markerad kommer ACE att försöka stänga andra valideringsdockor."
+
+#: config.py:98
+msgid "Split multiline &errors"
 msgstr ""
 
-#: config.py:97
+#: config.py:99
+msgid "When checked, ACE will split multiline error messages."
+msgstr ""
+
+#: config.py:105
 msgid "Messages:"
-msgstr ""
+msgstr "Meddelanden:"
 
-#: config.py:103
+#: config.py:111
 msgid "&Language:"
-msgstr ""
+msgstr "&Språk:"
 
-#: config.py:104
+#: config.py:112
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
 msgstr ""
+"Välj språk för att visa ACE- och AX-meddelanden. Vissa språk fungerar för "
+"AX, men inte för ACE."
 
-#: config.py:123
+#: config.py:131
 msgid "About"
 msgstr "Om"
 
-#: config.py:130
+#: config.py:138
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
 msgstr ""
+"Denna insticksmodul är baserad på Doitsus kod för\n"
+"Sigils ACE-insticksmodul och EPUBCheck för kaliber.\n"
 
-#: config.py:133
+#: config.py:141
 msgid "The Config Menu is based on KindleUnpack.\n"
-msgstr ""
+msgstr "Config-menyn är baserad på KindleUnpack.\n"
 
-#: config.py:135
+#: config.py:143
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
 msgstr ""
+"Tack till Kovid Goyal för att du har lagt till funktionen\n"
+"som möjliggjorde länkade felmeddelanden."
 
-#: config.py:149
+#: config.py:158
 msgid "Select Directory to save Report to"
 msgstr "Välj katalog för att spara rapport till"
 
-#: config.py:160
+#: config.py:169
 msgid ""
 "<p>The path specified for the Report Folder does not exist.<br/>Your latest "
 "preference changes will <b>NOT</b> be saved!</p>"
@@ -131,35 +145,35 @@ msgstr "Konfigurera"
 msgid "Configure ACE plugin"
 msgstr "Konfigurera ACE-insticksmodulen"
 
-#: main.py:186
+#: main.py:187
 msgid "Before: ACE"
 msgstr "Före: ACE"
 
-#: main.py:188
+#: main.py:189
 msgid "Empty Editor"
 msgstr ""
 
-#: main.py:189
+#: main.py:190
 msgid "You must first open a book!"
-msgstr ""
+msgstr "Du måste först öppna en bok!"
 
-#: main.py:195
+#: main.py:196
 msgid "Unsupported file format"
 msgstr "Filformatet stöds inte"
 
-#: main.py:196
+#: main.py:197
 msgid "You can't check {} files with ACE."
 msgstr "Du kan inte kontrollera {} filer med ACE."
 
-#: main.py:226 main.py:255
+#: main.py:227 main.py:256
 msgid "Checking book..."
-msgstr ""
+msgstr "Kontrollerar bok..."
 
-#: main.py:243 main.py:272
+#: main.py:244 main.py:273
 msgid "Error"
 msgstr "Fel"
 
-#: main.py:246
+#: main.py:247
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -169,76 +183,80 @@ msgstr ""
 "Vill du försöka köra om det?\n"
 "Detta kan lösa några fel."
 
-#: main.py:249
+#: main.py:250
 msgid "Rerun"
 msgstr "Kör om"
 
-#: main.py:342
+#: main.py:347
 msgid " (you must use only one role)"
-msgstr ""
+msgstr "(du ska bara använda en roll)"
 
-#: main.py:343
+#: main.py:348
 msgid " Matching ARIA role: "
-msgstr ""
+msgstr "Matchande ARIA-roll: "
 
-#: main.py:355
+#: main.py:360
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
 msgstr ""
+"ACE-kontrollen är klar!\n"
+"Grattis: inga fel hittades!"
 
-#: main.py:373
+#: main.py:378
 msgid "Error opening the report"
-msgstr ""
+msgstr "Fel vid öppnande av rapporten"
 
-#: main.py:374
+#: main.py:379
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
+"Ace kunde inte öppna rapporten. Klicka på \"Visa detaljer\" för mer "
+"information."
 
-#: main.py:476 main.py:518
+#: main.py:481 main.py:523
 msgid "File"
-msgstr ""
+msgstr "Fil"
 
-#: main.py:476 main.py:519
+#: main.py:481 main.py:524
 msgid "Severity"
-msgstr ""
+msgstr "Allvarlighet"
 
-#: main.py:476 main.py:520
+#: main.py:481 main.py:525
 msgid "Error message"
-msgstr ""
+msgstr "Felmeddelande"
 
-#: main.py:478
+#: main.py:483
 msgid "Sort by Filename"
-msgstr ""
+msgstr "Sortera efter filnamn"
 
-#: main.py:479
+#: main.py:484
 msgid "Sort by Severity"
-msgstr ""
+msgstr "Sortera efter allvarlighet"
 
-#: main.py:480
+#: main.py:485
 msgid "Sort by Error Message"
-msgstr ""
+msgstr "Sortera efter felmeddelande"
 
-#: main.py:488
+#: main.py:493
 msgid "Critical"
-msgstr ""
+msgstr "Kritisk"
 
-#: main.py:490
+#: main.py:495
 msgid "Serious"
-msgstr ""
+msgstr "Allvarlig"
 
-#: main.py:492
+#: main.py:497
 msgid "Moderate"
-msgstr ""
+msgstr "Måttlig"
 
-#: main.py:494
+#: main.py:499
 msgid "Minor"
-msgstr ""
+msgstr "Mindre"
 
-#: main.py:544
+#: main.py:549
 msgid "Unhandled exception"
 msgstr "Ohanterat undantag"
 
-#: main.py:545
+#: main.py:550
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr "Ett oväntat fel uppstod. Klicka på \"Visa detaljer\" för mer info."

@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-19 09:04-0300\n"
+"POT-Creation-Date: 2019-08-05 20:17-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: M. de Boer <de.boer.melle@gmail.com>, 2019\n"
 "Language-Team: Dutch (https://www.transifex.com/calibre/teams/19337/nl/)\n"
@@ -24,70 +24,80 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr "Controleert de toegankelijkheid van EPUB-bestanden met ACE."
 
-#: config.py:50
+#: config.py:51
 msgid "Report Folder:"
 msgstr "Rapport  map:"
 
-#: config.py:58
+#: config.py:59
 msgid "Folder to save the report"
 msgstr "Map om het rapport op te slaan"
 
-#: config.py:63
+#: config.py:64
 msgid "Select Report Folder"
 msgstr "Selecteer Rapportmap"
 
-#: config.py:64
+#: config.py:65
 msgid "Select the folder where the report will be saved."
 msgstr "Selecteer de map waarin het rapport zal worden opgeslagen."
 
-#: config.py:70
+#: config.py:71
 msgid "Options:"
 msgstr "Opties:"
 
-#: config.py:76
+#: config.py:77
 msgid "Open Report after checking"
 msgstr "Rapport openen na controle"
 
-#: config.py:77
+#: config.py:78
 msgid "Check it to open the html report on you default browser."
 msgstr "Vink het aan om het html-rapport in uw standaardbrowser te openen."
 
-#: config.py:83
+#: config.py:84
 msgid "Debug Mode"
 msgstr "Debug-modus"
 
-#: config.py:84
+#: config.py:85
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr ""
 "Wanneer ingeschakeld, wordt het ACE-logboek opgeslagen op het klembord."
 
-#: config.py:90
+#: config.py:91
 msgid "Close Validation Docks"
 msgstr "Validatie-docks sluiten"
 
-#: config.py:91
+#: config.py:92
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr "Wanneer ingeschakeld, probeert ACE andere validatiedocks te sluiten."
 
-#: config.py:97
+#: config.py:98
+msgid "Split multiline &errors"
+msgstr "Multiline &fouten splitsen"
+
+#: config.py:99
+msgid "When checked, ACE will split multiline error messages."
+msgstr "Indien ingeschakeld, splitst ACE foutmeldingen op meerdere regels op."
+
+#: config.py:105
 msgid "Messages:"
-msgstr ""
+msgstr "berichten:"
 
-#: config.py:103
+#: config.py:111
 msgid "&Language:"
-msgstr ""
+msgstr "&Taal:"
 
-#: config.py:104
+#: config.py:112
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
 msgstr ""
+"Kies de taal om ACE- en AXE-berichten weer te geven. Sommige talen werken "
+"voor AXE, maar niet voor ACE."
 
-#: config.py:123
+#: config.py:131
 msgid "About"
 msgstr "over"
 
-#: config.py:130
+#: config.py:138
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
@@ -95,11 +105,11 @@ msgstr ""
 "Deze plugin is gebaseerd op Doitsu's code voor\n"
 "Sigil's ACE Plugin en EPUBCheck voor calibre.\n"
 
-#: config.py:133
+#: config.py:141
 msgid "The Config Menu is based on KindleUnpack.\n"
 msgstr "Het Configuratie-menu is gebaseerd op KindleUnpack.\n"
 
-#: config.py:135
+#: config.py:143
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
@@ -107,11 +117,11 @@ msgstr ""
 "Met dank aan Kovid Goyal voor het toevoegen van de functie\n"
 "dat mogelijk gekoppelde foutmeldingen mogelijk maakte."
 
-#: config.py:149
+#: config.py:158
 msgid "Select Directory to save Report to"
 msgstr "Selecteer locatie om het rapport op te slaan"
 
-#: config.py:160
+#: config.py:169
 msgid ""
 "<p>The path specified for the Report Folder does not exist.<br/>Your latest "
 "preference changes will <b>NOT</b> be saved!</p>"
@@ -135,35 +145,35 @@ msgstr "configureren"
 msgid "Configure ACE plugin"
 msgstr "Configureer de ACE-plug-in"
 
-#: main.py:186
+#: main.py:187
 msgid "Before: ACE"
 msgstr "Vóór: ACE"
 
-#: main.py:188
+#: main.py:189
 msgid "Empty Editor"
 msgstr "Lege editor"
 
-#: main.py:189
+#: main.py:190
 msgid "You must first open a book!"
 msgstr "U moet eerst een boek openen!"
 
-#: main.py:195
+#: main.py:196
 msgid "Unsupported file format"
 msgstr "Niet ondersteund bestandsformaat"
 
-#: main.py:196
+#: main.py:197
 msgid "You can't check {} files with ACE."
 msgstr "U kunt {} bestanden niet controleren met ACE."
 
-#: main.py:226 main.py:255
+#: main.py:227 main.py:256
 msgid "Checking book..."
-msgstr ""
+msgstr "Boek controleren ..."
 
-#: main.py:243 main.py:272
+#: main.py:244 main.py:273
 msgid "Error"
 msgstr "Fout"
 
-#: main.py:246
+#: main.py:247
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -173,19 +183,19 @@ msgstr ""
 "Wilt u proberen het opnieuw uit te voeren?\n"
 "Dit kan een paar fouten oplossen."
 
-#: main.py:249
+#: main.py:250
 msgid "Rerun"
 msgstr "Draai opnieuw"
 
-#: main.py:342
+#: main.py:347
 msgid " (you must use only one role)"
-msgstr ""
+msgstr "(u moet slechts één rol gebruiken)"
 
-#: main.py:343
+#: main.py:348
 msgid " Matching ARIA role: "
-msgstr ""
+msgstr "Overeenkomende ARIA-rol:"
 
-#: main.py:355
+#: main.py:360
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -193,61 +203,61 @@ msgstr ""
 "ACE-controle is voltooid!\n"
 "Gefeliciteerd: er zijn geen fouten gevonden!"
 
-#: main.py:373
+#: main.py:378
 msgid "Error opening the report"
 msgstr "Fout bij openen van het rapport"
 
-#: main.py:374
+#: main.py:379
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "Ace kan het rapport niet openen. Klik op 'Details weergeven' voor meer "
 "informatie."
 
-#: main.py:476 main.py:518
+#: main.py:481 main.py:523
 msgid "File"
 msgstr "Bestand"
 
-#: main.py:476 main.py:519
+#: main.py:481 main.py:524
 msgid "Severity"
 msgstr "Prioriteit"
 
-#: main.py:476 main.py:520
+#: main.py:481 main.py:525
 msgid "Error message"
 msgstr "Foutmelding"
 
-#: main.py:478
+#: main.py:483
 msgid "Sort by Filename"
 msgstr "Sorteer op bestandsnaam"
 
-#: main.py:479
+#: main.py:484
 msgid "Sort by Severity"
 msgstr "Sorteer op prioriteit"
 
-#: main.py:480
+#: main.py:485
 msgid "Sort by Error Message"
 msgstr "Sorteren op foutbericht"
 
-#: main.py:488
+#: main.py:493
 msgid "Critical"
-msgstr ""
+msgstr "kritisch"
 
-#: main.py:490
+#: main.py:495
 msgid "Serious"
 msgstr "ernstig"
 
-#: main.py:492
+#: main.py:497
 msgid "Moderate"
 msgstr "Matig"
 
-#: main.py:494
+#: main.py:499
 msgid "Minor"
 msgstr "minder"
 
-#: main.py:544
+#: main.py:549
 msgid "Unhandled exception"
 msgstr "Onbehandelde uitzondering"
 
-#: main.py:545
+#: main.py:550
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Er is een onverwachte fout opgetreden. Klik op 'Details weergeven' voor meer"

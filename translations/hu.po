@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Zoltán Csáti <csati_zoltan@freemail.hu>, 2019
+# Szabó Péter <melchiadesian@gmail.com>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-19 09:04-0300\n"
+"POT-Creation-Date: 2019-08-05 20:17-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: Zoltán Csáti <csati_zoltan@freemail.hu>, 2019\n"
+"Last-Translator: Szabó Péter <melchiadesian@gmail.com>, 2019\n"
 "Language-Team: Hungarian (https://www.transifex.com/calibre/teams/19337/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,93 +24,113 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr "EPUB fájlok elérhetőségének ellenőrzése ACE-szel."
 
-#: config.py:50
+#: config.py:51
 msgid "Report Folder:"
-msgstr ""
+msgstr "Jelentés mappa:"
 
-#: config.py:58
+#: config.py:59
 msgid "Folder to save the report"
-msgstr ""
-
-#: config.py:63
-msgid "Select Report Folder"
-msgstr ""
+msgstr "Mappa a jelentés mentéséhez"
 
 #: config.py:64
+msgid "Select Report Folder"
+msgstr "Jelentés mappa kiválasztása"
+
+#: config.py:65
 msgid "Select the folder where the report will be saved."
-msgstr ""
+msgstr "Válaszd ki a mappát, ahová a jelentés el lesz mentve."
 
-#: config.py:70
+#: config.py:71
 msgid "Options:"
-msgstr "Beállítások"
-
-#: config.py:76
-msgid "Open Report after checking"
-msgstr ""
+msgstr "Beállítások:"
 
 #: config.py:77
+msgid "Open Report after checking"
+msgstr "Jelentés megnyitása ellenőrzés után"
+
+#: config.py:78
 msgid "Check it to open the html report on you default browser."
 msgstr ""
-
-#: config.py:83
-msgid "Debug Mode"
-msgstr ""
+"Ellenőrizd a html jelentés megnyitásával az alapértelmezett böngésződön."
 
 #: config.py:84
-msgid "When checked, ACE log will be saved to clipboard."
-msgstr ""
+msgid "Debug Mode"
+msgstr "Hibakereső mód"
 
-#: config.py:90
-msgid "Close Validation Docks"
-msgstr ""
+#: config.py:85
+msgid "When checked, ACE log will be saved to clipboard."
+msgstr "Amikor ellenőrizte, az ACE napló elmentődik a vágólapra."
 
 #: config.py:91
+msgid "Close Validation Docks"
+msgstr "Validációs dokkok bezárása"
+
+#: config.py:92
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr ""
+"Amikor ellenőrizte, az ACE meg fogja kísérelni bezárni a többi valódációs "
+"dokkot."
 
-#: config.py:97
+#: config.py:98
+msgid "Split multiline &errors"
+msgstr "Többsoros &hibák feldarabolása"
+
+#: config.py:99
+msgid "When checked, ACE will split multiline error messages."
+msgstr ""
+"Amikor ellenőrizte, az ACE a többsoros hibaüzeneteket fel fogja darabolni."
+
+#: config.py:105
 msgid "Messages:"
-msgstr ""
+msgstr "Üzenetek:"
 
-#: config.py:103
+#: config.py:111
 msgid "&Language:"
-msgstr ""
+msgstr "&Nyelv:"
 
-#: config.py:104
+#: config.py:112
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
 msgstr ""
+"Válassz nyelvet az ACE és AXE üzenetek mutatásához. Némelyik nyelv működik "
+"az AXE esetén, míg az ACE-nál nem."
 
-#: config.py:123
+#: config.py:131
 msgid "About"
-msgstr ""
+msgstr "Névjegy"
 
-#: config.py:130
+#: config.py:138
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
 msgstr ""
+"Ez a bőcítmény egy Doitsu kódon alapul a\n"
+"Sigil ACE bővítményéhez és a calibre EPUBCheck-jéhez.\n"
 
-#: config.py:133
+#: config.py:141
 msgid "The Config Menu is based on KindleUnpack.\n"
-msgstr ""
+msgstr "A beállítás menü KindleUnpack alapú.\n"
 
-#: config.py:135
+#: config.py:143
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
 msgstr ""
+"Köszönet Kovid Goyalnak a funkció hozzáadásáért,\n"
+"amivel lehetővé vált a hibaüzenetek csatolása."
 
-#: config.py:149
+#: config.py:158
 msgid "Select Directory to save Report to"
-msgstr ""
+msgstr "Válassz könyvtárat a jelentés mentéséhez"
 
-#: config.py:160
+#: config.py:169
 msgid ""
 "<p>The path specified for the Report Folder does not exist.<br/>Your latest "
 "preference changes will <b>NOT</b> be saved!</p>"
 msgstr ""
+"<p>A Jelentés mappához megadott útvonal nem létezik.<br/>A legutóbbi "
+"beállításod változásai <b>NEM</b> lesznek elmentve!</p>"
 
 #: main.py:130
 msgid "Configure ACE"
@@ -121,117 +142,126 @@ msgstr "ACE futtatása"
 
 #: main.py:167
 msgid "Configure"
-msgstr "Testreszab"
+msgstr "Konfigurálás"
 
 #: main.py:169
 msgid "Configure ACE plugin"
 msgstr "ACE beépülő konfigurálása"
 
-#: main.py:186
+#: main.py:187
 msgid "Before: ACE"
-msgstr ""
-
-#: main.py:188
-msgid "Empty Editor"
-msgstr ""
+msgstr "Előtte: ACE"
 
 #: main.py:189
-msgid "You must first open a book!"
-msgstr ""
+msgid "Empty Editor"
+msgstr "Üres szerkesztő"
 
-#: main.py:195
-msgid "Unsupported file format"
-msgstr "Nem támogatott fájl formátum"
+#: main.py:190
+msgid "You must first open a book!"
+msgstr "Először meg kell nyitnod egy könyvet!"
 
 #: main.py:196
+msgid "Unsupported file format"
+msgstr "Nem támogatott fájlformátum"
+
+#: main.py:197
 msgid "You can't check {} files with ACE."
-msgstr ""
+msgstr "Nem {} fájlokat ACE-val."
 
-#: main.py:226 main.py:255
+#: main.py:227 main.py:256
 msgid "Checking book..."
-msgstr ""
+msgstr "Könyv ellenőrzése..."
 
-#: main.py:243 main.py:272
+#: main.py:244 main.py:273
 msgid "Error"
 msgstr "Hiba"
 
-#: main.py:246
+#: main.py:247
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
 "This can resolve a few errors."
 msgstr ""
+"Az ACE hubát talált futtatás során.\n"
+"Szeretnéd megpróbálni újrafuttatni?\n"
+"Ez megoldhat néhány hibát."
 
-#: main.py:249
+#: main.py:250
 msgid "Rerun"
-msgstr ""
+msgstr "Vissza"
 
-#: main.py:342
+#: main.py:347
 msgid " (you must use only one role)"
-msgstr ""
+msgstr "(csak egy szerepkört használhatsz)"
 
-#: main.py:343
+#: main.py:348
 msgid " Matching ARIA role: "
-msgstr ""
+msgstr "Egyező ARIA szerepkör:"
 
-#: main.py:355
+#: main.py:360
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
 msgstr ""
+"Az ACE ellenőrzés befejeződött!\n"
+"Gratulálunk: nincs hiba!"
 
-#: main.py:373
+#: main.py:378
 msgid "Error opening the report"
-msgstr ""
+msgstr "Hiba a jelentés megnyitásakor"
 
-#: main.py:374
+#: main.py:379
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
+"Az Ace nem tudja megnyitni a jelentést. Kattints a 'Részletek mutatása'-ra "
+"további információkért."
 
-#: main.py:476 main.py:518
+#: main.py:481 main.py:523
 msgid "File"
-msgstr ""
+msgstr "Fájl"
 
-#: main.py:476 main.py:519
+#: main.py:481 main.py:524
 msgid "Severity"
-msgstr ""
+msgstr "Súlyosság"
 
-#: main.py:476 main.py:520
+#: main.py:481 main.py:525
 msgid "Error message"
-msgstr ""
+msgstr "Hibaüzenet"
 
-#: main.py:478
+#: main.py:483
 msgid "Sort by Filename"
-msgstr ""
+msgstr "Rendezés fájlnév szerint"
 
-#: main.py:479
+#: main.py:484
 msgid "Sort by Severity"
-msgstr ""
+msgstr "Rendezés súlyosság szerint"
 
-#: main.py:480
+#: main.py:485
 msgid "Sort by Error Message"
-msgstr ""
+msgstr "Rendezés hibaüzenet szerint"
 
-#: main.py:488
+#: main.py:493
 msgid "Critical"
-msgstr ""
+msgstr "Kritikus"
 
-#: main.py:490
+#: main.py:495
 msgid "Serious"
-msgstr ""
+msgstr "Súlyos"
 
-#: main.py:492
+#: main.py:497
 msgid "Moderate"
-msgstr ""
+msgstr "Mérsékelt"
 
-#: main.py:494
+#: main.py:499
 msgid "Minor"
-msgstr ""
+msgstr "Kisebb"
 
-#: main.py:544
+#: main.py:549
 msgid "Unhandled exception"
-msgstr ""
+msgstr "Kezeletlen kivétel"
 
-#: main.py:545
+#: main.py:550
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
+"Egy váratlan hiba történt. Kattints a 'Részletek mutatása'-ra további "
+"információkért."

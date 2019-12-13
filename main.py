@@ -212,6 +212,7 @@ class AceTool(Tool):
             self.current_container.commit(epub_path)
 
             # Define ACE command line parameters
+            # args = ['yarn', '--cwd', 'F:\\GitHub\\ace-tool\\ace', 'ace', '-f', '-o', report_folder, '-l', user_lang, epub_path]
             args = ['ace', '-f', '-o', report_folder, '-l', user_lang, epub_path]
 
             # Create a dictionary that maps names to relative hrefs
@@ -226,6 +227,7 @@ class AceTool(Tool):
                 QApplication.setOverrideCursor(Qt.WaitCursor)
 
                 self.gui.show_status_message(_("Checking book..."), 5)
+                QApplication.processEvents(QtCore.QEventLoop.ExcludeUserInputEvents)
 
                 # Run ACE
                 result, return_code = ace_wrapper(*args)
@@ -255,6 +257,7 @@ class AceTool(Tool):
                         QApplication.setOverrideCursor(Qt.WaitCursor)
 
                         self.gui.show_status_message(_("Checking book..."), 5)
+                        QApplication.processEvents(QtCore.QEventLoop.ExcludeUserInputEvents)
 
                         # Rerun ACE
                         result, return_code = ace_wrapper(*args)
@@ -298,7 +301,7 @@ class AceTool(Tool):
 
                                 # Get error message
                                 if split_lines:
-                                    error_message = (earl_assertion['earl:result']['dct:description'] + '.')
+                                    error_message = (earl_assertion['earl:result']['dct:description'])
                                 else:
                                     error_message = (earl_assertion['earl:result']['dct:description'] + '.') \
                                         .replace('\n', '. ').strip()
@@ -469,6 +472,7 @@ class AceTool(Tool):
                             widget.close()
 
                 # Define dock widget layout
+                is_dark_theme = QApplication.instance().is_dark_theme
                 tree = QTreeWidget()
                 tree.setRootIsDecorated(False)
                 layout = QVBoxLayout()
@@ -504,17 +508,22 @@ class AceTool(Tool):
                     item = QTreeWidgetItem(tree, [str(msg_index), os.path.split(file_name)[1], severity_type, message])
                     # Select background color based on severity
                     if error_level == 'critical':
-                        bg_color = QtGui.QBrush(QtGui.QColor(255, 200, 200))
+                        bg_color = QtGui.QBrush(QtGui.QColor(255, 190, 190))
                     elif error_level == 'serious':
-                        bg_color = QtGui.QBrush(QtGui.QColor(255, 220, 170))
+                        bg_color = QtGui.QBrush(QtGui.QColor(255, 220, 224))
                     elif error_level == 'moderate':
                         bg_color = QtGui.QBrush(QtGui.QColor(255, 255, 230))
                     else:
-                        bg_color = QtGui.QBrush(QtGui.QColor(190, 255, 255))
+                        bg_color = QtGui.QBrush(QtGui.QColor(200, 255, 240))
                     item.setBackground(0, QtGui.QColor(bg_color))
                     item.setBackground(1, QtGui.QColor(bg_color))
                     item.setBackground(2, QtGui.QColor(bg_color))
                     item.setBackground(3, QtGui.QColor(bg_color))
+                    if is_dark_theme:
+                        item.setForeground(0, QtGui.QBrush(QtGui.QColor("black")))
+                        item.setForeground(1, QtGui.QBrush(QtGui.QColor("black")))
+                        item.setForeground(2, QtGui.QBrush(QtGui.QColor("black")))
+                        item.setForeground(3, QtGui.QBrush(QtGui.QColor("black")))
                     tree.addTopLevelItem(item)
 
                 tree.itemClicked.connect(go_to_line)
