@@ -324,7 +324,7 @@ class AceTool(Tool):
                                     if numeric_version < (3, 41, 0):
                                         soup = BeautifulSoup(snippet)
                                         tag = soup.contents[0]
-                                        if tag.has_key('epub:type'):
+                                        if 'epub:type' in tag:
                                             epub_type = tag['epub:type']
                                             epub_type_list = epub_type.split()
                                             for epub_type_item in epub_type_list:
@@ -400,7 +400,8 @@ class AceTool(Tool):
                             return
                         if not pcfi:
                             import sys
-                            print('Failed to parse CFI: %r' % pcfi, file=sys.stderr)
+                            # print('Failed to parse CFI: %r' % pcfi, file=sys.stderr)
+                            print('Failed to parse CFI')
                             return
                         steps = get_steps(pcfi)
                         ans = root
@@ -472,7 +473,10 @@ class AceTool(Tool):
                             widget.close()
 
                 # Define dock widget layout
-                is_dark_theme = QApplication.instance().is_dark_theme
+                try:
+                    is_dark_theme = QApplication.instance().is_dark_theme
+                except:
+                    is_dark_theme = False
                 tree = QTreeWidget()
                 tree.setRootIsDecorated(False)
                 layout = QVBoxLayout()

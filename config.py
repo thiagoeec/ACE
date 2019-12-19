@@ -1,6 +1,7 @@
 # vim:fileencoding=UTF-8:ts=4:sw=4:sta:et:sts=4:ai
 from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
+import six
 
 __license__   = 'GPL v3'
 __copyright__ = '2018, Thiago Oliveira'
@@ -142,11 +143,11 @@ class ConfigWidget(QWidget):
                '\n' +\
                _('Thanks to Kovid Goyal for adding the feature\n'
                  'that made possible linked error messages.')
-        QMessageBox.about(self, PLUGIN_NAME + ' v' + PLUGIN_VERSION, text.decode('utf-8'))
+        QMessageBox.about(self, PLUGIN_NAME + ' v' + PLUGIN_VERSION, text)
 
     def save_settings(self):
         # Save current dialog settings back to JSON config file
-        plugin_prefs['report_path'] = unicode(self.directory_txtBox.displayText())
+        plugin_prefs['report_path'] = six.text_type(self.directory_txtBox.displayText())
         plugin_prefs['open_report'] = self.open_report_check.isChecked()
         plugin_prefs['debug_mode'] = self.debug_mode_check.isChecked()
         plugin_prefs['close_docks'] = self.close_docks_check.isChecked()
