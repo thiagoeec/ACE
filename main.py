@@ -389,7 +389,7 @@ class AceTool(Tool):
                                     pass
                                 else:
                                     import traceback
-                                    raise error_dialog(self.gui, _('No browser found'),
+                                    error_dialog(self.gui, _('No browser found'),
                                                        _('Could not find a browser to open the report. '
                                                          'Click \'Show details\' for more info.'),
                                                        det_msg=traceback.format_exc(), show=True)
@@ -619,7 +619,7 @@ class AceTool(Tool):
                     pass
                 else:
                     import traceback
-                    raise error_dialog(self.gui, _('No browser found'),
+                    error_dialog(self.gui, _('No browser found'),
                                        _('Could not find a browser to open the report. '
                                          'Click \'Show details\' for more info.'),
                                        det_msg=traceback.format_exc(), show=True)
