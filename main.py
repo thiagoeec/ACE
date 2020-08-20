@@ -19,7 +19,7 @@ import json
 from os.path import expanduser, basename
 
 # PyQt libraries
-from PyQt5.Qt import QApplication, QAction, QMessageBox, QDialog, Qt, QMenu, QIcon,\
+from PyQt5.Qt import QApplication, QAction, QMessageBox, QDialog, Qt, QMenu, QIcon, \
     QPixmap, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QTextEdit, QDockWidget
 from PyQt5 import QtCore, QtGui
 
@@ -108,7 +108,6 @@ def ace_wrapper(*args):
 
 # Main Class
 class AceTool(Tool):
-    
     # Set this to a unique name it will be used as a key
     name = 'ace'
     # If True the user can choose to place this tool in the plugins toolbar
@@ -324,7 +323,7 @@ class AceTool(Tool):
                                     if numeric_version < (3, 41, 0):
                                         soup = BeautifulSoup(snippet)
                                         tag = soup.contents[0]
-                                        if 'epub:type' in tag:
+                                        if 'epub:type' in str(tag):
                                             epub_type = tag['epub:type']
                                             epub_type_list = epub_type.split()
                                             for epub_type_item in epub_type_list:
@@ -349,7 +348,7 @@ class AceTool(Tool):
                                             else:
                                                 role_string = role_string + ', ' + role
                                                 multiple_roles_msg = _(' (you must use only one role)')
-                                    error_message += _(' Matching ARIA role: ') + role_string + multiple_roles_msg + '.'
+                                    error_message += '.' + _(' Matching ARIA role: ') + role_string + multiple_roles_msg + '.'
 
                                 # Save error information in a list
                                 error_messages.append((msg_index, error_message, error_level, file_name, epubcfi))
@@ -367,8 +366,36 @@ class AceTool(Tool):
 
                         # Show report on default browser
                         if open_report:
-                            url = 'file://' + os.path.abspath(report_file_name)
-                            webbrowser.open(url)
+                            url = os.path.abspath(report_file_name)
+                            if islinux:
+                                browsers = ['google-chrome', 'firefox', 'chromium', 'opera', 'lynx', 'midori']
+                                import subprocess
+                                sucess = False
+                                try:
+                                    for br in browsers:
+                                        try:
+                                            subprocess.check_call([br, url])
+                                            sucess = True
+                                            break
+                                        except:
+                                            pass
+                                except:
+                                    import traceback
+                                    error_dialog(self.gui, _('No browser found'),
+                                                 _('Could not find a browser to open the report. '
+                                                   'Click \'Show details\' for more info.'),
+                                                 det_msg=traceback.format_exc(), show=True)
+                                if sucess:
+                                    pass
+                                else:
+                                    import traceback
+                                    raise error_dialog(self.gui, _('No browser found'),
+                                                       _('Could not find a browser to open the report. '
+                                                         'Click \'Show details\' for more info.'),
+                                                       det_msg=traceback.format_exc(), show=True)
+                            else:
+                                url = 'file://' + url
+                                webbrowser.open(url)
 
                         return
 
@@ -534,9 +561,9 @@ class AceTool(Tool):
 
                 # Double-click copies to clipboard
                 def msg_to_clipboard():
-                    item_content = _('File') + ': ' + tree.currentItem().text(1) + '\n' +\
-                               _('Severity') + ': ' + tree.currentItem().text(2) + '\n' +\
-                               _('Error message') + ': ' + tree.currentItem().text(3)
+                    item_content = _('File') + ': ' + tree.currentItem().text(1) + '\n' + \
+                                   _('Severity') + ': ' + tree.currentItem().text(2) + '\n' + \
+                                   _('Error message') + ': ' + tree.currentItem().text(3)
                     QApplication.clipboard().setText(item_content)
 
                 tree.itemDoubleClicked.connect(msg_to_clipboard)
@@ -570,5 +597,32 @@ class AceTool(Tool):
 
         # Show report on default browser
         if open_report:
-            url = 'file://' + os.path.abspath(report_file_name)
-            webbrowser.open(url)
+            url = os.path.abspath(report_file_name)
+            if islinux:
+                browsers = ['google-chrome', 'firefox', 'chromium', 'opera', 'lynx', 'midori']
+                import subprocess
+                sucess = False
+                try:
+                    for br in browsers:
+                        try:
+                            subprocess.check_call([br, url])
+                            sucess = True
+                            break
+                        except:
+                            pass
+                except:
+                    import traceback
+                    error_dialog(self.gui, _('No browser found'),
+                                 _('Could not find a browser to open the report. '
+                                   'Click \'Show details\' for more info.'), det_msg=traceback.format_exc(), show=True)
+                if sucess:
+                    pass
+                else:
+                    import traceback
+                    raise error_dialog(self.gui, _('No browser found'),
+                                       _('Could not find a browser to open the report. '
+                                         'Click \'Show details\' for more info.'),
+                                       det_msg=traceback.format_exc(), show=True)
+            else:
+                url = 'file://' + url
+                webbrowser.open(url)

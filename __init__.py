@@ -16,7 +16,7 @@ load_translations()
 
 PLUGIN_NAME          = 'ACE'
 PLUGIN_DESCRIPTION   = _('Checks the accessibility of EPUB files with ACE.')
-PLUGIN_VERSION_TUPLE = (1, 1, 0)
+PLUGIN_VERSION_TUPLE = (1, 1, 1)
 PLUGIN_VERSION       = '.'.join([str(x) for x in PLUGIN_VERSION_TUPLE])
 PLUGIN_AUTHOR        = 'Thiago Oliveira'
 

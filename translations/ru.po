@@ -3,15 +3,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# ashed <craysy@gmail.com>, 2019
 # Aleksandr P, 2019
+# ashed <craysy@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-08-05 20:17-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: Aleksandr P, 2019\n"
+"Last-Translator: ashed <craysy@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/calibre/teams/19337/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,25 +70,29 @@ msgstr "Если отмечено, ACE попытается закрыть ос�
 
 #: config.py:98
 msgid "Split multiline &errors"
-msgstr ""
+msgstr "Разделить многострочные &ошибки"
 
 #: config.py:99
 msgid "When checked, ACE will split multiline error messages."
 msgstr ""
+"Если этот флажок установлен, ACE будет разделять многострочные сообщения об "
+"ошибках."
 
 #: config.py:105
 msgid "Messages:"
-msgstr ""
+msgstr "Сообщения:"
 
 #: config.py:111
 msgid "&Language:"
-msgstr ""
+msgstr "&Язык:"
 
 #: config.py:112
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
 msgstr ""
+"Выберите язык для отображения сообщений ACE и AXE. Некоторые языки работают "
+"для AXE, но не для ACE."
 
 #: config.py:131
 msgid "About"
@@ -164,7 +168,7 @@ msgstr "Вы не можете проверить {} файлы с помощь�
 
 #: main.py:227 main.py:256
 msgid "Checking book..."
-msgstr ""
+msgstr "Проверка книги..."
 
 #: main.py:244 main.py:273
 msgid "Error"
@@ -186,11 +190,11 @@ msgstr "Перезапуск"
 
 #: main.py:347
 msgid " (you must use only one role)"
-msgstr ""
+msgstr "(вы должны использовать только одну роль)"
 
 #: main.py:348
 msgid " Matching ARIA role: "
-msgstr ""
+msgstr "Соответствующая роль ARIA:"
 
 #: main.py:360
 msgid ""
@@ -236,7 +240,7 @@ msgstr "Сортировать по сообщению об ошибке"
 
 #: main.py:493
 msgid "Critical"
-msgstr ""
+msgstr "Критичная"
 
 #: main.py:495
 msgid "Serious"

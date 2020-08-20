@@ -5,14 +5,14 @@
 # Translators:
 # Henrik Mattsson-Mårn <h@reglage.net>, 2019
 # Sebastian Rasmussen <sebras@gmail.com>, 2019
-# Jonatan Nyberg, 2019
+# Jonatan Nyberg <jonatan.nyberg.karl@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-08-05 20:17-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: Jonatan Nyberg, 2019\n"
+"Last-Translator: Jonatan Nyberg <jonatan.nyberg.karl@gmail.com>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/calibre/teams/19337/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,11 +71,11 @@ msgstr "När markerad kommer ACE att försöka stänga andra valideringsdockor."
 
 #: config.py:98
 msgid "Split multiline &errors"
-msgstr ""
+msgstr "Dela flerrads&fel"
 
 #: config.py:99
 msgid "When checked, ACE will split multiline error messages."
-msgstr ""
+msgstr "När markerad, ACE kommer att dela flerradsfelmeddelanden."
 
 #: config.py:105
 msgid "Messages:"
@@ -103,7 +103,7 @@ msgid ""
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
 msgstr ""
 "Denna insticksmodul är baserad på Doitsus kod för\n"
-"Sigils ACE-insticksmodul och EPUBCheck för kaliber.\n"
+"Sigils ACE-insticksmodul och EPUBCheck för calibre.\n"
 
 #: config.py:141
 msgid "The Config Menu is based on KindleUnpack.\n"
@@ -151,7 +151,7 @@ msgstr "Före: ACE"
 
 #: main.py:189
 msgid "Empty Editor"
-msgstr ""
+msgstr "Tom redigerare"
 
 #: main.py:190
 msgid "You must first open a book!"
