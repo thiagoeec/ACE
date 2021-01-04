@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-08-05 20:17-0300\n"
+"POT-Creation-Date: 2020-08-19 20:59-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Szabó Péter <melchiadesian@gmail.com>, 2019\n"
 "Language-Team: Hungarian (https://www.transifex.com/calibre/teams/19337/hu/)\n"
@@ -24,71 +24,71 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr "EPUB fájlok elérhetőségének ellenőrzése ACE-szel."
 
-#: config.py:51
+#: config.py:52
 msgid "Report Folder:"
 msgstr "Jelentés mappa:"
 
-#: config.py:59
+#: config.py:60
 msgid "Folder to save the report"
 msgstr "Mappa a jelentés mentéséhez"
 
-#: config.py:64
+#: config.py:65
 msgid "Select Report Folder"
 msgstr "Jelentés mappa kiválasztása"
 
-#: config.py:65
+#: config.py:66
 msgid "Select the folder where the report will be saved."
 msgstr "Válaszd ki a mappát, ahová a jelentés el lesz mentve."
 
-#: config.py:71
+#: config.py:72
 msgid "Options:"
 msgstr "Beállítások:"
 
-#: config.py:77
+#: config.py:78
 msgid "Open Report after checking"
 msgstr "Jelentés megnyitása ellenőrzés után"
 
-#: config.py:78
+#: config.py:79
 msgid "Check it to open the html report on you default browser."
 msgstr ""
 "Ellenőrizd a html jelentés megnyitásával az alapértelmezett böngésződön."
 
-#: config.py:84
+#: config.py:85
 msgid "Debug Mode"
 msgstr "Hibakereső mód"
 
-#: config.py:85
+#: config.py:86
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr "Amikor ellenőrizte, az ACE napló elmentődik a vágólapra."
 
-#: config.py:91
+#: config.py:92
 msgid "Close Validation Docks"
 msgstr "Validációs dokkok bezárása"
 
-#: config.py:92
+#: config.py:93
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr ""
 "Amikor ellenőrizte, az ACE meg fogja kísérelni bezárni a többi valódációs "
 "dokkot."
 
-#: config.py:98
+#: config.py:99
 msgid "Split multiline &errors"
 msgstr "Többsoros &hibák feldarabolása"
 
-#: config.py:99
+#: config.py:100
 msgid "When checked, ACE will split multiline error messages."
 msgstr ""
 "Amikor ellenőrizte, az ACE a többsoros hibaüzeneteket fel fogja darabolni."
 
-#: config.py:105
+#: config.py:106
 msgid "Messages:"
 msgstr "Üzenetek:"
 
-#: config.py:111
+#: config.py:112
 msgid "&Language:"
 msgstr "&Nyelv:"
 
-#: config.py:112
+#: config.py:113
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
@@ -96,11 +96,11 @@ msgstr ""
 "Válassz nyelvet az ACE és AXE üzenetek mutatásához. Némelyik nyelv működik "
 "az AXE esetén, míg az ACE-nál nem."
 
-#: config.py:131
+#: config.py:132
 msgid "About"
 msgstr "Névjegy"
 
-#: config.py:138
+#: config.py:139
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
@@ -108,11 +108,11 @@ msgstr ""
 "Ez a bőcítmény egy Doitsu kódon alapul a\n"
 "Sigil ACE bővítményéhez és a calibre EPUBCheck-jéhez.\n"
 
-#: config.py:141
+#: config.py:142
 msgid "The Config Menu is based on KindleUnpack.\n"
 msgstr "A beállítás menü KindleUnpack alapú.\n"
 
-#: config.py:143
+#: config.py:144
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
@@ -120,11 +120,11 @@ msgstr ""
 "Köszönet Kovid Goyalnak a funkció hozzáadásáért,\n"
 "amivel lehetővé vált a hibaüzenetek csatolása."
 
-#: config.py:158
+#: config.py:159
 msgid "Select Directory to save Report to"
 msgstr "Válassz könyvtárat a jelentés mentéséhez"
 
-#: config.py:169
+#: config.py:170
 msgid ""
 "<p>The path specified for the Report Folder does not exist.<br/>Your latest "
 "preference changes will <b>NOT</b> be saved!</p>"
@@ -132,11 +132,11 @@ msgstr ""
 "<p>A Jelentés mappához megadott útvonal nem létezik.<br/>A legutóbbi "
 "beállításod változásai <b>NEM</b> lesznek elmentve!</p>"
 
-#: main.py:130
+#: main.py:129
 msgid "Configure ACE"
 msgstr "ACE testreszabása"
 
-#: main.py:153
+#: main.py:152
 msgid "Run ACE"
 msgstr "ACE futtatása"
 
@@ -168,15 +168,15 @@ msgstr "Nem támogatott fájlformátum"
 msgid "You can't check {} files with ACE."
 msgstr "Nem {} fájlokat ACE-val."
 
-#: main.py:227 main.py:256
+#: main.py:228 main.py:258
 msgid "Checking book..."
 msgstr "Könyv ellenőrzése..."
 
-#: main.py:244 main.py:273
+#: main.py:246 main.py:276
 msgid "Error"
 msgstr "Hiba"
 
-#: main.py:247
+#: main.py:249
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -186,19 +186,19 @@ msgstr ""
 "Szeretnéd megpróbálni újrafuttatni?\n"
 "Ez megoldhat néhány hibát."
 
-#: main.py:250
+#: main.py:252
 msgid "Rerun"
 msgstr "Vissza"
 
-#: main.py:347
+#: main.py:350
 msgid " (you must use only one role)"
 msgstr "(csak egy szerepkört használhatsz)"
 
-#: main.py:348
+#: main.py:351
 msgid " Matching ARIA role: "
 msgstr "Egyező ARIA szerepkör:"
 
-#: main.py:360
+#: main.py:363
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
@@ -206,61 +206,71 @@ msgstr ""
 "Az ACE ellenőrzés befejeződött!\n"
 "Gratulálunk: nincs hiba!"
 
-#: main.py:378
+#: main.py:384 main.py:392 main.py:615 main.py:622
+msgid "No browser found"
+msgstr ""
+
+#: main.py:385 main.py:393 main.py:616 main.py:623
+msgid ""
+"Could not find a browser to open the report. Click 'Show details' for more "
+"info."
+msgstr ""
+
+#: main.py:409
 msgid "Error opening the report"
 msgstr "Hiba a jelentés megnyitásakor"
 
-#: main.py:379
+#: main.py:410
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 "Az Ace nem tudja megnyitni a jelentést. Kattints a 'Részletek mutatása'-ra "
 "további információkért."
 
-#: main.py:481 main.py:523
+#: main.py:517 main.py:564
 msgid "File"
 msgstr "Fájl"
 
-#: main.py:481 main.py:524
+#: main.py:517 main.py:565
 msgid "Severity"
 msgstr "Súlyosság"
 
-#: main.py:481 main.py:525
+#: main.py:517 main.py:566
 msgid "Error message"
 msgstr "Hibaüzenet"
 
-#: main.py:483
+#: main.py:519
 msgid "Sort by Filename"
 msgstr "Rendezés fájlnév szerint"
 
-#: main.py:484
+#: main.py:520
 msgid "Sort by Severity"
 msgstr "Rendezés súlyosság szerint"
 
-#: main.py:485
+#: main.py:521
 msgid "Sort by Error Message"
 msgstr "Rendezés hibaüzenet szerint"
 
-#: main.py:493
+#: main.py:529
 msgid "Critical"
 msgstr "Kritikus"
 
-#: main.py:495
+#: main.py:531
 msgid "Serious"
 msgstr "Súlyos"
 
-#: main.py:497
+#: main.py:533
 msgid "Moderate"
 msgstr "Mérsékelt"
 
-#: main.py:499
+#: main.py:535
 msgid "Minor"
 msgstr "Kisebb"
 
-#: main.py:549
+#: main.py:590
 msgid "Unhandled exception"
 msgstr "Kezeletlen kivétel"
 
-#: main.py:550
+#: main.py:591
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Egy váratlan hiba történt. Kattints a 'Részletek mutatása'-ra további "

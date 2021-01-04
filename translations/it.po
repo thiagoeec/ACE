@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-08-05 20:17-0300\n"
+"POT-Creation-Date: 2020-08-19 20:59-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
 "Last-Translator: Volo Libero <massimocastiglia@alice.it>, 2019\n"
 "Language-Team: Italian (https://www.transifex.com/calibre/teams/19337/it/)\n"
@@ -25,97 +25,97 @@ msgstr ""
 msgid "Checks the accessibility of EPUB files with ACE."
 msgstr "Controlla l'accessibilità dei file EPUB con ACE."
 
-#: config.py:51
+#: config.py:52
 msgid "Report Folder:"
 msgstr "Cartella report:"
 
-#: config.py:59
+#: config.py:60
 msgid "Folder to save the report"
 msgstr "Cartella in cui salvare il report"
 
-#: config.py:64
+#: config.py:65
 msgid "Select Report Folder"
 msgstr "Seleziona la cartella del report"
 
-#: config.py:65
+#: config.py:66
 msgid "Select the folder where the report will be saved."
 msgstr "Seleziona la cartella in cui verrà salvato il report."
 
-#: config.py:71
+#: config.py:72
 msgid "Options:"
 msgstr "Opzioni:"
 
-#: config.py:77
+#: config.py:78
 msgid "Open Report after checking"
 msgstr "Apri il report dopo il controllo"
 
-#: config.py:78
+#: config.py:79
 msgid "Check it to open the html report on you default browser."
 msgstr "Controllalo per aprire il rapporto html sul tuo browser predefinito."
 
-#: config.py:84
+#: config.py:85
 msgid "Debug Mode"
 msgstr "Modalità debug"
 
-#: config.py:85
+#: config.py:86
 msgid "When checked, ACE log will be saved to clipboard."
 msgstr "Quando abilitata, il log di ACE verrà salvato negli appunti."
 
-#: config.py:91
+#: config.py:92
 msgid "Close Validation Docks"
 msgstr "Chiudi Docks di Convalida"
 
-#: config.py:92
+#: config.py:93
 msgid "When checked, ACE will attempt to close other validation docks."
 msgstr ""
 
-#: config.py:98
+#: config.py:99
 msgid "Split multiline &errors"
 msgstr ""
 
-#: config.py:99
+#: config.py:100
 msgid "When checked, ACE will split multiline error messages."
 msgstr ""
 
-#: config.py:105
+#: config.py:106
 msgid "Messages:"
 msgstr ""
 
-#: config.py:111
+#: config.py:112
 msgid "&Language:"
 msgstr ""
 
-#: config.py:112
+#: config.py:113
 msgid ""
 "Choose the language to show ACE and AXE messages. Some languages work for "
 "AXE, but not for ACE."
 msgstr ""
 
-#: config.py:131
+#: config.py:132
 msgid "About"
 msgstr "Informazioni"
 
-#: config.py:138
+#: config.py:139
 msgid ""
 "This plugin is based on Doitsu's code for\n"
 "Sigil's ACE Plugin and EPUBCheck for calibre.\n"
 msgstr ""
 
-#: config.py:141
+#: config.py:142
 msgid "The Config Menu is based on KindleUnpack.\n"
 msgstr ""
 
-#: config.py:143
+#: config.py:144
 msgid ""
 "Thanks to Kovid Goyal for adding the feature\n"
 "that made possible linked error messages."
 msgstr ""
 
-#: config.py:158
+#: config.py:159
 msgid "Select Directory to save Report to"
 msgstr "Seleziona la cartella in cui salvare il report"
 
-#: config.py:169
+#: config.py:170
 msgid ""
 "<p>The path specified for the Report Folder does not exist.<br/>Your latest "
 "preference changes will <b>NOT</b> be saved!</p>"
@@ -123,11 +123,11 @@ msgstr ""
 "<p>Il percorso specificato per la Cartella del report non esiste.<br/>Le tue"
 " ultime modifiche alle impostazioni<b>NON</b> verranno salvate!</p>"
 
-#: main.py:130
+#: main.py:129
 msgid "Configure ACE"
 msgstr "Configura ACE"
 
-#: main.py:153
+#: main.py:152
 msgid "Run ACE"
 msgstr "Fai partire ACE"
 
@@ -159,15 +159,15 @@ msgstr "Formato del file non supportato"
 msgid "You can't check {} files with ACE."
 msgstr "Non puoi controllare file {} con ACE."
 
-#: main.py:227 main.py:256
+#: main.py:228 main.py:258
 msgid "Checking book..."
 msgstr ""
 
-#: main.py:244 main.py:273
+#: main.py:246 main.py:276
 msgid "Error"
 msgstr "Errore"
 
-#: main.py:247
+#: main.py:249
 msgid ""
 "ACE found an error during execution.\n"
 "Do you want to try to rerun it?\n"
@@ -177,77 +177,87 @@ msgstr ""
 "Vuoi farlo partire di nuovo?\n"
 "Questo può risolvere alcuni errori."
 
-#: main.py:250
+#: main.py:252
 msgid "Rerun"
 msgstr "Riparti"
 
-#: main.py:347
+#: main.py:350
 msgid " (you must use only one role)"
 msgstr ""
 
-#: main.py:348
+#: main.py:351
 msgid " Matching ARIA role: "
 msgstr ""
 
-#: main.py:360
+#: main.py:363
 msgid ""
 "ACE check is finished!\n"
 "Congratulations: no errors were found!"
 msgstr ""
 
-#: main.py:378
+#: main.py:384 main.py:392 main.py:615 main.py:622
+msgid "No browser found"
+msgstr ""
+
+#: main.py:385 main.py:393 main.py:616 main.py:623
+msgid ""
+"Could not find a browser to open the report. Click 'Show details' for more "
+"info."
+msgstr ""
+
+#: main.py:409
 msgid "Error opening the report"
 msgstr ""
 
-#: main.py:379
+#: main.py:410
 msgid "Ace could not open the report. Click 'Show details' for more info."
 msgstr ""
 
-#: main.py:481 main.py:523
+#: main.py:517 main.py:564
 msgid "File"
 msgstr ""
 
-#: main.py:481 main.py:524
+#: main.py:517 main.py:565
 msgid "Severity"
 msgstr ""
 
-#: main.py:481 main.py:525
+#: main.py:517 main.py:566
 msgid "Error message"
 msgstr ""
 
-#: main.py:483
+#: main.py:519
 msgid "Sort by Filename"
 msgstr ""
 
-#: main.py:484
+#: main.py:520
 msgid "Sort by Severity"
 msgstr ""
 
-#: main.py:485
+#: main.py:521
 msgid "Sort by Error Message"
 msgstr ""
 
-#: main.py:493
+#: main.py:529
 msgid "Critical"
 msgstr ""
 
-#: main.py:495
+#: main.py:531
 msgid "Serious"
 msgstr ""
 
-#: main.py:497
+#: main.py:533
 msgid "Moderate"
 msgstr ""
 
-#: main.py:499
+#: main.py:535
 msgid "Minor"
 msgstr ""
 
-#: main.py:549
+#: main.py:590
 msgid "Unhandled exception"
 msgstr "Eccezione non gestita"
 
-#: main.py:550
+#: main.py:591
 msgid "An unexpected error occurred. Click 'Show details' for more info."
 msgstr ""
 "Si è verificato un errore inaspettato. Clicca \"Mostra dettagli\" per "

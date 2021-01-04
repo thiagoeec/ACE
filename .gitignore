@@ -1,2 +1,5 @@
 # Plugin zip file
 *.zip
+
+# PyCharm additions
+.idea
