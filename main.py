@@ -230,8 +230,8 @@ class AceTool(Tool):
 
                 # Run ACE
                 result, return_code = ace_wrapper(*args)
-                stdout = result[0]
-                stderr = result[1]
+                stdout = result[0].decode('utf-8')
+                stderr = result[1].decode('utf-8')
 
                 # Debug mode (ACE log)
                 if debug_mode:
@@ -260,8 +260,8 @@ class AceTool(Tool):
 
                         # Rerun ACE
                         result, return_code = ace_wrapper(*args)
-                        stdout = result[0]
-                        stderr = result[1]
+                        stdout = result[0].decode('utf-8')
+                        stderr = result[1].decode('utf-8')
 
                         # Debug mode (ACE log)
                         if debug_mode:
@@ -427,8 +427,10 @@ class AceTool(Tool):
                             return
                         if not pcfi:
                             import sys
-                            # print('Failed to parse CFI: %r' % pcfi, file=sys.stderr)
-                            print('Failed to parse CFI')
+                            try:
+                                print('Failed to parse CFI: %r' % pcfi, file=sys.stderr)
+                            except:
+                                print('Failed to parse CFI')
                             return
                         steps = get_steps(pcfi)
                         ans = root
