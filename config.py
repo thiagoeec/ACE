@@ -115,7 +115,7 @@ class ConfigWidget(QWidget):
         self.language_box_label.setToolTip(tooltip)
         self.language_box = QComboBox()
         self.language_box.setToolTip(tooltip)
-        self.language_box.addItems({'de', 'en', 'es', 'fr', 'ja', 'nl', 'pt_BR'})
+        self.language_box.addItems({'da', 'de', 'en', 'es', 'fr', 'ja', 'nl', 'pt_BR'})
         self.language_box.model().sort(0)
         self.language_box_label.setBuddy(self.language_box)
         lang_group_box_layout.addWidget(self.language_box_label, 0, 0)

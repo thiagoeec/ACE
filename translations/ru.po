@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Aleksandr P, 2019
-# ashed <craysy@gmail.com>, 2020
+# ashed <craysy@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-08-19 20:59-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: ashed <craysy@gmail.com>, 2020\n"
+"Last-Translator: ashed <craysy@gmail.com>, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/calibre/teams/19337/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -206,13 +206,15 @@ msgstr ""
 
 #: main.py:384 main.py:392 main.py:615 main.py:622
 msgid "No browser found"
-msgstr ""
+msgstr "Браузер не найден"
 
 #: main.py:385 main.py:393 main.py:616 main.py:623
 msgid ""
 "Could not find a browser to open the report. Click 'Show details' for more "
 "info."
 msgstr ""
+"Не удалось найти браузер, чтобы открыть отчет. Нажмите 'Показать "
+"подробности' для получения дополнительной информации."
 
 #: main.py:409
 msgid "Error opening the report"
