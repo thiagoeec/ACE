@@ -4,7 +4,7 @@ from __future__ import (unicode_literals, division, absolute_import,
 import six
 
 __license__   = 'GPL v3'
-__copyright__ = '2018, Thiago Oliveira'
+__copyright__ = '2018-2022, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
 # Standard libraries
@@ -12,8 +12,16 @@ import os
 import locale
 
 # PyQt libraries
-from PyQt5.Qt import (QWidget, QLabel, QLineEdit, QPushButton, QCheckBox,
-                      QGroupBox, QVBoxLayout, QGridLayout, QComboBox, QMessageBox)
+try:
+    from qt.core import (QApplication, QtCore, QWidget, QLabel, QLineEdit, QPushButton, QCheckBox,
+                          QGroupBox, QVBoxLayout, QGridLayout, QComboBox, QMessageBox)
+except:
+    from PyQt5.Qt import (QApplication, QWidget, QLabel, QLineEdit, QPushButton, QCheckBox,
+                          QGroupBox, QVBoxLayout, QGridLayout, QComboBox, QMessageBox)
+    from PyQt5 import QtCore
+
+# Get PyQt version
+Qt_version = int(QtCore.PYQT_VERSION_STR[0])
 
 # Calibre libraries
 from calibre.utils.config import JSONConfig

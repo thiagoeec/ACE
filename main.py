@@ -5,23 +5,27 @@ from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
 __license__ = 'GPL v3'
-__copyright__ = '2018, Thiago Oliveira'
+__copyright__ = '2018-2022, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
 # Standard libraries
 import os
 import os.path
-import sys
-import tempfile
 import webbrowser
 import shutil
 import json
-from os.path import expanduser, basename
 
 # PyQt libraries
-from PyQt5.Qt import QApplication, QAction, QMessageBox, QDialog, Qt, QMenu, QIcon, \
-    QPixmap, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QTextEdit, QDockWidget
-from PyQt5 import QtCore, QtGui
+try:
+    from qt.core import (QApplication, QAction, QMessageBox, Qt, QMenu, QIcon, QtCore, QtGui,
+                         QPixmap, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget)
+except:
+    from PyQt5.Qt import (QApplication, QAction, QMessageBox, Qt, QMenu, QIcon, QPixmap,
+                          QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget)
+    from PyQt5 import QtCore, QtGui
+
+# Get PyQt version
+Qt_version = int(QtCore.PYQT_VERSION_STR[0])
 
 # Calibre libraries
 from calibre.gui2 import error_dialog
@@ -119,7 +123,10 @@ class AceTool(Tool):
     def do_config(self):
         from calibre.gui2.widgets2 import Dialog
         from calibre.gui2.tweak_book import tprefs
-        from PyQt5.Qt import QDialogButtonBox
+        try:
+            from qt.core import QDialogButtonBox
+        except:
+            from PyQt5.Qt import QDialogButtonBox
         from calibre_plugins.ACE.config import ConfigWidget
         tool = self
 
@@ -226,7 +233,10 @@ class AceTool(Tool):
                 QApplication.setOverrideCursor(Qt.WaitCursor)
 
                 self.gui.show_status_message(_("Checking book..."), 5)
-                QApplication.processEvents(QtCore.QEventLoop.ExcludeUserInputEvents)
+                if Qt_version >= 6:
+                    QApplication.processEvents(QtCore.QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+                else:
+                    QApplication.processEvents(QtCore.QEventLoop.ExcludeUserInputEvents)
 
                 # Run ACE
                 result, return_code = ace_wrapper(*args)
@@ -256,7 +266,10 @@ class AceTool(Tool):
                         QApplication.setOverrideCursor(Qt.WaitCursor)
 
                         self.gui.show_status_message(_("Checking book..."), 5)
-                        QApplication.processEvents(QtCore.QEventLoop.ExcludeUserInputEvents)
+                        if Qt_version >= 6:
+                            QApplication.processEvents(QtCore.QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+                        else:
+                            QApplication.processEvents(QtCore.QEventLoop.ExcludeUserInputEvents)
 
                         # Rerun ACE
                         result, return_code = ace_wrapper(*args)

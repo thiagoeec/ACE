@@ -5,7 +5,7 @@ from __future__ import (unicode_literals, division, absolute_import,
                         print_function)
 
 __license__ = 'GPL v3'
-__copyright__ = '2018, Thiago Oliveira'
+__copyright__ = '2018-2022, Thiago Oliveira'
 __docformat__ = 'restructuredtext en'
 
 # Calibre libraries
@@ -16,7 +16,7 @@ load_translations()
 
 PLUGIN_NAME          = 'ACE'
 PLUGIN_DESCRIPTION   = _('Checks the accessibility of EPUB files with ACE.')
-PLUGIN_VERSION_TUPLE = (1, 1, 3)
+PLUGIN_VERSION_TUPLE = (1, 1, 4)
 PLUGIN_VERSION       = '.'.join([str(x) for x in PLUGIN_VERSION_TUPLE])
 PLUGIN_AUTHOR        = 'Thiago Oliveira'
 
