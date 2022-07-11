@@ -15,7 +15,7 @@ import locale
 try:
     from qt.core import (QApplication, QtCore, QWidget, QLabel, QLineEdit, QPushButton, QCheckBox,
                           QGroupBox, QVBoxLayout, QGridLayout, QComboBox, QMessageBox)
-except:
+except ImportError:
     from PyQt5.Qt import (QApplication, QWidget, QLabel, QLineEdit, QPushButton, QCheckBox,
                           QGroupBox, QVBoxLayout, QGridLayout, QComboBox, QMessageBox)
     from PyQt5 import QtCore

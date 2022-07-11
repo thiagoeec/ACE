@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Oi Suomi On! <oisuomion@protonmail.com>, 2022
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-08-19 20:59-0300\n"
+"PO-Revision-Date: 2019-01-10 00:06+0000\n"
+"Last-Translator: Oi Suomi On! <oisuomion@protonmail.com>, 2022\n"
+"Language-Team: Finnish (https://www.transifex.com/calibre/teams/19337/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: __init__.py:18
+msgid "Checks the accessibility of EPUB files with ACE."
+msgstr "Tarkistaa EPUB-tiedostojen käytön tilan ACE:n avulla."
+
+#: config.py:52
+msgid "Report Folder:"
+msgstr "Kansio selonteolle:"
+
+#: config.py:60
+msgid "Folder to save the report"
+msgstr "Kansio johon selonteko tallennetaan"
+
+#: config.py:65
+msgid "Select Report Folder"
+msgstr "Valitse selontekokansio"
+
+#: config.py:66
+msgid "Select the folder where the report will be saved."
+msgstr "Valitse kansio johon selonteko tallennetaan."
+
+#: config.py:72
+msgid "Options:"
+msgstr "Vaihtoehdot:"
+
+#: config.py:78
+msgid "Open Report after checking"
+msgstr "Avaa selonteko tarkistuksen jälkeen"
+
+#: config.py:79
+msgid "Check it to open the html report on you default browser."
+msgstr ""
+"Tarkista se avataksesi html-selonteon vakiollisessa internet-selaimessasi."
+
+#: config.py:85
+msgid "Debug Mode"
+msgstr "Vian etsinnän- ja korjauksen tila"
+
+#: config.py:86
+msgid "When checked, ACE log will be saved to clipboard."
+msgstr ""
+"Tarkistuksen jälkeen, ACE-tapahtumakirjaukset tallennetaan leikepöydälle."
+
+#: config.py:92
+msgid "Close Validation Docks"
+msgstr "Sulje vahvistusten telakat"
+
+#: config.py:93
+msgid "When checked, ACE will attempt to close other validation docks."
+msgstr "Kun tarkistettu, ACE koettaa sulkea muut vahvistustelakat."
+
+#: config.py:99
+msgid "Split multiline &errors"
+msgstr "Jaa moniriviset &virheet"
+
+#: config.py:100
+msgid "When checked, ACE will split multiline error messages."
+msgstr "Kun tarkistettu, ACE jakaa moniriviset virheilmoitukset."
+
+#: config.py:106
+msgid "Messages:"
+msgstr "Viestit:"
+
+#: config.py:112
+msgid "&Language:"
+msgstr "&Kieli"
+
+#: config.py:113
+msgid ""
+"Choose the language to show ACE and AXE messages. Some languages work for "
+"AXE, but not for ACE."
+msgstr ""
+"Valitse kieli jolla ACE ja AXE -viestit näytetään. Jotkut kielet toimivat "
+"AXE:ssa, mutta eivät sitten ACE:ssa."
+
+#: config.py:132
+msgid "About"
+msgstr "Tietoja"
+
+#: config.py:139
+msgid ""
+"This plugin is based on Doitsu's code for\n"
+"Sigil's ACE Plugin and EPUBCheck for calibre.\n"
+msgstr ""
+"Tämä liitännäinen perustuu Doitsu:n koodiin\n"
+"Sigil:in ACE-liitännäiselle ja EPUBCheck:ille Calibrea varten.\n"
+
+#: config.py:142
+msgid "The Config Menu is based on KindleUnpack.\n"
+msgstr "Asetusvalikko perustuu KindleUnpack:iin.\n"
+
+#: config.py:144
+msgid ""
+"Thanks to Kovid Goyal for adding the feature\n"
+"that made possible linked error messages."
+msgstr ""
+"Kiitokset Kovid Goyal:ille tämän ominaisuuden lisäämisestä\n"
+"joka toi mukanaan linkatut virheilmoitukset."
+
+#: config.py:159
+msgid "Select Directory to save Report to"
+msgstr "Valitse hakemisto johon selonteko tallennetaan"
+
+#: config.py:170
+msgid ""
+"<p>The path specified for the Report Folder does not exist.<br/>Your latest "
+"preference changes will <b>NOT</b> be saved!</p>"
+msgstr ""
+"<p>Polku joka selontekohakemistolle on määritetty ei näytä olevan "
+"olemassa.<br/>Viimeisimmät asetusmuutoksesi <b>EIVÄT</b> tule "
+"tallentumaan!</p>"
+
+#: main.py:129
+msgid "Configure ACE"
+msgstr "Määritä ACE"
+
+#: main.py:152
+msgid "Run ACE"
+msgstr "Aja ACE"
+
+#: main.py:167
+msgid "Configure"
+msgstr "Määritä"
+
+#: main.py:169
+msgid "Configure ACE plugin"
+msgstr "Määritä ACE-liitännäinen"
+
+#: main.py:187
+msgid "Before: ACE"
+msgstr "Ennen: ACE"
+
+#: main.py:189
+msgid "Empty Editor"
+msgstr "Tyhjä muokkain"
+
+#: main.py:190
+msgid "You must first open a book!"
+msgstr "Ensin sinun pitää avata kirja!"
+
+#: main.py:196
+msgid "Unsupported file format"
+msgstr "Tukematon tiedostomuoto"
+
+#: main.py:197
+msgid "You can't check {} files with ACE."
+msgstr "Et voi tarkastaa {} tiedostoja ACE:n avulla."
+
+#: main.py:228 main.py:258
+msgid "Checking book..."
+msgstr "Kirjaa tarkistetaan..."
+
+#: main.py:246 main.py:276
+msgid "Error"
+msgstr "Virhe"
+
+#: main.py:249
+msgid ""
+"ACE found an error during execution.\n"
+"Do you want to try to rerun it?\n"
+"This can resolve a few errors."
+msgstr ""
+"ACE havaitsi virheen ajon aikana.\n"
+"Haluatko koittaa uudelleenajoa?\n"
+"Tämä saattaa ratkaista joitakin virheitä."
+
+#: main.py:252
+msgid "Rerun"
+msgstr "Uudelleenajo"
+
+#: main.py:350
+msgid " (you must use only one role)"
+msgstr "(sinun täytyy käyttää vain yhtä roolia)"
+
+#: main.py:351
+msgid " Matching ARIA role: "
+msgstr "Täsmätään ARIA-rooli:"
+
+#: main.py:363
+msgid ""
+"ACE check is finished!\n"
+"Congratulations: no errors were found!"
+msgstr ""
+"ACE tarkitus saapui päätökseensä!\n"
+"Onnittelut: yhtäkään virhettä ei löytynyt!"
+
+#: main.py:384 main.py:392 main.py:615 main.py:622
+msgid "No browser found"
+msgstr "Selainta ei löytynyt"
+
+#: main.py:385 main.py:393 main.py:616 main.py:623
+msgid ""
+"Could not find a browser to open the report. Click 'Show details' for more "
+"info."
+msgstr ""
+"Selainta ei löydetty jolla avata selonteko. Napsauta 'näytä yksityiskohdat' "
+"saadaksesi lisätietoja."
+
+#: main.py:409
+msgid "Error opening the report"
+msgstr "Selontekoa avatessa Ilmeni virhe"
+
+#: main.py:410
+msgid "Ace could not open the report. Click 'Show details' for more info."
+msgstr ""
+"ACE ei kyennyt avaamaan selontekoa. Napsauta 'näytä yksityiskohdat' "
+"lisätietoja saadaksesi."
+
+#: main.py:517 main.py:564
+msgid "File"
+msgstr "Tiedosto"
+
+#: main.py:517 main.py:565
+msgid "Severity"
+msgstr "Vakavuus"
+
+#: main.py:517 main.py:566
+msgid "Error message"
+msgstr "Virheviesti"
+
+#: main.py:519
+msgid "Sort by Filename"
+msgstr "Järjestä tiedostonimen mukaan"
+
+#: main.py:520
+msgid "Sort by Severity"
+msgstr "Järjestä vakavuuden mukaan"
+
+#: main.py:521
+msgid "Sort by Error Message"
+msgstr "Järjestä virheilmoituksen mukaan"
+
+#: main.py:529
+msgid "Critical"
+msgstr "Kriittinen"
+
+#: main.py:531
+msgid "Serious"
+msgstr "Merkittävä"
+
+#: main.py:533
+msgid "Moderate"
+msgstr "Keskitasoinen"
+
+#: main.py:535
+msgid "Minor"
+msgstr "Lievä"
+
+#: main.py:590
+msgid "Unhandled exception"
+msgstr "Käsittelemätön poikkeus"
+
+#: main.py:591
+msgid "An unexpected error occurred. Click 'Show details' for more info."
+msgstr ""
+"Ilmeni odottamaton virhe. Napsauta 'näytä yksityiskohdat' lisätietoja "
+"saadaksesi."

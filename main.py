@@ -19,7 +19,7 @@ import json
 try:
     from qt.core import (QApplication, QAction, QMessageBox, Qt, QMenu, QIcon, QtCore, QtGui,
                          QPixmap, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget)
-except:
+except ImportError:
     from PyQt5.Qt import (QApplication, QAction, QMessageBox, Qt, QMenu, QIcon, QPixmap,
                           QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget)
     from PyQt5 import QtCore, QtGui
@@ -76,11 +76,11 @@ def getrole(epub_type):
         'table': 'table', 'table-row': 'row', 'table-cell': 'cell',
     }
     if epub_type in [
-        'abstract', 'acknowledgments', 'afterword', 'appendix', 'biblioentry', 'bibliography',
-        'biblioref', 'chapter', 'colophon', 'conclusion', 'cover', 'credit', 'credits', 'dedication',
-        'endnote', 'endnotes', 'epigraph', 'epilogue', 'errata', 'footnote', 'foreword', 'glossary',
-        'glossref', 'index', 'introduction', 'noteref', 'notice', 'pagebreak', 'part', 'preface',
-        'prologue', 'pullquote', 'qna', 'backlink', 'subtitle', 'tip', 'toc'
+        'abstract', 'acknowledgments', 'afterword', 'appendix', 'bibliography', 'biblioref', 'chapter',
+        'colophon', 'conclusion', 'cover', 'credit', 'credits', 'dedication', 'endnotes', 'epigraph',
+        'epilogue', 'errata', 'footnote', 'foreword', 'glossary', 'glossref', 'index', 'introduction',
+        'noteref', 'notice', 'pagebreak', 'part', 'preface', 'prologue', 'pullquote', 'qna', 'backlink',
+        'subtitle', 'tip', 'toc'
     ]:
         role = 'doc-' + epub_type
     elif epub_type in noequiv:
@@ -125,7 +125,7 @@ class AceTool(Tool):
         from calibre.gui2.tweak_book import tprefs
         try:
             from qt.core import QDialogButtonBox
-        except:
+        except ImportError:
             from PyQt5.Qt import QDialogButtonBox
         from calibre_plugins.ACE.config import ConfigWidget
         tool = self
