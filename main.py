@@ -127,7 +127,7 @@ def update_ace(self):
         if b'\'npm\'' in stderr:
             self.gui.show_status_message('')
             error_title = _('Node.js is not installed.')
-            error_msg = _('\nInstall Node.js 10 or higher, then run: \'npm install @daisy/ace -g\' on a cmd/terminal window.')
+            error_msg = _('Install Node.js 10 or higher, then run: \'npm install @daisy/ace -g\' on a cmd/terminal window.')
             error_dialog(self.gui, error_title, error_msg, show=True)
             return False
 
