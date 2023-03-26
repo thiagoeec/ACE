@@ -6,13 +6,14 @@
 # 玉堂白鹤 <yjwork@qq.com>, 2020
 # 凝沙 云 <smalltv233@outlook.com>, 2020
 # 白夜咲雪, 2021
+# yyngfive <chenhye5@outlook.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-08-19 20:59-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: 白夜咲雪, 2021\n"
+"Last-Translator: yyngfive <chenhye5@outlook.com>, 2023\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/calibre/teams/19337/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,7 +72,7 @@ msgstr "勾选后，ACE将尝试关闭其他验证站。"
 
 #: config.py:99
 msgid "Split multiline &errors"
-msgstr "分割多行错误(&E)"
+msgstr "分割多行错误 &E"
 
 #: config.py:100
 msgid "When checked, ACE will split multiline error messages."
@@ -83,7 +84,7 @@ msgstr "信息："
 
 #: config.py:112
 msgid "&Language:"
-msgstr "语言(&L)："
+msgstr "&L："
 
 #: config.py:113
 msgid ""
@@ -139,19 +140,19 @@ msgstr "配置"
 
 #: main.py:169
 msgid "Configure ACE plugin"
-msgstr ""
+msgstr "配置ACE插件"
 
 #: main.py:187
 msgid "Before: ACE"
-msgstr ""
+msgstr "之前：ACE"
 
 #: main.py:189
 msgid "Empty Editor"
-msgstr ""
+msgstr "空编辑器"
 
 #: main.py:190
 msgid "You must first open a book!"
-msgstr ""
+msgstr "必须先打开一本书！"
 
 #: main.py:196
 msgid "Unsupported file format"
@@ -159,15 +160,15 @@ msgstr "不支持的文件格式"
 
 #: main.py:197
 msgid "You can't check {} files with ACE."
-msgstr ""
+msgstr "无法用ACE检查 {} 文件"
 
 #: main.py:228 main.py:258
 msgid "Checking book..."
-msgstr ""
+msgstr "正在检查书籍"
 
 #: main.py:246 main.py:276
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: main.py:249
 msgid ""
@@ -181,15 +182,15 @@ msgstr ""
 
 #: main.py:252
 msgid "Rerun"
-msgstr ""
+msgstr "重新运行"
 
 #: main.py:350
 msgid " (you must use only one role)"
-msgstr ""
+msgstr "（只能使用一项规则）"
 
 #: main.py:351
 msgid " Matching ARIA role: "
-msgstr ""
+msgstr "正在匹配ARIA规则"
 
 #: main.py:363
 msgid ""
@@ -201,33 +202,33 @@ msgstr ""
 
 #: main.py:384 main.py:392 main.py:615 main.py:622
 msgid "No browser found"
-msgstr ""
+msgstr "无法找到浏览器"
 
 #: main.py:385 main.py:393 main.py:616 main.py:623
 msgid ""
 "Could not find a browser to open the report. Click 'Show details' for more "
 "info."
-msgstr ""
+msgstr "找不到用于打开报告的浏览器。点击“Show details”获取更多信息。"
 
 #: main.py:409
 msgid "Error opening the report"
-msgstr ""
+msgstr "打开报告时发生错误"
 
 #: main.py:410
 msgid "Ace could not open the report. Click 'Show details' for more info."
-msgstr ""
+msgstr "Ace无法打开报告。点击“Show details”获取更多信息。"
 
 #: main.py:517 main.py:564
 msgid "File"
-msgstr ""
+msgstr "文件"
 
 #: main.py:517 main.py:565
 msgid "Severity"
-msgstr ""
+msgstr "严重程度"
 
 #: main.py:517 main.py:566
 msgid "Error message"
-msgstr ""
+msgstr "错误信息"
 
 #: main.py:519
 msgid "Sort by Filename"
@@ -235,32 +236,32 @@ msgstr "按文件名排序"
 
 #: main.py:520
 msgid "Sort by Severity"
-msgstr ""
+msgstr "按严重程度排序"
 
 #: main.py:521
 msgid "Sort by Error Message"
-msgstr ""
+msgstr "按错误信息排序"
 
 #: main.py:529
 msgid "Critical"
-msgstr ""
+msgstr "极为严重"
 
 #: main.py:531
 msgid "Serious"
-msgstr ""
+msgstr "严重"
 
 #: main.py:533
 msgid "Moderate"
-msgstr ""
+msgstr "中等"
 
 #: main.py:535
 msgid "Minor"
-msgstr ""
+msgstr "轻微"
 
 #: main.py:590
 msgid "Unhandled exception"
-msgstr ""
+msgstr "未处理的异常"
 
 #: main.py:591
 msgid "An unexpected error occurred. Click 'Show details' for more info."
-msgstr ""
+msgstr "发生了预期之外的错误。点击“Show details”获取更多信息。"

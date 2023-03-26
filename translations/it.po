@@ -3,7 +3,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Manuel Tassi <manueltassi91@gmail.com>, 2019
+# Manuel Tassi <mannivuwiki@gmail.com>, 2019
 # Nicoletta Donadio <nico88.imac@gmail.com>, 2019
 # Volo Libero <massimocastiglia@alice.it>, 2019
 # 
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: __init__.py:18
 msgid "Checks the accessibility of EPUB files with ACE."

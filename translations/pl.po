@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Marcin Kozioł <koziol.martin@gmail.com>, 2020
+# The Name <moje.konto+transifex@posteo.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-08-19 20:59-0300\n"
 "PO-Revision-Date: 2019-01-10 00:06+0000\n"
-"Last-Translator: Marcin Kozioł <koziol.martin@gmail.com>, 2020\n"
+"Last-Translator: The Name <moje.konto+transifex@posteo.org>, 2022\n"
 "Language-Team: Polish (https://www.transifex.com/calibre/teams/19337/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -229,7 +230,7 @@ msgstr "Plik"
 
 #: main.py:517 main.py:565
 msgid "Severity"
-msgstr ""
+msgstr "Istotność"
 
 #: main.py:517 main.py:566
 msgid "Error message"
@@ -253,7 +254,7 @@ msgstr "Krytyczny"
 
 #: main.py:531
 msgid "Serious"
-msgstr ""
+msgstr "Poważny"
 
 #: main.py:533
 msgid "Moderate"
@@ -261,7 +262,7 @@ msgstr "Umiarkowany"
 
 #: main.py:535
 msgid "Minor"
-msgstr ""
+msgstr "Pomniejszy"
 
 #: main.py:590
 msgid "Unhandled exception"

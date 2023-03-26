@@ -134,6 +134,7 @@ class AceTool(Tool):
 
             def __init__(self):
                 Dialog.__init__(self, _('Configure ACE'), 'plugin-ace-config-dialog', parent=tool.gui, prefs=tprefs)
+                self.setWindowIcon(get_icon('images/icon.png'))
 
             def setup_ui(self):
                 self.box = QVBoxLayout(self)

@@ -4,10 +4,10 @@
 # 
 # Translators:
 # Ettore Atalan <atalanttore@googlemail.com>, 2019
-# JimmXinu <retiefjimm@gmail.com>, 2019
+# JimmXinu, 2019
 # Armin Geller <armin.geller@t-online.de>, 2019
 # pitfd, 2019
-# Dirk Hein <bankman@mailbox.org>, 2019
+# e13493b2a936f499f30a988e8a2df4be_22a66bf <faf36a540214319109e3a8bf5cbd8af8_453360>, 2019
 # Janina Schlappkohl <mirataria@gmail.com>, 2019
 # 
 msgid ""

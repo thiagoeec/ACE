@@ -1,7 +1,9 @@
 [main]
 host = https://www.transifex.com
 
-[calibre-plugins.ace]
+[o:calibre:p:calibre-plugins:r:ace]
 file_filter = translations/<lang>.po
+source_file = translations/en.po
 source_lang = en
-type = PO
+type        = PO
+
