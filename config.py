@@ -10,6 +10,7 @@ __docformat__ = 'restructuredtext en'
 # Standard libraries
 import os
 import locale
+from datetime import datetime, timedelta
 
 # PyQt libraries
 try:
@@ -45,6 +46,9 @@ plugin_prefs.defaults['debug_mode'] = False
 plugin_prefs.defaults['close_docks'] = True
 plugin_prefs.defaults['user_lang'] = user_language[0]
 plugin_prefs.defaults['split_lines'] = True
+plugin_prefs.defaults['update'] = True
+plugin_prefs.defaults['check_interval'] = 7
+plugin_prefs.defaults['last_time_checked'] = str(datetime.now() - timedelta(days=7))
 
 
 # Set up Config Dialog
@@ -110,6 +114,32 @@ class ConfigWidget(QWidget):
         # Load the checkbox with the current preference setting
         self.split_lines_check.setChecked(plugin_prefs['split_lines'])
 
+        # --- Update Options ---
+        update_group_box = QGroupBox(_('Update:'), self)
+        layout.addWidget(update_group_box)
+        update_group_box_layout = QGridLayout()
+        update_group_box.setLayout(update_group_box_layout)
+
+        # Update checkbox
+        self.update_check = QCheckBox(_('Auto &update'), self)
+        self.update_check.setToolTip(_('When checked, the plugin will attempt to update local ACE installation.'))
+        update_group_box_layout.addWidget(self.update_check, 0, 0)
+        # Load the checkbox with the current preference setting
+        self.update_check.setChecked(plugin_prefs['update'])
+
+        # Check interval line edit
+        self.check_interval_txtBox_label = QLabel(_('&Check interval:'), self)
+        tooltip = _('Update check interval')
+        self.check_interval_txtBox_label.setToolTip(tooltip)
+        # Load the textbox with the current preference setting
+        self.check_interval_txtBox = QLineEdit(str(plugin_prefs['check_interval']), self)
+        self.check_interval_txtBox.setAlignment(QtCore.Qt.AlignRight)
+        self.check_interval_txtBox.setMaximumWidth(110)
+        self.check_interval_txtBox.setToolTip(tooltip)
+        self.check_interval_txtBox_label.setBuddy(self.check_interval_txtBox)
+        update_group_box_layout.addWidget(self.check_interval_txtBox_label, 1, 0)
+        update_group_box_layout.addWidget(self.check_interval_txtBox, 1, 1)
+
         # --- Lang Options ---
         lang_group_box = QGroupBox(_('Messages:'), self)
         layout.addWidget(lang_group_box)
@@ -161,6 +191,8 @@ class ConfigWidget(QWidget):
         plugin_prefs['close_docks'] = self.close_docks_check.isChecked()
         plugin_prefs['user_lang'] = self.language_box.currentText()
         plugin_prefs['split_lines'] = self.split_lines_check.isChecked()
+        plugin_prefs['update'] = self.update_check.isChecked()
+        plugin_prefs['check_interval'] = int(self.check_interval_txtBox.text())
 
     def get_directory(self):
         c = choose_dir(self, PLUGIN_NAME + 'dir_chooser',

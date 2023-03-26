@@ -14,14 +14,16 @@ import os.path
 import webbrowser
 import shutil
 import json
+from datetime import datetime
+import time
 
 # PyQt libraries
 try:
     from qt.core import (QApplication, QAction, QMessageBox, Qt, QMenu, QIcon, QtCore, QtGui,
-                         QPixmap, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget)
+                         QPixmap, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget, QEventLoop)
 except ImportError:
     from PyQt5.Qt import (QApplication, QAction, QMessageBox, Qt, QMenu, QIcon, QPixmap,
-                          QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget)
+                          QTreeWidget, QTreeWidgetItem, QVBoxLayout, QDockWidget, QEventLoop)
     from PyQt5 import QtCore, QtGui
 
 # Get PyQt version
@@ -109,6 +111,71 @@ def ace_wrapper(*args):
     return_code = process.returncode
     return ret, return_code
 
+def update_ace(self):
+    # Make sure we have an Internet connection
+    if is_connected():
+        msg = _('Running update check...')
+        self.gui.show_status_message(msg)
+        QApplication.processEvents(QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+
+        # Check if an update is available
+        check_args = ['npm', 'outdated', '-g']
+        update_check = ace_wrapper(*check_args)[0]
+        stderr = update_check[1]
+
+        # Check if Node.js is installed
+        if b'\'npm\'' in stderr:
+            self.gui.show_status_message('')
+            error_title = _('Node.js is not installed.')
+            error_msg = _('\nInstall Node.js 10 or higher, then run: \'npm install @daisy/ace -g\' on a cmd/terminal window.')
+            error_dialog(self.gui, error_title, error_msg, show=True)
+            return False
+
+        if '@daisy/ace' in str(update_check):
+            msg = _('Updating ACE...')
+            self.gui.show_status_message(msg)
+            QApplication.processEvents(QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+
+            # Update ACE to the latest version
+            update_args = ['npm', 'install', '@daisy/ace', '-g']
+            update_return_code = ace_wrapper(*update_args)[1]
+
+            if update_return_code == 0:
+                version_args = ['ace', '-v']
+                result = ace_wrapper(*version_args)[0]
+                version_check = result[0].decode('utf-8').replace('\n', '')
+                msg = _('ACE was successfully updated to version %s.') % version_check
+                self.gui.show_status_message(msg, 5)
+                QApplication.processEvents(QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+            else:
+                msg = _('Update failed.')
+                self.gui.show_status_message(msg, 5)
+                QApplication.processEvents(QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+        else:
+            msg = _('No updates found.')
+            self.gui.show_status_message(msg, 5)
+            QApplication.processEvents(QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+
+        # Update time stamp in Check_Books.json
+        cfg.plugin_prefs.set('last_time_checked', str(datetime.now()))
+        cfg.plugin_prefs.commit()
+        time.sleep(1)
+    else:
+        msg = _('Update check skipped: no internet.')
+        self.gui.show_status_message(msg, 5)
+        QApplication.processEvents(QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
+
+def is_connected():
+    import socket
+    try:
+        sock = socket.create_connection(('8.8.8.8', 53), 1)
+        sock.close()
+        return True
+    except:
+        pass
+
+def string_to_date(date_string):
+    return datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S.%f')
 
 # Main Class
 class AceTool(Tool):
@@ -189,6 +256,18 @@ class AceTool(Tool):
         close_docks = cfg.plugin_prefs['close_docks']
         user_lang = cfg.plugin_prefs['user_lang']
         split_lines = cfg.plugin_prefs['split_lines']
+        update = cfg.plugin_prefs['update']
+        check_interval = cfg.plugin_prefs['check_interval']
+        last_time_checked = cfg.plugin_prefs['last_time_checked']
+
+        # Check for ACE updates
+        if update:
+            # Compare current date against last update check date
+            time_delta = (datetime.now() - string_to_date(last_time_checked)).days
+            if time_delta >= check_interval:
+                status = update_ace(self)
+                if status is False:
+                    return
 
         # Create a savepoint
         try:
@@ -233,7 +312,7 @@ class AceTool(Tool):
                 # Display busy cursor
                 QApplication.setOverrideCursor(Qt.WaitCursor)
 
-                self.gui.show_status_message(_("Checking book..."), 5)
+                self.gui.show_status_message(_("Checking book..."), 3)
                 if Qt_version >= 6:
                     QApplication.processEvents(QtCore.QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
                 else:
@@ -252,45 +331,19 @@ class AceTool(Tool):
                 if return_code == 1:
                     # Hide busy cursor
                     QApplication.restoreOverrideCursor()
+                    self.gui.show_status_message('')
 
-                    # If an error is found
-                    QMessageBox.warning(self.gui, _('Error'), stderr)
-
-                    # Ask user to rerun ACE
-                    rerun_msg = _('ACE found an error during execution.'
-                                  '\nDo you want to try to rerun it?'
-                                  '\nThis can resolve a few errors.')
-                    reply = QMessageBox.question(self.gui, _('Rerun'), rerun_msg,
-                                                 QMessageBox.Yes, QMessageBox.No)
-                    if reply == QMessageBox.Yes:
-                        # Display busy cursor
-                        QApplication.setOverrideCursor(Qt.WaitCursor)
-
-                        self.gui.show_status_message(_("Checking book..."), 5)
-                        if Qt_version >= 6:
-                            QApplication.processEvents(QtCore.QEventLoop.ProcessEventsFlag.ExcludeUserInputEvents)
-                        else:
-                            QApplication.processEvents(QtCore.QEventLoop.ExcludeUserInputEvents)
-
-                        # Rerun ACE
-                        result, return_code = ace_wrapper(*args)
-                        stdout = result[0].decode('utf-8')
-                        stderr = result[1].decode('utf-8')
-
-                        # Debug mode (ACE log)
-                        if debug_mode:
-                            stdout += stderr
-                            QApplication.clipboard().setText(stdout)
-
-                        if return_code == 1:
-                            # Hide busy cursor
-                            QApplication.restoreOverrideCursor()
-
-                            # Exit if error persists
-                            QMessageBox.critical(self.gui, _('Error'), stderr)
-                            return
+                    # Get ACE errors
+                    # ACE only gives 1 as return code when the file can't be processed.
+                    # Otherwise, it returns 0, even if the book has errors.
+                    if '\'ace\'' in stderr:
+                        error_title = _('ACE is not installed.')
+                        msg = _('Install Node.js 10 or higher, then run: \'npm install @daisy/ace -g\' on a cmd/terminal window.')
                     else:
-                        return
+                        error_title = _('Invalid EPUB or DRMed')
+                        msg = _('This file is either corrupted/invalid or DRMed')
+                    error_dialog(self.gui, error_title, msg, show=True)
+                    return
 
                 # If ACE succeeded, there should be a report file in the home folder
                 if os.path.isfile(report_file_name):
